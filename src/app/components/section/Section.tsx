@@ -68,10 +68,14 @@ export default function Section() {
                                 <button className="special_button_prev">
                                     <span className="hidden">이전</span>
                                 </button>
-                                <div className="special_pagination">
-
+                                <div className="special_pagination_a">
+                                    <span className="pagination_current">01</span>
+                                    /
+                                    <span className="pagination_total_a">04</span>
                                 </div>
-                                <button></button>
+                                <button className="button_next">
+                                    <span className="hidden">ㄷㅏ음</span>
+                                </button>
                             </div>
                             <span className=""></span>
                         </div>

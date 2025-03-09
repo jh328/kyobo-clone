@@ -392,7 +392,7 @@
     border: 0;
 }
 
-.special_pagination {
+.special_pagination_a {
     height: 16px;
     line-height: 16px;
     padding: 0 2px;
@@ -406,7 +406,7 @@
     box-sizing: border-box;
     font-size: 0;
     text-align: center;
-    width: 36px;
+    width: 39px;
 }
 
 .welcome_arketing_wrap {
@@ -469,4 +469,58 @@
     width: 274px;
     height: 96px;
     border-radius: 12px;
+}
+
+.pagination_current {
+    color: #000;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    line-height: 16px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style: none;
+}
+
+.pagination_total_a {
+    color: #767676;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    line-height: 16px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style: none;
+}
+
+.pagination_total_a:before {
+    margin: 0 3px;
+    color: #767676;
+    content: "-";
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    line-height: 16px;
+    text-align: center;
+    width: 3px;
+    height: 16px;
+}
+
+.button_next {
+    display: inline-block;
+    position: static;
+    width: 16px;
+    height: 16px;
+    margin-top: 0;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 6px 10px;
+    background-image: url("/images/section/btn_swiper_list@2x.png");
+    vertical-align: top;
+    opacity: 1;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 0;
 }
