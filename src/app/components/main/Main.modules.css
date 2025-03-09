@@ -1,0 +1,42 @@
+.title_size_xxl {
+    padding-bottom: 30px;
+    position: relative;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+}
+
+.showcase_template_wrap {
+
+}
+
+.title_heading {
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.category_tag_list {
+    margin: 4px 0 0 30px;
+}
+
+.right_area {
+    margin-left: auto;
+    flex-shrink: 0;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+
+}
