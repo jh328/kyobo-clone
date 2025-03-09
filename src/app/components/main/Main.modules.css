@@ -84,10 +84,10 @@
     letter-spacing: -0.01em;
     color: #767676;
     transition: color 0.23s, font-weight 0.23s;
-    border:0;
+    border: 0;
 }
 
-.btn_category_remain:before{
+.btn_category_remain:before {
     content: "";
     position: absolute;
     left: 50%;
@@ -98,4 +98,36 @@
     border-radius: 100%;
     transform: translateX(-50%);
     transition: background-color 0.23s;
+}
+
+.btn_more_plus_text {
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    color: #000;
+    font-weight: 700;
+    text-align: left;
+}
+
+.text_plus {
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.ico_plus {
+    width: 10px;
+    height: 10px;
+    margin: 6px 0 0 6px;
+    background: url("/images/common/ico_plus_h10_bold@2x.png");
+    background-size: 10px 10px;
 }

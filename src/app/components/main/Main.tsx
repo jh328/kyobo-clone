@@ -1,4 +1,5 @@
 import "./Main.modules.css"
+import Link from "next/link";
 
 export default function Main() {
     return (
@@ -42,7 +43,12 @@ export default function Main() {
                         </button>
                     </li>
                 </ul>
-                <div className="right_area"></div>
+                <div className="right_area">
+                    <Link href="" className="btn_more_plus_text">
+                        <span className="text_plus">더보기</span>
+                        <span className="ico_plus"></span>
+                    </Link>
+                </div>
             </div>
             <div className="showcase_template_wrap"></div>
         </div>

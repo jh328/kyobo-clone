@@ -128,3 +128,9 @@ button {
     padding-block: 1px;
     padding-inline: 6px;
 }
+
+button[class^=btn_] [class^=ico_], a[class^=btn_] [class^=ico_]{
+    display:inline-block;
+    position:relative;
+    vertical-align: top;
+}
