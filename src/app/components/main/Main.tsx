@@ -50,7 +50,36 @@ export default function Main() {
                     </Link>
                 </div>
             </div>
-            <div className="showcase_template_wrap"></div>
+            <div className="showcase_template_wrap">
+                <div className="template_row">
+                    <div className="template_col">
+                        <div className="expand_related_book_wrap">
+                            <div className="detail_swiper_wrap">
+                                <div className="swiper_container_fade">
+                                    <ul className="main_wrapper">
+                                        <li className="main_li">
+                                            <div className="prod_area_hor_izontal">
+                                                <div className="prod_thumb_box">
+                                                    <Link href="" className="prod_link">
+                                                        <span className="prod_img_box">
+                                                            <img src="/images/main/9788932043500.jpg" alt="" className="prod_img_box_a"/>
+                                                        </span>
+                                                    </Link>
+                                                </div>
+                                                <div className="prod_info_box"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div className="thumb_swiper_wrap"></div>
+                            <button className=""></button>
+                            <button className=""></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 };
