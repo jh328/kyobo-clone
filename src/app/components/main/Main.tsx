@@ -66,7 +66,15 @@ export default function Main() {
                                                         </span>
                                                     </Link>
                                                 </div>
-                                                <div className="prod_info_box"></div>
+                                                <div className="prod_info_box">
+                                                    <Link href="" className="prod_info_title">
+                                                        <h3 className="prod_name">[소셜] 봄밤의 모든 것</h3>
+                                                    </Link>
+                                                    <span></span>
+                                                    <div></div>
+                                                    <p></p>
+                                                    <p></p>
+                                                </div>
                                             </div>
                                         </li>
                                     </ul>

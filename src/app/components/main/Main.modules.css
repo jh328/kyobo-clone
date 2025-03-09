@@ -260,4 +260,24 @@
 
 .prod_info_box {
     pointer-events: auto;
+    margin-left: 30px;
+    overflow: hidden;
+}
+
+.prod_name {
+    max-height: calc(30px * 2);
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.01em;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+    font-weight:500;
+}
+
+.prod_info_title {
+    display: block;
+    height: 100%;
+    font-size: 0;
 }
