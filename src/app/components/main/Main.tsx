@@ -62,7 +62,8 @@ export default function Main() {
                                                 <div className="prod_thumb_box">
                                                     <Link href="" className="prod_link">
                                                         <span className="prod_img_box">
-                                                            <img src="/images/main/9788932043500.jpg" alt="" className="prod_img_box_a"/>
+                                                            <img src="/images/main/9788932043500.jpg" alt=""
+                                                                 className="prod_img_box_a"/>
                                                         </span>
                                                     </Link>
                                                 </div>
@@ -70,10 +71,21 @@ export default function Main() {
                                                     <Link href="" className="prod_info_title">
                                                         <h3 className="prod_name">[소셜] 봄밤의 모든 것</h3>
                                                     </Link>
-                                                    <span></span>
-                                                    <div></div>
-                                                    <p></p>
-                                                    <p></p>
+                                                    <span className="prod_author">백수린.문학과지성사</span>
+                                                    <div className="prod_price">
+                                                        <span className="percent">10%</span>
+                                                        <span className="price">
+                                                            <span className="val">15,300</span>
+                                                            <span className="unit">원</span>
+                                                        </span>
+                                                    </div>
+                                                    <p className="prod_md_comment">
+                                                        "'젊은 거장' 백수린의 네 번째 소설집"
+                                                    </p>
+                                                    <p className="prod_md_comment_desc">
+                                                        섬세하고 사려 깊은 시선, 우아하고 단정한 문장으로 고유의 문학을 구축한 백수린 신작 소설집. 절망 속 한 줌의
+                                                        빛을 그린 일곱 편의 이야기가 우리를 위로한다.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </li>
