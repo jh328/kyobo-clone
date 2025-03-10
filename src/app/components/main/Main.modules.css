@@ -172,7 +172,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    margin: auto;
+    margin: 40px 0;
     height: min-content;
 }
 
@@ -341,6 +341,75 @@
     left: 0;
 }
 
+.swiper_container_horizontal {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.main_button_prev {
+    left: -64px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    background-size: 42px 42px;
+    background-image: url("/images/section/btn_swiper_list_wh@2x.png");
+    transform: rotate(180deg);
+    opacity: 1;
+    width: 44px;
+    height: 44px;
+    margin-top: -22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.23s;
+    border-radius: 100%;
+    z-index: 2;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    right: auto;
+    padding: 0;
+}
+
+.thumb_item {
+    margin: 0 0 0 20px;
+    width: 142px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    height: 153px;
+    position: relative;
+    transition-property: transform, -webkit-transform;
+}
+
+.thumb_img_box {
+    width: calc(100% - 2px);
+    border: 1px solid #eaeaea;
+}
+
+.thumb_main_box {
+    width: 100%;
+    min-height: 50px;
+}
+
+.prod_area {
+
+}
+
+.thum_list {
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    height: 288px;
+    z-index: 1;
+    display: flex;
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+}
+
 .prod_md_comment_desc {
     margin-top: 12px;
     color: #595959;
@@ -351,7 +420,7 @@
     line-height: 22px;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    word-break:break-all;
+    word-break: break-all;
     max-height: 66px;
 }
 
@@ -380,4 +449,26 @@
     display: flex;
     gap: 5px;
     align-items: center;
+}
+
+.main_button_next {
+    right: calc(100% - 1200px - 64px);
+    border: 1px solid #ccc;
+    background-color: #fff;
+    background-size: 42px 42px;
+    background-image: url("/images/section/btn_swiper_list_wh@2x.png");
+    opacity: 1;
+    width: 44px;
+    height: 44px;
+    margin-top: -22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.23s;
+    border-radius: 100%;
+    z-index: 2;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    padding: 0;
 }

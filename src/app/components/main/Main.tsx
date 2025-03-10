@@ -93,9 +93,28 @@ export default function Main() {
                                     <span></span>
                                 </div>
                             </div>
-                            <div className="thumb_swiper_wrap"></div>
-                            <button className=""></button>
-                            <button className=""></button>
+                            <div className="thumb_swiper_wrap">
+                                <div className="swiper_container_horizontal">
+                                    <ul className="thum_list"
+                                        style={{transitionDuration: "0", transform: "translate3d(-6642,0,0"}}>
+                                        <li className="thumb_item">
+                                            <div className="thumb_img_box">
+                                                <Link href="" className="">
+                                                    <img src="/images/main/9788955827910.jpg" alt="엄마"
+                                                         className="thumb_main_box"/>
+                                                </Link>
+                                            </div>
+                                            <div className="prod_area"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button className="main_button_prev">
+                                <span className="hidden">이전</span>
+                            </button>
+                            <button className="main_button_next">
+                                <span className="hidden">다음</span>
+                            </button>
                         </div>
                     </div>
                 </div>
