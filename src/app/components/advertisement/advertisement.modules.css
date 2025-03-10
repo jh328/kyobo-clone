@@ -1,0 +1,37 @@
+.content_area {
+    margin-top: 110px;
+}
+
+.content_inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.showcase_blurb_wrap {
+    font-size: 0;
+    margin-top: 30px;
+}
+
+.showcase_blurb_box {
+    width: calc((100% - 10px) / 2);
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 10px;
+    vertical-align: top;
+    font-size: 0;
+}
+
+.blurb_link {
+    display: block;
+    height: 100%;
+}
+
+.blurb_link_ml {
+    display: block;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.blurb_wrap_img {
+    width: 100%
+}
