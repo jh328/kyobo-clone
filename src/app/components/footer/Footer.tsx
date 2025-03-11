@@ -135,7 +135,27 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="footer_body"></div>
+            <div className="footer_body">
+                <div className="f_inner">
+                    <div className="footer_logo_box">
+                        <div className="f_logo_box">
+                            <Link href="" className="logo_link">
+                                <img src="/images/common/img_logo_kyobo_footer@2x.png" alt="" className="img_footer"/>
+                            </Link>
+                        </div>
+                        <div className="right_box">
+                            <div className="family_site_box">
+                                <button className="btn_family_site">
+                                    <span className="text family_text">Family Site</span>
+                                </button>
+                                <ul></ul>
+                            </div>
+                            <div className="sns_share_box"></div>
+                        </div>
+                    </div>
+                    <div className="footer_contents_wrap"></div>
+                </div>
+            </div>
         </footer>
     )
 };
