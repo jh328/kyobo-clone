@@ -350,12 +350,13 @@
     z-index: 1;
 }
 
+
 .main_button_prev {
     left: -64px;
     border: 1px solid #ccc;
     background-color: #fff;
-    background-size: 42px 42px;
-    background-image: url("/images/section/btn_swiper_list_wh@2x.png");
+    background-size: 44px 44px;
+    background-image: url("/images/common/btn_swiper_arr@2x.png");
     transform: rotate(180deg);
     opacity: 1;
     width: 44px;
@@ -456,7 +457,7 @@
     border: 1px solid #ccc;
     background-color: #fff;
     background-size: 42px 42px;
-    background-image: url("/images/section/btn_swiper_list_wh@2x.png");
+    background-image: url("/images/common/btn_swiper_arr@2x.png");
     opacity: 1;
     width: 44px;
     height: 44px;
