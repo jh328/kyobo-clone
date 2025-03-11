@@ -1,6 +1,62 @@
-.call{
+.service_desc{
+    margin-top: 3px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #767676;
+}
+.btn_footer_link:after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 3px 0 0 2px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 6px 6px;
+    vertical-align: top;
+    background-image: url("/images/common/arw_footer_link@2x.png");
+}
+.btn_footer_link{
+    display: inline-block;
+    padding: 5px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    line-height: 1;
+    vertical-align: top;
+}
+.service_text{
+    display: inline-block;
+    margin: 3px 6px 0 0;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #595959;
+    vertical-align: top;
+}
+.footer_mark_isms {
+    display: -webkit-flex;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    margin-top: 22px;
+}
+
+.footer_service {
+    font-size: 0;
+}
+
+.call {
     font-weight: 700;
 }
+
 .gap {
     content: "";
     display: inline-block;

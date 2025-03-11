@@ -211,7 +211,18 @@ export default function Footer() {
                                 © KYOBO BOOK CENTRE
                             </div>
                         </div>
-                        <div className="footer_contents_right"></div>
+                        <div className="footer_contents_right">
+                            <div className="footer_service">
+                                <span className="service_text">토스페이먼츠 구매인전서비스</span>
+                                <Link href="" className="btn_footer_link">서비스 가입 확인</Link>
+                                <p className="service_desc">
+                                    고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
+                                    <br/>
+                                    토스페이먼츠의 구매안전한서비스를 이용하실 수 있습니다.
+                                </p>
+                            </div>
+                            <div className="footer_mark_isms"></div>
+                        </div>
                     </div>
                 </div>
             </div>
