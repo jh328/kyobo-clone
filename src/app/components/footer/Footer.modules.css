@@ -1,3 +1,26 @@
+.call{
+    font-weight: 700;
+}
+.gap {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 9px;
+    margin: 8px 6px 0;
+    background-color: #d5d5d5;
+    vertical-align: top;
+}
+
+.info_text {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: #595959;
+    vertical-align: top;
+}
+
 .footer_menu_item:before {
     content: "";
     display: inline-block;

@@ -193,8 +193,23 @@ export default function Footer() {
                                     </li>
                                 </ul>
                             </div>
-                            <address className="footer_info_box"></address>
-                            <div className="copyright"></div>
+                            <address className="footer_info_box">
+                                <span className="info_text">대표이사: 안병현, 김상훈</span>
+                                <span className="gap">|</span>
+                                <span className="info_text">서울특별시 종로구 종로1</span>
+                                <span className="gap"></span>
+                                <span className="info_text">사업자등록번호:102-81-11670</span>
+                                <br/>
+                                <span className="info_text call">대표전화 : 1544-1900(발신자 부담전화) </span>
+                                <span className="gap"></span>
+                                <span className="info_text">FAX:0502-987-5711(지역번호 공통)</span>
+                                <span className="gap"></span>
+                                <span className="info_text">서울특별시 통신판매업신고번호 : 제 653호</span>
+                                <Link href="">혹시 모르니 패스~</Link>
+                            </address>
+                            <div className="copyright">
+                                © KYOBO BOOK CENTRE
+                            </div>
                         </div>
                         <div className="footer_contents_right"></div>
                     </div>
