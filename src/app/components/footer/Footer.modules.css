@@ -1,62 +1,79 @@
-.footer_wrapper {
-    margin-top: 150px;
+.item_link_cl{
+    color:#595959
+}
+.service_item {
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    margin-top: 10px;
 }
 
-.footer_header {
-    border-top-width: 1px !important
+.service_list {
+    margin-top: 16px;
+    padding-left: 0;
 }
 
-.default {
-    margin-top: 150px;
-    border-top: 1px solid #d5d5d5;
-}
-
-.footer_body {
-    padding: 40px 0 50px;
-    border-top: 1px solid #eaeaea;
-}
-
-.footer_inner {
-    padding: 19px 0 20px;
-    display: -webkit-flex;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-    width: 1200px;
-    margin: 0 auto;
-}
-
-.welcome_main_service_area {
-    margin-top: 0;
-    padding: 40px 0 50px;
-    background: #f7f7f7;
-    border-top: 1px solid #eaeaea;
-}
-
-.winner {
-    position: relative;
-    padding-left: 61px;
-}
-
-.notice_wrap {
-    flex: 1;
-    display: -webkit-flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-    -webkit-box-pack: start;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-}
-
-.notice_text {
-    font-size: 15px;
-    flex-shrink: 0;
+.title_group_name {
     display: inline-block;
+    font-size: 14px;
+    line-height: 22px;
     letter-spacing: -0.01em;
     font-weight: 700;
-    vertical-align: top;
+}
+
+.a_group_name {
+    padding-right: 22px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 16px 16px;
+    background-image: url("/images/common/arw_anb_category_all@2x.png");
+}
+
+.bl_pl {
+    border-left: 1px solid #eaeaea;
+    padding-left: 37px;
+}
+
+.service_group_box {
+    flex: 1;
+}
+
+.service_groop_area {
+    width: 100%;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.winner:before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    height: 9px;
+    background: #d5d5d5;
+    left: 30px;
+    top: 7px;
+}
+
+.btn_more_plus_footer {
+    color: #000;
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    text-align: left;
+}
+
+.footer_right_area {
+    margin-left: auto;
+    flex-shrink: 0;
+    padding-left: 15px;
 }
 
 .notice_link {
@@ -77,4 +94,83 @@
     line-height: 22px;
     letter-spacing: -0.01em;
     text-decoration: underline;
+
+}
+
+.notice_text {
+    font-size: 15px;
+    flex-shrink: 0;
+    display: inline-block;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.winner {
+    position: relative;
+    padding-left: 61px;
+}
+
+.notice_wrap {
+    flex: 1;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+}
+
+.welcome_main_service_area {
+    padding: 40px 0 50px;
+    background: #f7f7f7;
+    border-top: 1px solid #eaeaea;
+    margin-top: 0;
+}
+
+.area_footer_inner {
+    padding: 0;
+    width: 1200px;
+    margin: 0 auto;
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.footer_inner {
+    padding: 19px 0 20px;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footer_wrapper {
+    margin-top: 150px;
+}
+
+.footer_body {
+    padding: 40px 0 50px;
+    border-top: 1px solid #eaeaea;
+}
+
+.footer_header {
+    border-top-width: 1px;
+}
+
+.default {
+    margin-top: 150px;
+    border-top: 1px solid #d5d5d5;
 }
