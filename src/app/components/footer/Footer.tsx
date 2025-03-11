@@ -221,7 +221,18 @@ export default function Footer() {
                                     토스페이먼츠의 구매안전한서비스를 이용하실 수 있습니다.
                                 </p>
                             </div>
-                            <div className="footer_mark_isms"></div>
+                            <div className="footer_mark_isms">
+                                <Link href="" className="mark_link">
+                                    정보보호관리체계
+                                    <br/>
+                                    ISMS 인증획득
+                                </Link>
+                                <p className="mark_desc">
+                                    [인증범위] 인터넷 교보문고 및 브랜드 서비스 운영
+                                    <br/>
+                                    [유효기간] 2023.11.15 ~ 2026.11.14
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
