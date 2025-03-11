@@ -1,4 +1,4 @@
-.mark_desc{
+.mark_desc {
     display: block;
     margin-left: 17px;
     font-size: 12px;
@@ -6,7 +6,8 @@
     letter-spacing: -0.01em;
     color: #767676;
 }
-.mark_link{
+
+.mark_link {
     display: block;
     font-size: 12px;
     line-height: 18px;
@@ -18,13 +19,15 @@
     background-size: 48px 48px;
     background-image: url("/images/common/img_mark_isms@2x.png");
 }
-.service_desc{
+
+.service_desc {
     margin-top: 3px;
     font-size: 12px;
     line-height: 18px;
     letter-spacing: -0.01em;
     color: #767676;
 }
+
 .btn_footer_link:after {
     content: "";
     display: inline-block;
@@ -37,7 +40,8 @@
     vertical-align: top;
     background-image: url("/images/common/arw_footer_link@2x.png");
 }
-.btn_footer_link{
+
+.btn_footer_link {
     display: inline-block;
     padding: 5px 5px;
     border: 1px solid #ccc;
@@ -49,7 +53,8 @@
     line-height: 1;
     vertical-align: top;
 }
-.service_text{
+
+.service_text {
     display: inline-block;
     margin: 3px 6px 0 0;
     font-size: 12px;
@@ -58,6 +63,7 @@
     color: #595959;
     vertical-align: top;
 }
+
 .footer_mark_isms {
     display: -webkit-flex;
     justify-content: flex-start;
@@ -133,6 +139,7 @@
 
 .footer_menu_list {
     font-size: 0;
+    padding: 0;
 }
 
 .copyright {
