@@ -707,7 +707,8 @@ button[class^=btn_], a[class^=btn_] {
 .btn_curtain_expand {
     display: inline-block;
     vertical-align: top;
-    border:0;
+    border: 0;
+    padding: 0;
 }
 
 .curtain_banner_box {
