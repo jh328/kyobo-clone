@@ -1,14 +1,80 @@
-.sns_inst{
+.footer_menu_item:before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    margin: 4px 12px 0;
+    background-color: #d5d5d5;
+    vertical-align: top;
+}
+
+.footer_menu_item.no-before:before {
+    content: none;
+    display: none;
+}
+
+.footer_menu_link {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    color: #595959;
+}
+
+.item_privacy {
+    font-weight: 700;
+    color: #000;
+    text-decoration: underline;
+}
+
+.footer_menu_item {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer_menu_list {
+    font-size: 0;
+}
+
+.copyright {
+    margin-top: 23px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #767676;
+}
+
+.footer_info_box {
+    margin-top: 20px;
+    font-size: 0;
+}
+
+.footer_menu_box {
+    margin-top: 2px;
+}
+
+.footer_contents_right {
+    margin-left: auto;
+}
+
+.footer_contents_left {
+    flex: 1;
+}
+
+.sns_inst {
     background-size: 32px 32px;
     background-image: url("/images/sns/btn_footer_sns_insta_v2@2x.png");
 }
+
 .sns_face {
     background-size: 32px 32px;
     background-image: url("/images/sns/btn_footer_sns_fb_v2@2x.png");
 }
-.sns_ml{
+
+.sns_ml {
     margin-left: 8px;
 }
+
 .sns_share {
     display: inline-block;
     width: 32px;

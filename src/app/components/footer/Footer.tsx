@@ -163,7 +163,41 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className="footer_contents_wrap"></div>
+                    <div className="footer_contents_wrap">
+                        <div className="footer_contents_left">
+                            <div className="footer_menu_box">
+                                <ul className="footer_menu_list">
+                                    <li className="footer_menu_item no-before">
+                                        <Link href="" className="footer_menu_link">회사소개</Link>
+                                    </li>
+                                    <li className="footer_menu_item">
+                                        <Link href="" className="footer_menu_link">이용약관</Link>
+                                    </li>
+                                    <li className="footer_menu_item">
+                                        <Link href="" className="footer_menu_link item_privacy">개인정보처리방침</Link>
+                                    </li>
+                                    <li className="footer_menu_item">
+                                        <Link href="" className="footer_menu_link">청소년보호정책</Link>
+                                    </li>
+                                    <li className="footer_menu_item">
+                                        <Link href="" className="footer_menu_link">대량주문안내</Link>
+                                    </li>
+                                    <li className="footer_menu_item">
+                                        <Link href="" className="footer_menu_link">협력사여러분</Link>
+                                    </li>
+                                    <li className="footer_menu_item">
+                                        <Link href="" className="footer_menu_link">채용정보</Link>
+                                    </li>
+                                    <li className="footer_menu_item">
+                                        <Link href="" className="footer_menu_link">광고소개</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <address className="footer_info_box"></address>
+                            <div className="copyright"></div>
+                        </div>
+                        <div className="footer_contents_right"></div>
+                    </div>
                 </div>
             </div>
         </footer>
