@@ -150,7 +150,17 @@ export default function Footer() {
                                 </button>
                                 <ul></ul>
                             </div>
-                            <div className="sns_share_box"></div>
+                            <div className="sns_share_box">
+                                <Link href="" className="sns_youtube sns_share">
+                                    <span className="hidden">유튭 공유</span>
+                                </Link>
+                                <Link href="" className="sns_face sns_share sns_ml">
+                                    <span className="hidden">페북 공유</span>
+                                </Link>
+                                <Link href="" className="sns_inst sns_share sns_ml">
+                                    <span className="hidden">인스타 공유</span>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                     <div className="footer_contents_wrap"></div>
