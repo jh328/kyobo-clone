@@ -176,7 +176,11 @@ export default function Page() {
                     <div className="tab_content"></div>
                 </section>
             </main>
-            <footer></footer>
+            <footer className="footer_wrapper">
+                <div className="footer_inner">
+                    <div className="copyright">© KYOBO BOOK CENTRE</div>
+                </div>
+            </footer>
         </div>
     )
 };
