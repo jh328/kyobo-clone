@@ -1,0 +1,156 @@
+.wrapper_member_login {
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 100%;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+
+
+/*컨텐츠 / 로그인 x */
+.container_wrapper {
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 50px 0 100px;
+    min-height: calc(100vh - 54px - 68px - 250px);
+}
+
+.contents_wrap {
+    width: 340px;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+.login_form_wrap {
+    padding-bottom: 30px;
+    border-bottom: none;
+}
+
+.adv_wrap {
+
+}
+
+.form_col_group {
+
+}
+
+.valid_check {
+
+}
+
+
+.captcha_wrap {
+
+}
+
+.btn_wrap {
+
+}
+
+.justify {
+
+}
+
+.save_id_box {
+
+}
+
+.sns_login_box {
+}
+
+.join_induce_wrap {
+}
+
+.col_box {
+
+}
+
+.form_ip {
+    display: inline-block;
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 2px;
+    color: #000;
+    font-size: 14px;
+    line-height: 42px;
+    letter-spacing: -0.01em;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-out;
+    outline: none;
+}
+
+.auto_complete_box {
+    display: none;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    padding-bottom: 5px;
+    border: 1px solid #000;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    background-color: #fff;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.visually_hidden {
+    display: none;
+}
+
+.custom_scroll_wrap {
+    max-height: 226px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.data_simplebar {
+    position: relative;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.bb_ll_radius {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form_desc {
+    display: none;
+    padding-left: 33px;
+    position: relative;
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: #767676;
+}
+
+.awesomplete {
+    position: relative;
+}
+
+/*회원정보 관리 / 로그인 O */
+.footer_wrapper {
+    flex-shrink: 0;
+    width: 100%;
+    height: 68px;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-top: auto;
+    box-sizing: border-box;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+}

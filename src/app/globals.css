@@ -129,8 +129,51 @@ button {
     padding-inline: 6px;
 }
 
-button[class^=btn_] [class^=ico_], a[class^=btn_] [class^=ico_]{
-    display:inline-block;
-    position:relative;
+button[class^=btn_] [class^=ico_], a[class^=btn_] [class^=ico_] {
+    display: inline-block;
+    position: relative;
     vertical-align: top;
+}
+
+input, button {
+    border: 0;
+    border-radius: 0;
+    background: none;
+}
+
+.header_wrapper{
+    width: 100%;
+    border-bottom: none;
+    flex-shrink: 0;
+    height: 54px;
+    position: relative;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+
+.header_inner {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0;
+    position: relative;
+}
+
+
+.logo_box {
+    display: inline-block;
+    width: 171px;
+    height: 56px;
+    vertical-align: top;
+}
+
+
+.logo_link {
+    display: block;
+    height: 100%;
+}
+
+.logo_link_img {
+    width: 100%;
 }

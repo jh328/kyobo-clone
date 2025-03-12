@@ -34,10 +34,10 @@ export default function Header() {
                     <div className="customer_service_box box-ml0">
                         <ul className="customer_service_list">
                             <li className="customer_service_item_rg">
-                                <Link href="" className="customer_service_link">회원가입</Link>
+                                <Link href="/join" className="customer_service_link">회원가입</Link>
                             </li>
                             <li className="customer_service_item">
-                                <Link href="" className="customer_service_link">로그인</Link>
+                                <Link href="/login" className="customer_service_link">로그인</Link>
                             </li>
                             <li className="customer_service_item">
                                 <button className="btn_member_benefit">
