@@ -1,7 +1,13 @@
+'use client'
+
 import "./join.modules.css"
 import Link from "next/link";
+import {signIn} from "next-auth/react";
 
-export default function Page() {
+export default function SingUpPage() {
+
+
+
     return (
         <div className="wrapper member_login">
             <header className="header_wrapper">
@@ -52,13 +58,13 @@ export default function Page() {
                                         </Link>
                                     </li>
                                     <li className="sns_login_item sns_item_ml">
-                                        <Link href="" className="btn_sns_login btn_kakao">
-                                            <span className="hidden">카카오 로그인</span>
-                                        </Link>
+                                        <button onClick={() => signIn("kakao")} className="btn_sns_login btn_kakao">
+                                            <span className="hidden">카카오 회원가입</span>
+                                        </button>
                                     </li>
                                     <li className="sns_login_item sns_item_ml">
                                         <Link href="" className="btn_sns_login btn_goolge">
-                                            <span className="hidden">구글 로그인</span>
+                                        <span className="hidden">구글 로그인</span>
                                         </Link>
                                     </li>
                                     <li className="sns_login_item sns_item_ml">
@@ -167,7 +173,6 @@ export default function Page() {
                                             <span className="right_box right_box_very"></span>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

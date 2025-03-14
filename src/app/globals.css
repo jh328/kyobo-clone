@@ -261,3 +261,13 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     font-weight: 400;
     letter-spacing: -0.01em;
 }
+
+a[disabled], a[aria-disabled=true], a.disabled, button[disabled], button[aria-disabled=true], button.disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+    text-decoration: none !important;
+}
+
+.btn_sns_lg{
+    min-width: 42px;
+}

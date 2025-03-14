@@ -10,3 +10,384 @@
     padding-top: 100px;
     box-sizing: border-box;
 }
+
+.container_wrapper {
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 50px 0 100px;
+    min-height: calc(100vh - 54px - 68px - 250px)
+}
+
+.contents_wrap {
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+.login {
+    width: 340px;
+}
+
+
+.login_form_wrap {
+    padding-bottom: 30px;
+}
+
+.adv_wrap {
+
+}
+
+.form_com_group {
+
+}
+
+.valid_check {
+
+}
+
+.valid_desc {
+    padding-left: 16px;
+    color: #ec1f2d;
+    display: block;
+    position: relative;
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+}
+
+.valid_desc:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    background-position: left top;
+    background-size: 12px 12px;
+    background-image: url("/images/common/ico_warning@2x.png");
+}
+
+.col_id_pw {
+    margin-top: -1px;
+}
+
+.awesomplete {
+    position: relative;
+}
+
+.form_desc {
+    display: none;
+    padding-left: 33px;
+    position: relative;
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: #767676;
+}
+
+input {
+    vertical-align: middle;
+}
+
+.auto_complete_box {
+    display: none;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    padding-bottom: 5px;
+    border: 1px solid #000;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    background-color: #fff;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.form_ip {
+    display: inline-block;
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 2px;
+    color: #000;
+    font-size: 14px;
+    line-height: 42px;
+    letter-spacing: -0.01em;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-out;
+    outline: none;
+}
+
+.bblr {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+.custom_scroll_wrap {
+    max-height: 226px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+[data-simplebar] {
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.form_ip_pw {
+    position: relative;
+}
+
+.btn_toggle_pw {
+    display: inline-block;
+    position: absolute;
+    right: 14px;
+    top: 11px;
+    width: 22px;
+    height: 20px;
+    background-size: 22px 20px;
+    background-image: url("/images/common/ico_eye@2x.png");
+    transition: background 0.2s ease-out;
+}
+
+.btn_wrap {
+    margin-top: 20px;
+    font-size: 0;
+    text-align: center;
+}
+
+.justify {
+    display: flex;
+}
+
+.btn_lg_a {
+    color: #fff;
+    border: 1px solid #767676;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out
+}
+
+.btn_light_gray {
+    background: #bebebe;
+    border-color: #bebebe;
+}
+
+.btn_wrap.justify [class^=btn_] {
+    flex: 1;
+    min-width: auto;
+}
+
+.btn_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    padding: 0 23px 1px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+}
+
+.save_id_box {
+    margin-top: 10px;
+    display: -webkit-flex;
+    align-items: center;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
+
+.form_chk {
+    display: inline-block;
+    position: relative;
+    min-height: 22px;
+    vertical-align: top;
+}
+
+.right_area {
+    font-size: 0;
+}
+
+.form_chk input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.form_chk input + label {
+    display: inline-block;
+    position: relative;
+    padding: 2px 0 0 27px;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    line-height: 20px;
+    color: #000;
+    cursor: pointer;
+    vertical-align: top;
+    transition: color 0.2s ease-out;
+    -webkit-user-select: none;
+}
+
+.form_rdo input:checked + label:before, .form_chk input:checked + label:before {
+    background-color: #5055b1;
+    border-color: #5055b1;
+}
+
+.form_chk input + label:before {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.form_rdo input + label:before, .form_rdo input + label:after, .form_chk input + label:before, .form_chk input + label:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.form_chk input:checked + label:after {
+    background-size: 10px 7px;
+    background-image: url("/images/common/ico_checkbox_active@2x.png");
+}
+
+.gap {
+    display: inline-block;
+    vertical-align: top;
+    width: 0;
+    height: 9px;
+    border-left: 1px solid #d5d5d5;
+    margin: 5px 12px 0;
+}
+
+.btn_text_id_link {
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: #767676;
+}
+
+.sns_login_box {
+    margin: 40px 0 0;
+    text-align: center;
+}
+
+.sns_login_list {
+    display: -webkit-flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    font-size: 0;
+}
+
+.info_text {
+    margin-top: 25px !important;
+    color: #767676;
+}
+
+.font_size_xxs {
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -01.0em;
+}
+
+.join_induce_wrap {
+    margin-bottom: -10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.login_banner_box {
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.btn_wrap {
+    font-size: 0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.banner_link {
+    display: block;
+}
+
+.btn_lg_join {
+    flex: 1;
+    min-width: auto;
+    color: #474c98;
+    border: 1px solid #5055ba;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+    display: -webkit-inline-flex;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    padding: 0 23px 1px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+}
+
+.btn_line_gray {
+    color: #595959;
+}
+
+.btn_wrap_Nonmem {
+    flex: 1;
+    min-width: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+    display: -webkit-inline-flex;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    padding: 0 23px 1px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+}
