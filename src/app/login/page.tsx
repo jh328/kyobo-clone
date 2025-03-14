@@ -2,6 +2,7 @@ import "./login.modules.css"
 import Link from "next/link";
 
 export default function Page() {
+
     return (
         <div className="wrapper member_login">
             <header className="header_wrapper">

@@ -1,7 +1,17 @@
+'use client'
+
 import "./self.modules.css"
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 export default function SelfSignupPage() {
+    const router = useRouter();
+
+    const handleIdentification = () => {
+        console.log("🔵 본인인증 버튼 클릭됨!");
+        router.push("/join/verify/self/begin");
+    };
+
     return (
         <div className="wrapper member_login">
             <header className="header_wrapper">
@@ -30,7 +40,7 @@ export default function SelfSignupPage() {
                         <input type="hidden"/>
                     </div>
                     <div className="cert_type_box">
-                        <button type="button" className="btn_cert_type">
+                        <button type="button" className="btn_cert_type" onClick={handleIdentification}>
                             <span className="ico_phone"></span>
                             <span className="text">휴대폰 본인인증</span>
                         </button>
