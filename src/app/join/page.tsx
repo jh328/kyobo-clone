@@ -3,9 +3,15 @@
 import "./join.modules.css"
 import Link from "next/link";
 import {signIn} from "next-auth/react";
+import {useRouter} from "next/navigation";
 
 export default function SingUpPage() {
 
+    const router = useRouter();
+
+    const handleSelfJoin = () => {
+        router.push("/join/verify/self")
+    }
 
 
     return (
@@ -43,11 +49,10 @@ export default function SingUpPage() {
                     <div className="tab_content">
                         <div className="member_join_wrap">
                             <div className="btn_wrap justify">
-                                <Link href="" className="btn_lg btn_primary">
+                                <button onClick={handleSelfJoin} className="btn_lg btn_primary">
                                     <span className="text">회원가입</span>
-                                </Link>
+                                </button>
                                 <div className="sns_login_box sns_login">
-
                                 </div>
                             </div>
                             <div className="sns_login sns_login_box">
@@ -64,7 +69,7 @@ export default function SingUpPage() {
                                     </li>
                                     <li className="sns_login_item sns_item_ml">
                                         <Link href="" className="btn_sns_login btn_goolge">
-                                        <span className="hidden">구글 로그인</span>
+                                            <span className="hidden">구글 로그인</span>
                                         </Link>
                                     </li>
                                     <li className="sns_login_item sns_item_ml">

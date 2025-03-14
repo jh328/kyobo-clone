@@ -268,6 +268,54 @@ a[disabled], a[aria-disabled=true], a.disabled, button[disabled], button[aria-di
     text-decoration: none !important;
 }
 
-.btn_sns_lg{
+.btn_sns_lg {
     min-width: 42px;
+}
+
+.btn_ico_arrow {
+    width: 5px !important;
+    height: 9px !important;
+    margin-top: 5px;
+    background-image: url("/images/common/btn_swiper_list_wh@2x.png");
+    background-size: 5px 9px;
+}
+
+.ico_phone{
+    background-size:36px 36px;
+    background-image: url("/images/common/ico_cert_phone_36x36@2x.png");
+}
+
+.ico_ipin{
+    background-size:36px 36px;
+    background-image: url("/images/common/ico_cert_ipin_36x36@2x.png");
+}
+
+
+
+.footer_wrapper {
+    flex-shrink: 0;
+    width: 100%;
+    height: 68px;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    -webkit-box-pack: start;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: auto;
+    box-sizing: border-box;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+}
+
+.footer_inner {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.copyright{
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: #767676;
 }

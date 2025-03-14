@@ -100,7 +100,7 @@ export default function Page() {
                                 </Link>
                             </div>
                             <div className="btn_wrap justify">
-                                <Link href="" className="btn_lg_join">
+                                <Link href="/join" className="btn_lg_join">
                                     <span className="text">회원가입</span>
                                 </Link>
                             </div>
@@ -114,7 +114,11 @@ export default function Page() {
                     <div className="adv_wrap null 아무 속성 없음. 이건 안해도 되는 것 같음. 다 들어가봐도 화면에 안나옴."></div>
                 </section>
             </main>
-            <footer></footer>
+            <footer className="footer_wrapper">
+                <div className="footer_inner">
+                    <div className="copyright">© KYOBO BOOK CENTRE</div>
+                </div>
+            </footer>
         </div>
     )
 };
