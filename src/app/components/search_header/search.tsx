@@ -1,9 +1,9 @@
 'use client'
-import "./Header.modules.css"
+import "./search.modules.css"
 import Link from "next/link";
 import {signOut, useSession} from "next-auth/react";
 
-export default function Header() {
+export default function SearchHeader() {
     const {data: session} = useSession();
     return (
         <header className="header-wrapper">
@@ -108,9 +108,8 @@ export default function Header() {
                             </Link>
                         </li>
                     </ul>
-                    <div className="auto_complte~~~이거는 안해도 될듯 마우스 갖다대면, 화면 요소에 안나옴"></div>
                 </div>
-                <nav className="gnb_wrap">
+               {/* <nav className="gnb_wrap">
                     <div className="anb_wrap">
                         <button className="btn_anb">
                             <span className="hidden">전체</span>
@@ -192,7 +191,7 @@ export default function Header() {
                         </button>
                         <div className="curtain_banner_box 값 안나오는거 숙제로하기"></div>
                     </div>
-                </nav>
+                </nav>*/}
             </div>
         </header>
     )
