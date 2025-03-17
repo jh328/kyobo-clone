@@ -19,6 +19,26 @@ export default function page() {
                         </ol>
                     </div>
                 </section>
+                <section className="contents_wrap aside">
+                    <div className="contents_inner">
+                        <aside className="aside_wrap">
+                            <div className="body">
+                                <div className="my_profifle_area">
+                                    <div className="profile_thumb_box">
+                                        <Link href="" className="btn_setting">
+                                            <div className="thumb_box"></div>
+                                            <span className="hidden">프로필 설정 바로기기</span>
+                                        </Link>
+                                    </div>
+                                    <div className="profile_name_box"></div>
+                                    <ul className="profile_info_list"></ul>
+                                </div>
+                                <div className="snb_wrap"></div>
+                            </div>
+                        </aside>
+                        <section className="section_wrap"></section>
+                    </div>
+                </section>
             </main>
         </div>
     )
