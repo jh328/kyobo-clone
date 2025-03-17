@@ -35,7 +35,6 @@ export default function Header() {
                         </ul>
                     </div>
                     <div className="customer_service_box box-ml0">
-
                         <ul className="customer_service_list">
                             {!session && (
                                 <li className="customer_service_item_rg">
@@ -94,6 +93,18 @@ export default function Header() {
                         <li className="user_menu_item_cash user_menu_item">
                             <Link href="" className="user_menu_link">
                                 <span className="hidden">e캐시</span>
+                            </Link>
+                        </li>
+                        <li className="user_menu_item cart">
+                            <Link href="" className="cart_link">
+                                <span className="hidden">장바구니</span>
+                                <span className="hidden">카드 사이즈 값 주기 꼭 </span>
+                            </Link>
+                        </li>
+                        <li className="user_menu_item my">
+                            <Link href="" className="user_link">
+                                <span></span>
+                                <span className="hidden">마페</span>
                             </Link>
                         </li>
                     </ul>

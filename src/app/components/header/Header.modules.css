@@ -476,8 +476,59 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 
 .user_menu_item {
     position: relative;
+    display: inline-block;
     vertical-align: top;
 }
+
+.cart {
+    width: 32px;
+    height: 32px;
+    margin-left: 20px;
+    padding-top: 5px;
+}
+
+.my {
+    width: 48px;
+    height: 48px;
+    margin-left: 22px;
+    box-shadow: 0 5px 10px 0 rgba(77, 172, 39, 0.5);
+    border-radius: 100%;
+}
+
+.cart_link {
+    display: block;
+    height: 100%;
+}
+
+.cart_link:before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("/images/common/btn_header_cart@2x.png");
+    vertical-align: top;
+}
+
+.user_link {
+    display: block;
+    height: 100%;
+}
+
+.user_link:before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("/images/common/btn_header_my@2x.png");
+    vertical-align: top;
+}
+
 
 .user_menu_link {
     display: block;
