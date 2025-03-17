@@ -1,7 +1,10 @@
+'use client'
 import "./Header.modules.css"
 import Link from "next/link";
+import {signOut, useSession} from "next-auth/react";
 
 export default function Header() {
+    const {data: session} = useSession();
     return (
         <header className="header-wrapper">
             <div className="service_mall_wrap">
@@ -32,12 +35,21 @@ export default function Header() {
                         </ul>
                     </div>
                     <div className="customer_service_box box-ml0">
+
                         <ul className="customer_service_list">
-                            <li className="customer_service_item_rg">
-                                <Link href="/join" className="customer_service_link">회원가입</Link>
-                            </li>
+                            {!session && (
+                                <li className="customer_service_item_rg">
+                                    <Link href="/join" className="customer_service_link">회원가입</Link>
+                                </li>
+                            )}
                             <li className="customer_service_item">
-                                <Link href="/login" className="customer_service_link">로그인</Link>
+                                {session ? (
+                                    <button onClick={() => signOut()}
+                                            className="customer_service_link">
+                                        로그아웃
+                                    </button>
+                                ) : <Link href="/login" className="customer_service_link">로그인</Link>
+                                }
                             </li>
                             <li className="customer_service_item">
                                 <button className="btn_member_benefit">

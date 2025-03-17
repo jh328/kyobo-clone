@@ -1,10 +1,26 @@
+'use client'
 import "./login.modules.css"
 import Link from "next/link";
+import {useUserStore} from "@/app/store/userStore";
+import { signIn } from "next-auth/react";
 
 export default function Page() {
+    const {name} = useUserStore();
 
     return (
         <div className="wrapper member_login">
+            {name ? (
+                <p>환영합니다, {name}님!</p> // ✅ 로그인된 경우 UI 변경
+            ) : (
+                <ul className="sns_login_list">
+                    <li className="sns_login_item sns_item_ml">
+                        {/* ✅ 카카오 로그인 버튼 */}
+                        <button onClick={() => signIn("kakao")} className="btn_sns_login btn_kakao">
+                            <span className="hidden">카카오 로그인</span>
+                        </button>
+                    </li>
+                </ul>
+            )}
             <header className="header_wrapper">
                 <div className="header_inner">
                     <div className="logo_box">
@@ -88,11 +104,11 @@ export default function Page() {
                                     </button>
                                 </li>
                             </ul>
-                            <p className="info_text font_size_xxs">
+                           {/* <p className="info_text font_size_xxs">
                                 개인정보 보호를 위해 공용 PC에서 사용 시 SNS 계정의 로그아웃
                                 <br/>
                                 상태를 꼭 확인해 주세요.
-                            </p>
+                            </p>*/}
                         </div>
                         <div className="join_induce_wrap">
                             <div className="login_banner_box hidden">

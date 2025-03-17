@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import {ClientProvider} from "@/app/components/ClientProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,15 +19,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+                                       children,
+                                   }: Readonly<{
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <ClientProvider> {/* ✅ 이제 `SessionProvider`를 포함하고 있음 */}
+            {children}
+        </ClientProvider>
+        </body>
+        </html>
+    );
 }

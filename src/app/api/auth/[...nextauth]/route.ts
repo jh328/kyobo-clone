@@ -26,10 +26,18 @@ export const authOptions: NextAuthOptions = {
                       profile,
                   }: { token: JWT; account?: Record<string, unknown> | null; profile?: Profile | undefined }) {
             if (account) {
+                console.log("🔹 [JWT Callback] 원본 프로필 정보:", profile);
+
                 token.accessToken = account.access_token as string;
                 token.id = profile?.sub as string;
                 token.name = profile?.name as string;
                 token.email = profile?.email as string;
+
+                console.log("🔹 [JWT Callback] 로그인 정보:");
+                console.log("ID:", token.id);
+                console.log("Name:", token.name);
+                console.log("Email:", token.email);
+
 
                 // ✅ 회원가입 기능 추가 (DB 없이 객체에 저장)
                 if (!userDatabase[token.email]) {
