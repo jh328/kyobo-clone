@@ -30,7 +30,19 @@ export default function page() {
                                             <span className="hidden">프로필 설정 바로기기</span>
                                         </Link>
                                     </div>
-                                    <div className="profile_name_box"></div>
+                                    <div className="profile_name_box">
+                                        <span className="name wrap">
+                                            <b className="nickname">홍길동</b>
+                                            님
+                                        </span>
+                                        <span className="badge type_icon">
+                                            <Link href="" className="badge_lg pill bp">
+                                                <span className="text">프렌즈</span>
+                                            </Link>
+                                            <span className=""></span>
+                                            <Link href="" className=""></Link>
+                                        </span>
+                                    </div>
                                     <ul className="profile_info_list"></ul>
                                 </div>
                                 <div className="snb_wrap"></div>
@@ -41,5 +53,5 @@ export default function page() {
                 </section>
             </main>
         </div>
-    )
+    );
 };

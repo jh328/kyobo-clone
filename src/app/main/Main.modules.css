@@ -140,6 +140,8 @@
     min-height: 56px;
     max-height: 82px;
     position: relative;
+    margin-top: 10px;
+    line-height: 26px;
 }
 
 .profile_info_list {
@@ -181,4 +183,95 @@
     background-repeat: no-repeat;
     background-size: 28px 28px;
     background-image: url("/images/common/btn_profile_setting@2x.png");
+}
+
+.name {
+    font-size: 20px;
+}
+
+.wrap {
+    white-space: nowrap;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    color: #fff;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.nickname {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 182px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.badge {
+    vertical-align: top;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.type_icon {
+    display: flex;
+    margin-top: 7px;
+    gap: 9px;
+}
+
+[class^=badge] {
+    white-space: nowrap;
+}
+
+.badge_lg {
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 13px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+}
+
+.pill {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top;
+}
+
+.bp {
+    border-radius: 22px;
+}
+
+.bp:before {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 4px;
+    width: 20px;
+    height: 23px;
+    background: none no-repeat 0 0 / 100%;
+}
+
+.pill:before {
+    background-image: url("/images/common/ico_grade_friends_sm.png");
+}
+
+.text{
+    display:inline-block;
+    position:relative;
+    vertical-align: top;
+    color:#fff;
+}
+
+.badge_lg:after {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    margin: 7px 0 0 4px;
+    width: 5px;
+    height: 9px;
+    background: url("/images/common/btn_more_view_white@2x.png") no-repeat 0 0 / 100%;
 }
