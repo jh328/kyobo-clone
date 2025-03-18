@@ -574,7 +574,6 @@ export default function page() {
                                             <div className="b_val">
                                                 <span className="my_val">1,000,000,000</span>
                                                 <span className="point">원</span>
-
                                             </div>
                                         </Link>
                                     </div>
@@ -584,7 +583,6 @@ export default function page() {
                                             <div className="b_val">
                                                 <span className="my_val">1,000</span>
                                                 <span className="point">원</span>
-
                                             </div>
                                         </Link>
                                     </div>
@@ -592,9 +590,135 @@ export default function page() {
                             </div>
                             <div className="여기는 마우스 손 올리면 안나옴"></div>
                             <div className="여기는 마우스 손 올리면 안나옴"></div>
-                            <div className="title_wrap"></div>
-                            <ul className="my_library_list"></ul>
-                            <div className="my_activity_wrap"></div>
+                            <div className="title_wrap">
+                                <p className="title_head">라이브러리 리스트</p>
+                                <div className="right_area">
+                                    <Link href="" className="btn_more_view">
+                                        <span className="text_more">더보기</span>
+                                        <span className="ico_plus"></span>
+                                    </Link>
+                                </div>
+                            </div>
+                            <ul className="my_library_list">
+                                <li className="my_library_item">
+                                    <div className="my_library_box">
+                                        <div className="my_library_bg">
+                                            <img src="/images/book/9791158391720.jpg" alt="코어자바스크립트"
+                                                 className="my_img"/>
+                                        </div>
+                                        <div className="my_library_box_inner">
+                                            <Link href="" className="my_library_link">
+                                                <div className="my_library_img_box">
+                                                    <div className="img_box">
+                                                        <img src="/images/book/9791158391720.jpg" alt=""
+                                                             className="img_book"/>
+                                                    </div>
+                                                </div>
+                                                <div className="my_library_info">
+                                                    <span className="my_library_title">나의 보관함</span>
+                                                    <div className="thumb_list">
+                                                        <span className="thumb_add thumb">
+                                                            <span className="text_add">+2</span>{/*데이터 넣어야함.*/}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="my_library_item">
+                                    <div className="my_library_box">
+                                        <div className="my_library_bg">
+                                            <img src="/images/book/9791169212540.jpg" alt="코어자바스크립트"
+                                                 className="my_img"/>
+                                        </div>
+                                        <div className="my_library_box_inner">
+                                            <Link href="" className="my_library_link">
+                                                <div className="my_library_img_box radius">
+                                                    <div className="img_box ">
+                                                        <img src="/images/book/9791169212540.jpg" alt=""
+                                                             className="img_book"/>
+                                                    </div>
+                                                </div>
+                                                <div className="my_library_info">
+                                                    <span className="my_library_title">#구매</span>
+                                                    <div className="thumb_list">
+                                                        <span className="thumb_add thumb">
+                                                            <span className="text_add">+150</span>{/*데이터 넣어야함.*/}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="my_library_item mr_zero">
+                                    <div className="no_data_line">
+                                        <p className="no_data_desc">
+                                            나만의 리스트를 만들고
+                                            <br/>
+                                            나의 기억을 기록해보세요...
+                                        </p>
+                                        <button type="button" className="btn_add_cont">
+                                            <span className="ico_add_cont"></span>
+                                            <span className="text_additional">추가</span>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div className="my_activity_wrap">
+                                <div className="continue_view_box">
+                                    <div className="title_wrap titme_sizi_md">
+                                        <h2 className="title_head">이어보기</h2>
+                                    </div>
+                                    <div className="continue_view_list">
+                                        <div className="view_item">
+                                            <div className="continue_prod no_data">
+                                                <p className="no_data_desc font">독서/시청 중인 상품/콘텐츠가 없습니다.</p>
+                                                <p className="no_data_sdesc">
+                                                    Picks추천과 함께
+                                                    <br/>
+                                                    책 읽는 습관을 길러보세요.
+                                                </p>
+                                                <div className="continue_prod_swiper">
+                                                    <div className="swiper_container">
+                                                        <ul className="swiper_wrapper"
+                                                            style={{transform: "transform3d(0,0,0)"}}>
+                                                            <li className="swiper_slide">
+                                                                <div className="prod_area">
+                                                                    <div className="prod_thumb">
+                                                                        <Link href="" className="prod_link_a">
+                                                                            <span className="img_item_book">
+                                                                                <img src="/images/book/9791158394646.jpg" alt="" className="img_react"/>
+                                                                            </span>
+                                                                        </Link>
+                                                                    </div>
+                                                                    <div className="prod_info">
+                                                                        <Link href="" className="books_title">
+                                                                            <span className="prod_name">리액트의 핵심 개념과 동작원리부터 Next.js까지 리액트의 모든 것</span>
+                                                                        </Link>
+                                                                        <span className="prod_author">김용찬 저자(글)</span>
+                                                                        <button type="button" className="button_list btn_list">
+                                                                            <span className="bookasa ico_list_plus btn_list_plus"></span>
+                                                                            <span className="add_text">리스트 추가</span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div></div>
+                                                    </div>
+                                                    <div className="swiper_control_box"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="activity_more_box">
+                                    <div className="my_quick_link_box"></div>
+                                    <div className="sam_voucher_wrap"></div>
+                                </div>
+                            </div>
                             {/*스크립트 파일*/}
                             {/*메인 테그에서 내가 설정한 태그들 제외하고서 푸터 빼고 안해도 됨. */}
                         </section>
