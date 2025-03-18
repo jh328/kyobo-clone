@@ -1220,9 +1220,99 @@
     margin-right: 3px;
 }
 
-.add_text{
-    display:inline-block;
-    position:relative;
+.add_text {
+    display: inline-block;
+    position: relative;
     vertical-align: top;
-    color:#000;
+    color: #000;
+}
+
+.pb {
+    padding-bottom: 20px;
+}
+
+.h150 {
+    height: 150px;
+    padding: 0;
+}
+
+.sam_info_box {
+    flex: 1;
+    padding: 22px 24px 24px 20px;
+    border-radius: 16px;
+    height: 150px;
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: rgba(6, 187, 192, 0.07);
+}
+
+.sam_info_link {
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.info_desc {
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+}
+
+.btn_size_sm {
+    margin-top: auto;
+    align-self: flex-end;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #595959;
+    font-weight: 500;
+    text-align: left;
+}
+
+.sam_logo {
+    display: inline-block;
+    width: 44px;
+    height: 13px;
+    margin-top: 4px;
+    vertical-align: top;
+}
+
+.sam_img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.sm_text {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #595959;
+}
+
+.ico_arw {
+    background-image: url("/images/common/btn_more_view@2x.png");
+    width: 5px;
+    height: 9px;
+    background-size: 5px 9px;
+    vertical-align: top;
+    background-position: center;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.mar_left {
+    margin-left: 10px;
+    background-color: rgba(80, 85, 177, 0.07)
+}
+
+.fw_bold {
+    font-weight: 700;
+    color: #474c98;
 }

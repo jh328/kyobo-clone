@@ -1,6 +1,7 @@
 import SearchHeader from "@/app/components/search_header/search";
 import "./MyPage.modules.css"
 import Link from "next/link";
+import Footer from "@/app/components/footer/Footer";
 
 export default function page() {
     return (
@@ -715,17 +716,61 @@ export default function page() {
                                     </div>
                                 </div>
                                 <div className="activity_more_box">
-                                    <div className="my_quick_link_box"></div>
-                                    <div className="sam_voucher_wrap"></div>
+                                    <div className="my_quick_link_box">
+                                        <div className="title_wrap pb">
+                                            <p className="title_head">바로가기</p>
+                                        </div>
+                                        <div className="no_data_line h150">
+                                            <p className="no_data_desc">자주 쓰는 메뮤, 꺼내 두고 사용해요</p>
+                                            <button type="button" className="btn_add_cont">
+                                                <span className="ico_add_cont"></span>
+                                                <span className="text_additional">추가하기PC</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="sam_voucher_wrap">
+                                        <div className="sam_info_box box">
+                                            <Link href="" className="sam_info_link">
+                                                <span className="info_desc">
+                                                    eBook부터 종이책까지,
+                                                    <br/>
+                                                    폭넓은 독서생활의 시작
+                                                    <br/>
+                                                    <span className="sam_logo">
+                                                        <img src="/images/common/img_my_sam_logo@2x.png" className="sam_img" alt=""/>
+                                                    </span>
+                                                </span>
+                                                <span className="btn_size_sm">
+                                                    <span className="sm_text">이용안내</span>
+                                                    <span className="ico_arw"></span>
+                                                </span>
+                                            </Link>
+                                        </div>
+                                        <div className="sam_info_box mar_left">
+                                            <Link href="" className="sam_info_link">
+                                                <span className="info_desc">
+                                                    기억하고 기록하는
+                                                    <br/>
+                                                    나만의 공간,
+                                                    <br/>
+                                                    <span className="fw_bold">
+                                                      라이브러리
+                                                    </span>
+                                                </span>
+                                                <span className="btn_size_sm">
+                                                    <span className="sm_text">라이브러리</span>
+                                                    <span className="ico_arw"></span>
+                                                </span>
+                                            </Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            {/*스크립트 파일*/}
-                            {/*메인 테그에서 내가 설정한 태그들 제외하고서 푸터 빼고 안해도 됨. */}
                         </section>
                     </div>
                 </section>
             </main>
-            <footer></footer>
+            <Footer/>
         </div>
     );
 };
