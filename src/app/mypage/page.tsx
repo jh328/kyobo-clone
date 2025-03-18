@@ -1,5 +1,5 @@
 import SearchHeader from "@/app/components/search_header/search";
-import "./Main.modules.css"
+import "./MyPage.modules.css"
 import Link from "next/link";
 
 export default function page() {
@@ -251,7 +251,8 @@ export default function page() {
                                                                 <span className="state_desc">새소식</span>
                                                             </div>
                                                             <div className="alarm_box">
-                                                                <div className="alarm_desc">(광고)🔔컬처라운지 이벤트 3월 마지막 기회</div>
+                                                                <div className="alarm_desc">(광고)🔔컬처라운지 이벤트 3월 마지막 기회
+                                                                </div>
                                                             </div>
                                                         </Link>
                                                     </div>
@@ -264,7 +265,8 @@ export default function page() {
                                                                 <span className="state_desc">새소식</span>
                                                             </div>
                                                             <div className="alarm_box">
-                                                                <div className="alarm_desc">(광고)💌오늘만 특가 : 밸런스온 프리미엄시트</div>
+                                                                <div className="alarm_desc">(광고)💌오늘만 특가 : 밸런스온 프리미엄시트
+                                                                </div>
                                                             </div>
                                                         </Link>
                                                     </div>
@@ -516,7 +518,78 @@ export default function page() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="benfit_info_wrap"></div>
+                            <div className="benfit_info_wrap">
+                                <div className="benfit_ico_group">
+                                    <div className="benfit_item benfit_a">
+                                        <Link href="" className="benefit_link">
+                                            <span className="benefit_title">통합포인트</span>
+                                            <div className="benefit_val">
+                                                <span className="my_val">1,120</span>
+                                                <span className="point">P</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div className="benfit_item benfit_box">
+                                        <Link href="" className="benefit_link">
+                                            <span className="benefit_title">e교환권</span>
+                                            <div className="benefit_val">
+                                                <span className="my_val">1.000,000</span>
+                                                <span className="point">원</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div className="benfit_item benfit_box">
+                                        <Link href="" className="benefit_link">
+                                            <span className="benefit_title">기프트카드</span>
+                                            <div className="benefit_val">
+                                                <span className="my_val">100</span>
+                                                <span className="point">장</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div className="benfit_item benfit_box">
+                                        <Link href="" className="benefit_link">
+                                            <span className="benefit_title">교보캐시</span>
+                                            <div className="benefit_val">
+                                                <span className="my_val">5,000,000,000</span>
+                                                <span className="point">원</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div className="benfit_sub_group">
+                                    <div className="benefit_sub_box pl">
+                                        <Link href="" className="box_link">
+                                            <span className="b_title">쿠폰</span>
+                                            <div className="b_val">
+                                                <span className="my_val">10</span>
+                                                <span className="point">장</span>
+
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div className="benefit_sub_box line">
+                                        <Link href="" className="box_link">
+                                            <span className="b_title">교보e캐시</span>
+                                            <div className="b_val">
+                                                <span className="my_val">1,000,000,000</span>
+                                                <span className="point">원</span>
+
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div className="benefit_sub_box line">
+                                        <Link href="" className="box_link">
+                                            <span className="b_title">예치금</span>
+                                            <div className="b_val">
+                                                <span className="my_val">1,000</span>
+                                                <span className="point">원</span>
+
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="여기는 마우스 손 올리면 안나옴"></div>
                             <div className="여기는 마우스 손 올리면 안나옴"></div>
                             <div className="title_wrap"></div>

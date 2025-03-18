@@ -102,7 +102,7 @@ export default function Header() {
                             </Link>
                         </li>
                         <li className="user_menu_item my">
-                            <Link href="/main" className="user_link">
+                            <Link href="/mypage" className="user_link">
                                 <span></span>
                                 <span className="hidden">마페</span>
                             </Link>

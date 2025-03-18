@@ -597,7 +597,7 @@
     padding: 0;
 }
 
-.button_next{
+.button_next {
     width: 35px;
     height: 35px;
     background-size: 9px 18px;
@@ -610,4 +610,142 @@
     vertical-align: top;
     padding: 0;
     border-radius: 100%;
+}
+
+.benfit_info_wrap {
+    margin-top: 50px;
+}
+
+.benfit_ico_group {
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+}
+
+.benfit_sub_group {
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    padding: 19px 0;
+    margin-top: 10px;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+}
+
+.benfit_item {
+    position: relative;
+    flex: 1;
+}
+
+.benfit_box {
+    margin-left: 10px;
+}
+
+.benfit_item:before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+
+.benfit_a:before {
+    background-size: 40px 40px;
+    background-image: url("/images/common/img_my_benefit_point@2x.png");
+}
+
+.benefit_link {
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: end;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 142px;
+    padding: 23px;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+}
+
+.benefit_title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    text-align: right;
+}
+
+.benefit_val {
+    margin-top: auto;
+    font-size: 0;
+    color: #595959;
+    text-align: right;
+}
+
+.my_val {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #595959;
+    text-align: right;
+}
+
+.point {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+}
+
+.benefit_sub_box {
+    position: relative;
+    padding-left: 24px;
+    flex: 1;
+}
+
+.pl {
+    padding-left: 23px;
+}
+
+.box_link {
+    display: block;
+    height: calc(100% - 24px);
+    margin-right: 24px;
+}
+
+.line:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: block;
+    width: 1px;
+    height: 46px;
+    background-color: #eaeaea;
+}
+
+.b_title {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+}
+
+.b_val {
+    margin-top: 4px;
+    font-size: 0;
+    color: #595959;
 }
