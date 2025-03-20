@@ -102,10 +102,14 @@ export default function Header() {
                             </Link>
                         </li>
                         <li className="user_menu_item my">
-                            <Link href="/mypage" className="user_link">
-                                <span></span>
-                                <span className="hidden">마페</span>
-                            </Link>
+                            {!session ? (
+                                <Link href="/login" className="user_link"></Link>
+                            ) : (
+                                <Link href="/mypage" className="user_link">
+                                    <span></span>
+                                    <span className="hidden">마페</span>
+                                </Link>
+                            )}
                         </li>
                     </ul>
                     <div className="auto_complte~~~이거는 안해도 될듯 마우스 갖다대면, 화면 요소에 안나옴"></div>

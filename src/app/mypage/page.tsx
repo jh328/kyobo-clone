@@ -1,9 +1,19 @@
+'use client'
 import SearchHeader from "@/app/components/search_header/search";
 import "./MyPage.modules.css"
 import Link from "next/link";
 import Footer from "@/app/components/footer/Footer";
+import {useSession} from "next-auth/react";
 
-export default function page() {
+export default function MyPage() {
+    const {data: session} = useSession();
+
+    let userName;
+    if (session && session.user?.name) {
+        userName = session.user.name;
+    }
+    console.log("카카오 유저 확인 : ",userName)
+
     return (
         <div className="wrapper">
             <SearchHeader/>
@@ -33,8 +43,7 @@ export default function page() {
                                     </div>
                                     <div className="profile_name_box">
                                         <span className="name wrap">
-                                            <b className="nickname">홍길동</b>
-                                            님
+                                            <b className="nickname">{userName}님</b>
                                         </span>
                                         <span className="badge type_icon">
                                             <Link href="" className="badge_lg pill bp">
@@ -690,7 +699,9 @@ export default function page() {
                                                                     <div className="prod_thumb">
                                                                         <Link href="" className="prod_link_a">
                                                                             <span className="img_item_book">
-                                                                                <img src="/images/book/9791158394646.jpg" alt="" className="img_react"/>
+                                                                                <img
+                                                                                    src="/images/book/9791158394646.jpg"
+                                                                                    alt="" className="img_react"/>
                                                                             </span>
                                                                         </Link>
                                                                     </div>
@@ -699,8 +710,10 @@ export default function page() {
                                                                             <span className="prod_name">리액트의 핵심 개념과 동작원리부터 Next.js까지 리액트의 모든 것</span>
                                                                         </Link>
                                                                         <span className="prod_author">김용찬 저자(글)</span>
-                                                                        <button type="button" className="button_list btn_list">
-                                                                            <span className="bookasa ico_list_plus btn_list_plus"></span>
+                                                                        <button type="button"
+                                                                                className="button_list btn_list">
+                                                                            <span
+                                                                                className="bookasa ico_list_plus btn_list_plus"></span>
                                                                             <span className="add_text">리스트 추가</span>
                                                                         </button>
                                                                     </div>
@@ -737,7 +750,8 @@ export default function page() {
                                                     폭넓은 독서생활의 시작
                                                     <br/>
                                                     <span className="sam_logo">
-                                                        <img src="/images/common/img_my_sam_logo@2x.png" className="sam_img" alt=""/>
+                                                        <img src="/images/common/img_my_sam_logo@2x.png"
+                                                             className="sam_img" alt=""/>
                                                     </span>
                                                 </span>
                                                 <span className="btn_size_sm">
