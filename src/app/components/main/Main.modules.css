@@ -375,12 +375,34 @@
     padding: 0;
 }
 
+.prod_book_name {
+    font-size: 13px;
+    display: -webkit-box;
+    overflow: hidden;
+    height: 38px;
+    max-height: 38px;
+    line-height: 19px;
+    white-space: normal;
+    word-break: break-all;
+    font-weight: 400;
+}
+
+.prod_title {
+    margin-top: 12px;
+}
+
+.prod_info {
+    display: block;
+    height: 100%;
+    font-size: 0;
+}
+
 .thumb_item {
     margin: 0 0 0 20px;
     width: 142px;
     box-sizing: border-box;
     flex-shrink: 0;
-    height: 153px;
+    height: 263px;
     position: relative;
     transition-property: transform, -webkit-transform;
 }
@@ -391,7 +413,8 @@
 }
 
 .thumb_main_box {
-    width: 100%;
+    width: 140px;
+    height: 230px;
     min-height: 50px;
 }
 

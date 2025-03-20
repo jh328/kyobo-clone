@@ -95,18 +95,84 @@ export default function Main() {
                             </div>
                             <div className="thumb_swiper_wrap">
                                 <div className="swiper_container_horizontal">
-                                    <ul className="thum_list"
-                                        style={{transitionDuration: "0", transform: "translate3d(-6642,0,0"}}>
+                                    <ul className="thum_list">
                                         <li className="thumb_item">
                                             <div className="thumb_img_box">
                                                 <Link href="" className="">
-                                                    <img src="/images/main/9788955827910.jpg" alt="엄마"
+                                                    <img src="/images/book/9791158394646.jpg" alt=""
                                                          className="thumb_main_box"/>
                                                 </Link>
                                             </div>
-                                            <div className="prod_area"></div>
+                                            <div className="prod_area">
+                                                <div className="prod_title">
+                                                    <Link href="" className="prod_info">
+                                                        <span className="prod_book_name">코어 자바스크립트</span>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className="thumb_item">
+                                            <div className="thumb_img_box">
+                                                <Link href="" className="">
+                                                    <img src="/images/book/9791158391720.jpg" alt=""
+                                                         className="thumb_main_box"/>
+                                                </Link>
+                                            </div>
+                                            <div className="prod_area">
+                                                <div className="prod_title">
+                                                    <Link href="" className="prod_info">
+                                                        <span className="prod_book_name">코어 자바스크립트</span>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className="thumb_item">
+                                            <div className="thumb_img_box">
+                                                <Link href="" className="">
+                                                    <img src="/images/book/9791158394646.jpg" alt=""
+                                                         className="thumb_main_box"/>
+                                                </Link>
+                                            </div>
+                                            <div className="prod_area">
+                                                <div className="prod_title">
+                                                    <Link href="" className="prod_info">
+                                                        <span className="prod_book_name">모던 리액트 Deep Dive</span>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className="thumb_item">
+                                            <div className="thumb_img_box">
+                                                <Link href="" className="">
+                                                    <img src="/images/book/9791169212540.jpg" alt=""
+                                                         className="thumb_main_box"/>
+                                                </Link>
+                                            </div>
+                                            <div className="prod_area">
+                                                <div className="prod_title">
+                                                    <Link href="" className="prod_info">
+                                                        <span className="prod_book_name">이것이 컴퓨터 과학이다</span>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className="thumb_item">
+                                            <div className="thumb_img_box">
+                                                <Link href="" className="">
+                                                    <img src="/images/book/9791158394646.jpg" alt=""
+                                                         className="thumb_main_box"/>
+                                                </Link>
+                                            </div>
+                                            <div className="prod_area">
+                                                <div className="prod_title">
+                                                    <Link href="" className="prod_info">
+                                                        <span className="prod_book_name">흰 고래의 힘에 대하여</span>
+                                                    </Link>
+                                                </div>
+                                            </div>
                                         </li>
                                     </ul>
+                                    <span></span>
                                 </div>
                             </div>
                             <button className="main_button_prev">
