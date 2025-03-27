@@ -74,7 +74,7 @@ export default function Header() {
             <div className="header_inner">
                 <div className="gnb_search_wrap">
                     <div className="logo_box">
-                        <Link href="" className="logo_box_dis logo_link_book">
+                        <Link href="/" className="logo_box_dis logo_link_book">
                             <span className="hidden">교보문고</span>
                         </Link>
                     </div>
