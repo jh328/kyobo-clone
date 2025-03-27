@@ -76,7 +76,7 @@ export default function Main() {
                                             <li key={currentBook.id} className="main_li">
                                                 <div className="prod_area_hor_izontal">
                                                     <div className="prod_thumb_box">
-                                                        <Link href="" className="prod_link">
+                                                        <Link href="/detail/page" className="prod_link">
                                                         <span className="prod_img_box">
                                                                      <img src={currentBook.image}
                                                                           alt={currentBook.title} width={241.43}
@@ -116,7 +116,7 @@ export default function Main() {
                                         {books.slice(currentIndex, currentIndex + itemsPerPage).map((book) => (
                                             <li key={book.id} className="thumb_item">
                                                 <div className="thumb_img_box">
-                                                    <Link href="">
+                                                    <Link href="/detail/page">
                                                         <img src={book.image} alt={book.title}
                                                              className="thumb_main_box"/>
                                                     </Link>

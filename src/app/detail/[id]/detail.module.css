@@ -1,0 +1,33 @@
+.detail_wrapper {
+    position: relative;
+    min-width: 1440px;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.breadcrumb_wrap {
+    position: relative;
+    padding-top: 20px;
+    z-index: 102;
+}
+
+.breadcrumb_inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.breadcrumb_list {
+    font-size: 0;
+}
+
+.breadcrumb_item {
+    position: relative;
+    z-index: 10;
+    display: inline-block;;
+    vertical-align: top;
+}
+
+.item_exception{
+    position:relative;
+    padding-left: 20px;
+}
