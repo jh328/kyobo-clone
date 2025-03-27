@@ -1,7 +1,23 @@
+'use client'
 import "./Main.modules.css"
 import Link from "next/link";
+import {books} from "@/app/lib/book";
+import {useState} from "react";
 
 export default function Main() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const itemsPerPage = 5; // 한 번에 보여줄 책 수
+
+    const next = () => {
+        setCurrentIndex((prev) => (prev + 1) % books.length);
+    };
+
+    const prev = () => {
+        setCurrentIndex((prev) => (prev - 1 + books.length) % books.length);
+    };
+
+    const currentBook = books[currentIndex];
+
     return (
         <div className="contents_inner">
             <div className="title_size_xxl">
@@ -57,38 +73,39 @@ export default function Main() {
                             <div className="detail_swiper_wrap">
                                 <div className="swiper_container_fade">
                                     <ul className="main_wrapper">
-                                        <li className="main_li">
-                                            <div className="prod_area_hor_izontal">
-                                                <div className="prod_thumb_box">
-                                                    <Link href="" className="prod_link">
+                                            <li key={currentBook.id} className="main_li">
+                                                <div className="prod_area_hor_izontal">
+                                                    <div className="prod_thumb_box">
+                                                        <Link href="" className="prod_link">
                                                         <span className="prod_img_box">
-                                                            <img src="/images/main/9788932043500.jpg" alt=""
-                                                                 className="prod_img_box_a"/>
+                                                                     <img src={currentBook.image}
+                                                                          alt={currentBook.title} width={241.43}
+                                                                          height={365.38} className="prod_img_box_a"/>
+
                                                         </span>
-                                                    </Link>
-                                                </div>
-                                                <div className="prod_info_box">
-                                                    <Link href="" className="prod_info_title">
-                                                        <h3 className="prod_name">[소셜] 봄밤의 모든 것</h3>
-                                                    </Link>
-                                                    <span className="prod_author">백수린.문학과지성사</span>
-                                                    <div className="prod_price">
-                                                        <span className="percent">10%</span>
-                                                        <span className="price">
-                                                            <span className="val">15,300</span>
+                                                        </Link>
+                                                    </div>
+                                                    <div className="prod_info_box">
+                                                        <Link href='' className="prod_info_title">
+                                                            <h3 className="prod_name">{currentBook.title}</h3>
+                                                        </Link>
+                                                        <span className="prod_author">{currentBook.author}</span>
+                                                        <div className="prod_price">
+                                                            <span className="percent">10%</span>
+                                                            <span className="price">
+                                                            <span className="val">{currentBook.price}</span>
                                                             <span className="unit">원</span>
                                                         </span>
+                                                        </div>
+                                                        <p className="prod_md_comment">
+                                                            {currentBook.comment}
+                                                        </p>
+                                                        <p className="prod_md_comment_desc">
+                                                            {currentBook.content}
+                                                        </p>
                                                     </div>
-                                                    <p className="prod_md_comment">
-                                                        "'젊은 거장' 백수린의 네 번째 소설집"
-                                                    </p>
-                                                    <p className="prod_md_comment_desc">
-                                                        섬세하고 사려 깊은 시선, 우아하고 단정한 문장으로 고유의 문학을 구축한 백수린 신작 소설집. 절망 속 한 줌의
-                                                        빛을 그린 일곱 편의 이야기가 우리를 위로한다.
-                                                    </p>
                                                 </div>
-                                            </div>
-                                        </li>
+                                            </li>
                                     </ul>
                                     <span></span>
                                 </div>
@@ -96,89 +113,31 @@ export default function Main() {
                             <div className="thumb_swiper_wrap">
                                 <div className="swiper_container_horizontal">
                                     <ul className="thum_list">
-                                        <li className="thumb_item">
-                                            <div className="thumb_img_box">
-                                                <Link href="" className="">
-                                                    <img src="/images/book/9791158394646.jpg" alt=""
-                                                         className="thumb_main_box"/>
-                                                </Link>
-                                            </div>
-                                            <div className="prod_area">
-                                                <div className="prod_title">
-                                                    <Link href="" className="prod_info">
-                                                        <span className="prod_book_name">코어 자바스크립트</span>
+                                        {books.slice(currentIndex, currentIndex + itemsPerPage).map((book) => (
+                                            <li key={book.id} className="thumb_item">
+                                                <div className="thumb_img_box">
+                                                    <Link href="">
+                                                        <img src={book.image} alt={book.title}
+                                                             className="thumb_main_box"/>
                                                     </Link>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li className="thumb_item">
-                                            <div className="thumb_img_box">
-                                                <Link href="" className="">
-                                                    <img src="/images/book/9791158391720.jpg" alt=""
-                                                         className="thumb_main_box"/>
-                                                </Link>
-                                            </div>
-                                            <div className="prod_area">
-                                                <div className="prod_title">
-                                                    <Link href="" className="prod_info">
-                                                        <span className="prod_book_name">코어 자바스크립트</span>
-                                                    </Link>
+                                                <div className="prod_area">
+                                                    <div className="prod_title">
+                                                        <Link href="" className="prod_info">
+                                                            <span className="prod_book_name">{book.title}</span>
+                                                        </Link>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li className="thumb_item">
-                                            <div className="thumb_img_box">
-                                                <Link href="" className="">
-                                                    <img src="/images/book/9791158394646.jpg" alt=""
-                                                         className="thumb_main_box"/>
-                                                </Link>
-                                            </div>
-                                            <div className="prod_area">
-                                                <div className="prod_title">
-                                                    <Link href="" className="prod_info">
-                                                        <span className="prod_book_name">모던 리액트 Deep Dive</span>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li className="thumb_item">
-                                            <div className="thumb_img_box">
-                                                <Link href="" className="">
-                                                    <img src="/images/book/9791169212540.jpg" alt=""
-                                                         className="thumb_main_box"/>
-                                                </Link>
-                                            </div>
-                                            <div className="prod_area">
-                                                <div className="prod_title">
-                                                    <Link href="" className="prod_info">
-                                                        <span className="prod_book_name">이것이 컴퓨터 과학이다</span>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li className="thumb_item">
-                                            <div className="thumb_img_box">
-                                                <Link href="" className="">
-                                                    <img src="/images/book/9791158394646.jpg" alt=""
-                                                         className="thumb_main_box"/>
-                                                </Link>
-                                            </div>
-                                            <div className="prod_area">
-                                                <div className="prod_title">
-                                                    <Link href="" className="prod_info">
-                                                        <span className="prod_book_name">흰 고래의 힘에 대하여</span>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </li>
+                                            </li>
+                                        ))}
                                     </ul>
                                     <span></span>
                                 </div>
                             </div>
-                            <button className="main_button_prev">
+                            <button onClick={prev} className="main_button_prev">
                                 <span className="hidden">이전</span>
                             </button>
-                            <button className="main_button_next">
+                            <button onClick={next} className="main_button_next">
                                 <span className="hidden">다음</span>
                             </button>
                         </div>

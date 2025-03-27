@@ -9,6 +9,7 @@ export interface Book {
     period: string; //기간
     delivery: string; // 배송
     image: string;
+    comment: string;
 }
 
 
@@ -26,7 +27,9 @@ export const books: Book[] = [
         price: 40500,
         period: "2020년09월25일",
         delivery: "무료배송 금 오후 4시 결제시 다음날 빛 배송",
-        image: "/images/book/javaScriptDeepDive.jpg"
+        image: "/images/book/javaScriptDeepDive.jpg",
+        comment: "프런트 개발자라면 꼭 읽어야 할 책 "
+
     },
     {
         id: 2,
@@ -37,7 +40,9 @@ export const books: Book[] = [
         price: 43200,
         period: "2020년09월25일",
         delivery: "무료배송 금 오후 4시 결제시 다음날 빛 배송",
-        image: "/images/book/9791158394646.jpg"
+        image: "/images/book/9791158394646.jpg",
+        comment: "프런트 개발자라면 꼭 읽어야 할 책 "
+
     },
     {
         id: 3,
@@ -48,7 +53,9 @@ export const books: Book[] = [
         price: 1900,
         period: "2020년09월25일",
         delivery: "무료배송 금 오후 4시 결제시 다음날 빛 배송",
-        image: "/images/book/9791158391720.jpg"
+        image: "/images/book/9791158391720.jpg",
+        comment: "프런트 개발자라면 꼭 읽어야 할 책 "
+
     },
     {
         id: 4,
@@ -59,7 +66,9 @@ export const books: Book[] = [
         price: 32400,
         period: "2020년09월25일",
         delivery: "무료배송 금 오후 4시 결제시 다음날 빛 배송",
-        image: "/images/book/9791169212540.jpg"
+        image: "/images/book/9791169212540.jpg",
+        comment: "프런트 개발자라면 꼭 읽어야 할 책 "
+
     },
     {
         id: 5,
@@ -70,7 +79,9 @@ export const books: Book[] = [
         price: 25200,
         period: "2020년09월25일",
         delivery: "무료배송 금 오후 4시 결제시 다음날 빛 배송",
-        image: "/images/book/makejavascript.jpg"
+        image: "/images/book/makejavascript.jpg",
+        comment: "프런트 개발자라면 꼭 읽어야 할 책 "
+
     },
     {
         id: 6,
@@ -81,7 +92,9 @@ export const books: Book[] = [
         price: 37800,
         period: "2020년09월25일",
         delivery: "무료배송 금 오후 4시 결제시 다음날 빛 배송",
-        image: "/images/book/nodetextbook.jpg"
+        image: "/images/book/nodetextbook.jpg",
+        comment: "프런트 개발자라면 꼭 읽어야 할 책 "
+
     },
     {
         id: 7,
@@ -92,6 +105,21 @@ export const books: Book[] = [
         price: 29700,
         period: "2020년09월25일",
         delivery: "무료배송 금 오후 4시 결제시 다음날 빛 배송",
-        image: "/images/book/typescripttextbook.jpg"
+        image: "/images/book/typescripttextbook.jpg",
+        comment: "프런트 개발자라면 꼭 읽어야 할 책 "
+
+    },
+    {
+        id: 8,
+        title: "HTTP 완벽 가이드",
+        author: "데이빗 고울리, 브라이언 토티, 마조리세이어, 세일루 레디, 안슈 아가왈 저자(글) . 이응준, 정상일 번역",
+        accumulation: 1950,
+        content: "타입스크립트 문법을 실전에서 쓰이는가? 타입 정의를 분석하고 직접 타입을 만들 수 있는가? 실전을 위한 기본기, 실제 라이브러리 타입 분석, 실무/실용적인 조언을 모두 담았다. 타입스크립트를 공부할 때 가장 막막한 건 막상 문법은 다 배웠는데 실전에서 응용ㅎ자ㅣ 못한다는 것입니다. 인터페이스, 타입 애일리어스, 제네릭, 맵드 타입스, 인덱스드 시그니처 등을 배워도 언제 어떤 문법을 사용해야 하는지 모르는 경우입니다. 다른 사라밍 만든 타입을 분석하거나, 직접 타입을 만드는데 어려움을 겪는다면 타입스크립트 문법이 실전에서 어떻게 쓰이는지 배우고, 타입을 어떤 식으로 작성해나가면 직접 실습해보세요. 이 책은 직접 타입을 분석하여 쓸 수 있도록 만들어 드립니다. 타입스크립트를 깊이 이해하고, 정확하고 효율적으로 사용하도록 알려 드립니다. ",
+        price: 35100,
+        period: "200년09월25일",
+        delivery: "무료배송 금 오후 4시 결제시 다음날 빛 배송",
+        image: "/images/book/typescripttextbook.jpg",
+        comment: "프런트 개발자라면 꼭 읽어야 할 책 "
     },
 ]
+
