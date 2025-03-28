@@ -73,39 +73,39 @@ export default function Main() {
                             <div className="detail_swiper_wrap">
                                 <div className="swiper_container_fade">
                                     <ul className="main_wrapper">
-                                            <li key={currentBook.id} className="main_li">
-                                                <div className="prod_area_hor_izontal">
-                                                    <div className="prod_thumb_box">
-                                                        <Link href="/detail/page" className="prod_link">
+                                        <li key={currentBook.id} className="main_li">
+                                            <div className="prod_area_hor_izontal">
+                                                <div className="prod_thumb_box">
+                                                    <Link href={`/detail/${currentBook.id}`} className="prod_link">
                                                         <span className="prod_img_box">
                                                                      <img src={currentBook.image}
                                                                           alt={currentBook.title} width={241.43}
                                                                           height={365.38} className="prod_img_box_a"/>
 
                                                         </span>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="prod_info_box">
-                                                        <Link href='' className="prod_info_title">
-                                                            <h3 className="prod_name">{currentBook.title}</h3>
-                                                        </Link>
-                                                        <span className="prod_author">{currentBook.author}</span>
-                                                        <div className="prod_price">
-                                                            <span className="percent">10%</span>
-                                                            <span className="price">
+                                                    </Link>
+                                                </div>
+                                                <div className="prod_info_box">
+                                                    <Link href='' className="prod_info_title">
+                                                        <h3 className="prod_name">{currentBook.title}</h3>
+                                                    </Link>
+                                                    <span className="prod_author">{currentBook.author}</span>
+                                                    <div className="prod_price">
+                                                        <span className="percent">10%</span>
+                                                        <span className="price">
                                                             <span className="val">{currentBook.price}</span>
                                                             <span className="unit">원</span>
                                                         </span>
-                                                        </div>
-                                                        <p className="prod_md_comment">
-                                                            {currentBook.comment}
-                                                        </p>
-                                                        <p className="prod_md_comment_desc">
-                                                            {currentBook.content}
-                                                        </p>
                                                     </div>
+                                                    <p className="prod_md_comment">
+                                                        {currentBook.comment}
+                                                    </p>
+                                                    <p className="prod_md_comment_desc">
+                                                        {currentBook.content}
+                                                    </p>
                                                 </div>
-                                            </li>
+                                            </div>
+                                        </li>
                                     </ul>
                                     <span></span>
                                 </div>

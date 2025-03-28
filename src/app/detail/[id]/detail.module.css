@@ -5,30 +5,175 @@
     min-height: 100vh;
 }
 
-.breadcrumb_wrap {
+.contents_wrap {
+    padding-top: 42px;
+}
+
+.prod_detail_header {
     position: relative;
-    padding-top: 20px;
+    padding-bottom: 60px;
+    z-index: 101;
+}
+
+.tab_wrap {
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+
+.detail_footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-width: 1440px;
+    background-color: #fff;
     z-index: 102;
 }
 
-.breadcrumb_inner {
+.header_inner {
     width: 1200px;
     margin: 0 auto;
 }
 
-.breadcrumb_list {
+.detail_title {
+
+}
+
+.detail_view {
+    display: block;
+    margin-top: 18px;
+    word-break: break-all;
+}
+
+.title_area {
+    display: block;
+    position: relative;
+    padding: 0 72px;
+}
+
+.title_box {
+    display: block;
+    position: relative;
+    text-align: center;
     font-size: 0;
 }
 
-.breadcrumb_item {
+.util_btn_box {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.pred_desc_area {
+    display: block;
+    margin-top: 7px;
+    padding: 0 52px;
+}
+
+.overflow_contents {
+    max-height: 84px;
+    overflow: hidden;
+}
+
+.overflow_inner {
+    display: block;
+}
+
+.book_title {
+    display: inline
+}
+
+.prod_title {
+    display: inline;
+    color: #000;
+    font-size: 28px;
+    line-height: 42px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.share_wrap {
     position: relative;
-    z-index: 10;
-    display: inline-block;;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
     vertical-align: top;
 }
 
-.item_exception{
-    position:relative;
-    padding-left: 20px;
+.btn_share {
+    width: 42px;
+    height: 42px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 50%;
+    box-sizing: border-box;
 }
 
+.ico_share {
+    background-image: url("/images/common/ico_share@2x.png");
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 13px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    vertical-align: top;
+}
+
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.prod_desc_box {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 0;
+}
+
+.books_comment {
+    max-height: 46px;
+    overflow: hidden;
+    display: block;
+}
+
+.books_inner {
+    display: block;
+}
+
+.prod_desc {
+    display: inline;
+    color: #595959;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+}
+
+.gap {
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 6px 10px 0;
+    background-color: #ccc;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.prod_desc_normal {
+    color: #767676;
+    font-weight:400;
+    display: inline;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+}
