@@ -188,9 +188,33 @@ export default function Detail() {
                                                 <button className={styles.button_next}></button>
                                             </div>
                                         </div>
-                                        <div className={styles.btn_wrap}></div>
+                                        <div className={styles.btn_wrap}>
+                                            <button className={`${styles.btn_xs} ${styles.btn_pill}`}>
+                                                <span className={styles.ico_preview}></span>
+                                                <span className={styles.text}>미리보기</span>
+                                            </button>
+
+                                            <button className={`${styles.btn_xs} ${styles.btn_pill} ${styles.mb} `}>
+                                                <span className={styles.ico_ebook_preview}></span>
+                                                <span className={styles.text}>eBook 미리보기</span>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div className={`${styles.prod_ml} ${styles.prod_info}`}></div>
+                                    <div className={`${styles.prod_ml} ${styles.prod_info}`}>{/*여기 태그가 책 가격, 오른쪽 값 */}
+                                        <div className={`${styles.pord_brea}`}>
+                                            <div className={styles.badge_list_box}>
+                                                <span className={`${styles.badge_md} ${styles.badge_pr}`}>
+                                                    <span className={styles['badge-text']}>MD의 선택</span> 클래스 이런식으로 사용해야한다.
+                                                </span>
+                                                <span className={`${styles.badge_md} ${styles.badge_gray}`}></span>
+                                                <span className={`${styles.badge_md} ${styles.badge_gray}`}></span>
+                                            </div>
+                                            <div className={styles.prod_price_box}></div>
+                                        </div>
+                                        <div className={`${styles.pord_brea} ${styles.prod_guide}`}></div>
+                                        <div className={`${styles.pord_brea} ${styles.alarm_apply}`}></div>
+                                        <div className={`${styles.pord_brea} ${styles.overlap}`}></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

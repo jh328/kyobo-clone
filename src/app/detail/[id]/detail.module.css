@@ -730,7 +730,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     color: #767676;
     content: "-";
     display: inline-block;
-    font-size:12px;
+    font-size: 12px;
     letter-spacing: -0.01em;
     line-height: 16px;
 }
@@ -746,5 +746,133 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     background-color: transparent;
     background-size: 6px 10px;
     background-image: url("/images/common/btn_swiper_list@2x.png");
+    vertical-align: top;
+}
+
+.btn_pill {
+    width: auto;
+    padding-left: 11px;
+    padding-right: 12px;
+    border-radius: 30px;
+    position: relative;
+    margin-bottom: 6px;
+    color: #000;
+    background: #fff;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.btn_xs {
+    display: -webkit-inline-flex;
+    align-items: center;
+    flex-direction: row;
+    height: 30px;
+    padding: 0 9px 1px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+}
+
+.mb {
+    margin-bottom: 6px;
+    margin-left: 3px;
+}
+
+.ico_preview {
+    width: 12px;
+    background: url("/images/common/ico_preview@2x.png") left center no-repeat;
+    background-size: 12px 12px;
+    height: 18px;
+    margin-right: 3px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.ico_ebook_preview {
+    width: 12px;
+    background-image: url("/images/header/btn_header_search_v2@2x.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 12px 12px;
+    height: 18px;
+    margin-right: 3px;
+}
+
+.pord_brea {
+    word-break: break-all;
+}
+
+.prod_guide {
+    margin-top: 15px;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.alarm_apply {
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 16px;
+    box-sizing: border-box;
+}
+
+.overlap {
+    margin-top: 16px;
+    display: flex;
+    font-size: 0;
+    text-align: center;
+}
+
+.badge_list_box {
+    margin-bottom: 26px;
+    text-align: left;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-top: -4px;
+    font-size: 0;
+}
+
+
+.prod_price_box {
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.badge_md {
+    margin-right: 4px;
+    margin-top: 4px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top;
+    min-height: 22px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;;
+}
+
+.badge_pr {
+    color: #474c98;
+    border: 1px solid #474c98;
+    background: #fff;
+}
+
+.badge_gray{
+    color: #767676;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.badge-text{
+    display:inline-block;
+    position:relative;
     vertical-align: top;
 }
