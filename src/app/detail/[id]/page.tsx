@@ -113,7 +113,7 @@ export default function Detail() {
                                                 </Link>
                                             </div>
                                             <div className={styles.review_box}>
-                                                <div className={styles.col_review}>
+                                                <div className={`${styles.col_review} ${styles.no_before} `}>
                                                     <span
                                                         className={`${styles.review_score} ${styles.lucky}`}>10.0</span>
                                                     <div className={styles.rating_container}>
@@ -124,24 +124,23 @@ export default function Detail() {
                                                                 <span className={styles.star}>
                                                                     <i className={styles.icon_star}></i>
                                                                 </span>
-                                                                        <span className={styles.star}>
-                                                                    <i className={styles.icon_star}></i>
-                                                                </span><span className={styles.star}>
-                                                                    <i className={styles.icon_star}></i>
-                                                                </span><span className={styles.star}>
-                                                                    <i className={styles.icon_star}></i>
-                                                                </span><span className={styles.star}>
-                                                                    <i className={styles.icon_star}></i>
-                                                                </span>                                                        <span
-                                                                className={styles.star}>
+                                                                <span className={styles.star}>
                                                                     <i className={styles.icon_star}></i>
                                                                 </span>
-
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
                                                             </span>
                                                         </div>
                                                         <div></div>
                                                     </div>
-                                                    <input type="text"/>
+                                                    {/*<input type="text"/>*/}
                                                     <span className={styles.review_desc}>
                                                         (
                                                         <span className={styles.val}>24</span>
@@ -162,8 +161,35 @@ export default function Detail() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        className={`${styles.prod_ml} ${styles.prod_middle}`}></div>
+                                    <div className={`${styles.prod_ml} ${styles.prod_middle}`}>
+                                        <div className={styles.prod_thumb_swiper}>
+                                            <div className={styles.swiper_container}>
+                                                <ul className={styles.swiper_wrapper}>
+                                                    <li className={styles.prod_thumb_item}>
+                                                        <div className={styles.blur_img_wrap}>
+                                                            <div className={styles.portrait_img_box}>
+                                                                <img src="/images/book/javaScriptDeepDive.jpg" alt=""
+                                                                     className={styles.books_img}/>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    {/*li 4개이고, prod_thumbItem 속성 4개 다 들어감. */}
+                                                </ul>
+                                            </div>
+                                            <div className={styles.swiper_control_box}>
+                                                <button className={`${styles.button_prev} ${styles.btn_prev}`}>
+                                                    <span className={styles.hidden}>이전</span>
+                                                </button>
+                                                <div className={styles.swiper_pagination}>
+                                                    <span className={styles.pagination_current}>01</span>
+                                                    /
+                                                    <span className={styles.pagination_total}>04</span>
+                                                </div>
+                                                <button className={styles.button_next}></button>
+                                            </div>
+                                        </div>
+                                        <div className={styles.btn_wrap}></div>
+                                    </div>
                                     <div className={`${styles.prod_ml} ${styles.prod_info}`}></div>
                                 </div>
                             </div>

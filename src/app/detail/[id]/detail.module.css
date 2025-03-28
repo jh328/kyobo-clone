@@ -506,6 +506,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
+    width: 88px;
+    height: 18px;
 }
 
 .filled_start {
@@ -554,6 +556,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 }
 
 .review_quoter_text:before {
+    content: "";
     left: 50%;
     top: 0;
     width: 16px;
@@ -563,6 +566,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     background-size: 16px 16px;
     background-image: url("/images/common/ico_quotes_lg@2x.png");
     transform: translateX(-50%);
+    position: absolute;
 }
 
 .review_desc {
@@ -579,4 +583,168 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     font-size: 12px;
     line-height: 18px;
     letter-spacing: -0.01em;
+}
+
+.no_before::before {
+    display: none;
+}
+
+.prod_thumb_swiper {
+    position: relative;
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.btn_wrap {
+    position: static;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    font-size: 0;
+}
+
+.swiper_container {
+    overflow: visible;
+    margin: 0 auto;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper_control_box {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 0;
+}
+
+.swiper_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    box-sizing: content-box;
+    transition-duration: 0ms;
+    transform: translate3d(0, 0, 0);
+    padding-left: 0;
+}
+
+.prod_thumb_item {
+    display: -webkit-flex;
+    justify-content: center;
+    flex-direction: row;
+    height: auto;
+    background-color: #fff;
+    width: 380px;
+    opacity: 1;
+    transition-duration: 0ms;
+    transform: translate3d(0, 0, 0);
+}
+
+.blur_img_wrap {
+    position: relative;
+    width: 100%;
+}
+
+.portrait_img_box {
+    box-sizing: border-box;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.books_img {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-height: 760px;
+    object-fit: contain;
+}
+
+.button_prev {
+    display: inline-block;
+    position: static;
+    width: 16px !important;
+    height: 16px !important;
+    margin-top: 0;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 6px 10px;
+    vertical-align: top;
+    background-image: url("/images/common/btn_swiper_list@2x.png");
+}
+
+.btn_prev {
+    opacity: 0.3;
+    pointer-events: none !important;
+    cursor: default !important;
+    text-decoration: none !important;
+    transform: rotate(180deg);
+    transition: opacity 0.23s;
+    border-radius: 100%;
+    box-sizing: border-box;
+}
+
+.swiper_pagination {
+    height: 16px;
+    line-height: 16px;
+    padding: 0 2px;
+    border-radius: 0;
+    background: none;
+    display: inline-block;
+    position: static;
+    min-width: auto;
+    transform: translateX(0);
+    vertical-align: top;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.pagination_current {
+    color: #000;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    line-height: 16px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pagination_total {
+    color: #767676;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    line-height: 16px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pagination_total:before {
+    margin: 0 3px;
+    color: #767676;
+    content: "-";
+    display: inline-block;
+    font-size:12px;
+    letter-spacing: -0.01em;
+    line-height: 16px;
+}
+
+.button_next {
+    display: inline-block;
+    position: static;
+    width: 16px;
+    height: 16px;
+    margin-top: 0;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 6px 10px;
+    background-image: url("/images/common/btn_swiper_list@2x.png");
+    vertical-align: top;
 }
