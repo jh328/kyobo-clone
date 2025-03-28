@@ -4,6 +4,7 @@ import Header from "@/app/components/header/Header";
 import Breadcrumb from "@/app/components/breadcrumb/page";
 import {books} from "@/app/lib/book";
 import {useParams} from "next/navigation";
+import Link from "next/link";
 
 export default function Detail() {
     const {id} = useParams();
@@ -52,7 +53,120 @@ export default function Detail() {
                                     </div>
                                 </div>
                             </div>
-                            <div className={styles.detail_view}></div>
+                            <div className={styles.detail_view}>
+                                <div className={styles.type_area}>
+                                    <div className={styles.type_list}>
+                                        <ul className={styles.type_ko_el}>
+                                            <li className={`${styles.paper_book} ${styles.book_select}`}>
+                                                <Link href=""
+                                                      className={`${styles.btn_prod_type} ${styles.btn_col}`}>
+                                                    <span
+                                                        className={`${styles.prod_type} ${styles.select_title}`}>국내도서</span>
+                                                    <span
+                                                        className={`${styles.prod_price}  ${styles.book_price}`}>{book.price}</span>
+                                                </Link>
+                                            </li>
+                                            {/*book_select 이거 밑에 ebook에도 들어가는거 조건문으로 css 조절 해야함. */}
+                                            <li className={styles.paper_book}>
+                                                <Link href=""
+                                                      className={`${styles.btn_prod_type} ${styles.un_select}`}>
+                                                    <span className={styles.no_select_title}>eBook</span>
+                                                    <span className={styles.book_price}>{book.price}</span>
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className={styles.view_area}>
+                                    <div className={styles.prod_info}>
+                                        <div className={styles.info_wrap}>
+                                            <div className={styles.prod_autor}>
+                                                <div className={styles.auto_overflow}>
+                                                    <div>
+                                                        <div className={styles.author}>
+                                                            <Link href="">{book.author}</Link>
+                                                            &nbsp; 저자(글)
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className={`${styles.publish_date} ${styles.prod_text}`}>
+                                                <Link href="" className={styles.btn_link}>{book.period}</Link>
+                                            </div>
+                                            <div className={styles.best_box}>
+                                                <Link href="" className={styles.best_link}>
+                                                    <div className={styles.best_title}>
+                                                        <span className={styles.text}>주간베스트</span>
+                                                    </div>
+                                                    <div className={styles.best_text}>
+                                                        컴퓨터/IT
+                                                        <span className={styles.rank}>427</span>
+                                                        위
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className={`${styles.prod_text} ${styles.publish_date}`}>
+                                                가장 최근에 출시된 개정판입니다.
+                                                <Link href="" className={styles.btn_line_gray}>
+                                                    <span className={styles.text}>구판보기</span>
+                                                    <span className={styles.ico_arw}></span>
+                                                </Link>
+                                            </div>
+                                            <div className={styles.review_box}>
+                                                <div className={styles.col_review}>
+                                                    <span
+                                                        className={`${styles.review_score} ${styles.lucky}`}>10.0</span>
+                                                    <div className={styles.rating_container}>
+                                                        <div></div>
+                                                        <div className={styles.rating_stars}>
+                                                            <span></span>
+                                                            <span className={styles.filled_start}>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                                        <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span><span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span><span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span><span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>                                                        <span
+                                                                className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+
+                                                            </span>
+                                                        </div>
+                                                        <div></div>
+                                                    </div>
+                                                    <input type="text"/>
+                                                    <span className={styles.review_desc}>
+                                                        (
+                                                        <span className={styles.val}>24</span>
+                                                        개의 리뷰)
+                                                    </span>
+                                                </div>
+                                                <div className={styles.col_review}>
+                                                    <span className={styles.review_quoter_text}>
+                                                        도움돼요
+                                                    </span>
+                                                    <span className={styles.review_desc}>
+                                                        (
+                                                        <span className={styles.val}>38%</span>
+                                                        의 구매자)
+                                                    </span>
+                                                </div>
+                                                <button className={styles.btn_go_review}></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className={`${styles.prod_ml} ${styles.prod_middle}`}></div>
+                                    <div className={`${styles.prod_ml} ${styles.prod_info}`}></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.tab_wrap}></div>
@@ -61,5 +175,5 @@ export default function Detail() {
                 <div></div>
             </main>
         </div>
-    )
+    );
 }
