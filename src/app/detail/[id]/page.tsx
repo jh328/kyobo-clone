@@ -204,10 +204,10 @@ export default function Detail() {
                                         <div className={`${styles.pord_brea}`}>
                                             <div className={styles.badge_list_box}>
                                                 <span className={`${styles.badge_md} ${styles.badge_pr}`}>
-                                                    <span className={styles['badge-text']}>MD의 선택</span> 클래스 이런식으로 사용해야한다.
+                                                    <span className={styles['badge-text']}>MD의 선택</span>
                                                 </span>
-                                                <span className={`${styles.badge_md} ${styles.badge_gray}`}></span>
-                                                <span className={`${styles.badge_md} ${styles.badge_gray}`}></span>
+                                                <span className={`${styles.badge_md} ${styles.badge_gray} ${styles['badge-text']}`}>무료배송</span>
+                                                <span className={`${styles.badge_md} ${styles.badge_gray} ${styles['badge-text']}`}>소득공제</span>
                                             </div>
                                             <div className={styles.prod_price_box}></div>
                                         </div>
