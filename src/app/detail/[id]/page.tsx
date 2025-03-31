@@ -14,6 +14,8 @@ export default function Detail() {
 
     if (!book) return <div>책을 찾을 수 없습니다.</div>;  // 책이 없을 때 메시지 출력
 
+    const discountedPrice = book.price * (1 - book.discount / 100);
+
     return (
         <div className={styles.detail_wrapper}>
             <Header/>
@@ -223,10 +225,13 @@ export default function Detail() {
                                                     <span className={styles.percent}>10%</span>
                                                     <span className={styles.price}>
                                                         <span className={styles.books_val}>
-                                                            {formatPrice(book.price)}
+                                                            {formatPrice(discountedPrice)}
                                                             <span className={styles.unit}>원</span></span>
                                                     </span>
-                                                    <span className={styles.sale_price}></span>
+                                                    <span className={styles.sale_price}>
+                                                        <span
+                                                            className={styles.cancellationLine}>{formatPrice(book.price)}</span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>

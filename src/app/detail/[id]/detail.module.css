@@ -921,3 +921,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 .unit {
     font-weight: 500;
 }
+
+.cancellationLine {
+    display: inline-block;
+    text-decoration: line-through;
+}
