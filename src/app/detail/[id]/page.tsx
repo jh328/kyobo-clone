@@ -5,10 +5,12 @@ import Breadcrumb from "@/app/components/breadcrumb/page";
 import {books} from "@/app/lib/book";
 import {useParams} from "next/navigation";
 import Link from "next/link";
+import {formatPrice} from "@/utils/format";
 
 export default function Detail() {
     const {id} = useParams();
     const book = books.find((b) => b.id === Number(id));
+
 
     if (!book) return <div>책을 찾을 수 없습니다.</div>;  // 책이 없을 때 메시지 출력
 
@@ -63,7 +65,10 @@ export default function Detail() {
                                                     <span
                                                         className={`${styles.prod_type} ${styles.select_title}`}>국내도서</span>
                                                     <span
-                                                        className={`${styles.prod_price}  ${styles.book_price}`}>{book.price}</span>
+                                                        className={`${styles.prod_price}  ${styles.book_price}`}>
+
+                                                       {formatPrice(book.price)}원
+                                                    </span>
                                                 </Link>
                                             </li>
                                             {/*book_select 이거 밑에 ebook에도 들어가는거 조건문으로 css 조절 해야함. */}
@@ -71,7 +76,9 @@ export default function Detail() {
                                                 <Link href=""
                                                       className={`${styles.btn_prod_type} ${styles.un_select}`}>
                                                     <span className={styles.no_select_title}>eBook</span>
-                                                    <span className={styles.book_price}>{book.price}</span>
+                                                    <span className={styles.book_price}>
+                                                        {formatPrice(book.price)}원
+                                                    </span>
                                                 </Link>
                                             </li>
                                         </ul>
@@ -206,10 +213,22 @@ export default function Detail() {
                                                 <span className={`${styles.badge_md} ${styles.badge_pr}`}>
                                                     <span className={styles['badge-text']}>MD의 선택</span>
                                                 </span>
-                                                <span className={`${styles.badge_md} ${styles.badge_gray} ${styles['badge-text']}`}>무료배송</span>
-                                                <span className={`${styles.badge_md} ${styles.badge_gray} ${styles['badge-text']}`}>소득공제</span>
+                                                <span
+                                                    className={`${styles.badge_md} ${styles.badge_gray} ${styles['badge-text']}`}>무료배송</span>
+                                                <span
+                                                    className={`${styles.badge_md} ${styles.badge_gray} ${styles['badge-text']}`}>소득공제</span>
                                             </div>
-                                            <div className={styles.prod_price_box}></div>
+                                            <div className={styles.prod_price_box}>
+                                                <div className={styles.books_price}>
+                                                    <span className={styles.percent}>10%</span>
+                                                    <span className={styles.price}>
+                                                        <span className={styles.books_val}>
+                                                            {formatPrice(book.price)}
+                                                            <span className={styles.unit}>원</span></span>
+                                                    </span>
+                                                    <span className={styles.sale_price}></span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div className={`${styles.pord_brea} ${styles.prod_guide}`}></div>
                                         <div className={`${styles.pord_brea} ${styles.alarm_apply}`}></div>

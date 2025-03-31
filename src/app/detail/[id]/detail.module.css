@@ -865,14 +865,59 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     background: #fff;
 }
 
-.badge_gray{
+.badge_gray {
     color: #767676;
     border: 1px solid #ccc;
     background: #fff;
 }
 
-.badge-text{
-    display:inline-block;
-    position:relative;
+.badge-text {
+    display: inline-block;
+    position: relative;
     vertical-align: top;
+}
+
+.books_price {
+    flex: 1;
+    font-size: 0;
+}
+
+.percent {
+    display: inline-block;
+    margin-right: 6px;
+    color: #4dac27;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.price {
+    display: inline-block;
+    margin-right: 4px;
+    color: #000;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    vertical-align: top;
+}
+
+.sale_price {
+    display: inline-block;
+    margin-bottom: 2px;
+    color: #767676;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    vertical-align: bottom;
+}
+
+.books_val {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.unit {
+    font-weight: 500;
 }
