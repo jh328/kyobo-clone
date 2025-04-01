@@ -1018,6 +1018,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 
 .delivery_guide_text {
     display: inline-block;
+    width: 260px;
     vertical-align: top;
 }
 
@@ -1070,4 +1071,177 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     color: #474c98;
     border: 1px solid #ededf7;
     background: #ededf7;
+}
+
+.btn_info_popup {
+    margin: 2px 0 0 3px;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    width: 16px !important;
+    height: 16px !important;
+    padding: 0;
+}
+
+.ico_question {
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    border: 1px solid #d5d5d5;
+    border-radius: 100%;
+    background-image: url("/images/common/btn_tooltop_question_sm@2x.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    width: 14px !important;
+    height: 14px !important;
+}
+
+.fc_gray {
+    color: #595959;
+}
+
+.sm_he {
+    height: 16px;
+}
+
+
+.prod_info_text {
+    font-size: 13px;
+    color: #000;
+    display: block;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    vertical-align: middle;
+}
+
+.text_link {
+    text-align: left;
+    font-size: 13px;
+}
+
+.login_text {
+    text-decoration: underline;
+}
+
+.info_text {
+    margin: 4px 0 1px;
+    text-align: left;
+    padding: 14px;
+    display: block;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+}
+
+.bul_item_dot {
+    padding-left: 6px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    position: relative;
+    color: #595959;
+    font-weight: 400;
+    text-align: left;
+}
+
+.flower_info_flex {
+    padding-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flower_text {
+    color: #000;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+}
+
+.btn_xxs {
+    color: #000;
+    background: #fff;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+    display: -webkit-inline-flex;
+    align-items: center;
+    flex-direction: row;
+    height: 24px;
+    padding: 1px 5px 1px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.fw_medium {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    font-weight: 500;
+}
+
+.ico_more {
+    margin-right: 0;
+    width: 6px;
+    height: 6px;
+    margin-left: 2px;
+    background-image: url("/images/common/arw_footer_link@2x.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 6px 6px;
+}
+
+.bul_item_dot:before {
+    top: 7px;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    background-color: #999;
+    width: 2px;
+    height: 2px;
+}
+
+.btn_sm {
+    flex: 1;
+    min-width: auto;
+    color: #000;
+    background: #fff;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+    display: -webkit-inline-flex;
+    align-items: center;
+    flex-direction: row;
+    height: 38px;
+    padding: 0 13px 1px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    justify-content: center;
+}
+
+.ico_locate {
+    width: 14px;
+    background-size: 13px 19px;
+    background-image: url("/images/common/ico_locate@2x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    height: 19px;
+    margin-right: 3px;
+}
+
+.locate_text {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
 }

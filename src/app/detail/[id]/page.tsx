@@ -278,22 +278,72 @@ export default function Detail() {
                                                                 className={`${styles.badge_deli} ${styles.badge_sm} ${styles.badge_pill} ${styles.badge}`}>
                                                                 <span className={styles.deli_text}>새벽배송</span>
                                                             </span>
-                                                            <span></span>
-                                                            <button></button>
+                                                            <span>
+                                                                <span><strong className={styles.blue}>내일(4/2, 수 오전 7시 전) 도착</strong></span>
+                                                            </span>
+                                                            <button type="button" className={styles.btn_info_popup}>
+                                                                <span className={styles.ico_question}></span>
+                                                                <span className={styles.hidden}>팝업열기</span>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div
-                                                    className={`${styles.prod_guide_row} ${styles.guide_row_mt}`}></div>
+                                                    className={`${styles.prod_guide_row} ${styles.guide_row_mt}`}>
+                                                    <div className={styles.prod_guide_cont}>
+                                                        <div className={styles.delivery_guide_text}>
+                                                            <span className={styles.fc_gray}>기본배송지 기준</span>
+                                                            <div
+                                                                className={`${styles.type_sm} ${styles.tooltip_wrap} ${styles.sm_he}`}>
+                                                                <button className={styles.btn_tooltip}>
+                                                                    <span className={styles.ico_question}></span>
+                                                                    <span className={styles.hidden}>팝업열기</span>
+                                                                </button>
+                                                                <div>{/*tooltip_inner*/}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div
-                                                    className={`${styles.prod_guide_row} ${styles.guide_row_mt} ${styles.nonmember}`}></div>
+                                                    className={`${styles.prod_guide_row} ${styles.guide_row_mt} ${styles.nonmember}`}>
+                                                    <div className={styles.prod_guide_cont}>
+                                                        <div className={styles.prod_info_text}>
+                                                            <Link href="/login"
+                                                                  className={`${styles.point_text} ${styles.text_link}`}>
+                                                                <span className={styles.login_text}>로그인</span>
+                                                            </Link>
+                                                            &nbsp; 후 &nbsp;
+                                                            <strong>정확한 배송 안내</strong>
+                                                            를 받아보세요!
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div
-                                                    className={`${styles.prod_guide_row} ${styles.guide_row_mt}`}></div>
-
+                                                    className={`${styles.prod_guide_row} ${styles.guide_row_mt}`}>
+                                                    <div className={styles.prod_guide_cont}>
+                                                        <div className={styles.info_text}>
+                                                            <span className={styles.flower_info_flex}>
+                                                                <p className={styles.flower_text}>이달의 꽃과 함께 책을 받아보세요!</p>
+                                                                <button type="button" className={styles.btn_xxs}>
+                                                                    <span className={styles.fw_medium}>자세히보기</span>
+                                                                    <span className={styles.ico_more}></span>
+                                                                </button>
+                                                            </span>
+                                                            <p className={styles.bul_item_dot}>
+                                                                1권 구매 시 결제 단계에서 적용 가능합니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className={`${styles.pord_brea} ${styles.alarm_apply}`}></div>
-                                        <div className={`${styles.pord_brea} ${styles.overlap}`}></div>
+                                        <div className={`${styles.pord_brea} ${styles.overlap}`}>
+                                            <button type="button" className={styles.btn_sm}>
+                                                <span className={styles.ico_locate}></span>
+                                                <span className={styles.locate_text}>매장·재고 위치</span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
