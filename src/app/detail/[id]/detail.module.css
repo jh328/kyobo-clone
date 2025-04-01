@@ -926,3 +926,148 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     display: inline-block;
     text-decoration: line-through;
 }
+
+.prod_guide_box {
+    padding: 18px 0 16px;
+}
+
+.box_line {
+    border-top: 1px solid #eaeaea;
+}
+
+.prod_guide_row {
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.prod_guide_title {
+    flex: 0 0 auto;
+    color: #000;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+.prod_guide_cont {
+    flex: 1;
+    max-width: 100%;
+    margin-left: auto;
+    color: #000;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    text-align: right;
+}
+
+.point_text {
+    display: inline-block;
+    color: #4dac27;
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.tooltip_wrap {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.tool_ml {
+    margin-left: 7px;
+}
+
+.btn_tooltip {
+    display: inline-block;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding: 0;
+}
+
+.ico_arw {
+    background-size: 22px 22px;
+    background-image: url("/images/common/arw_tooltip@2x.png");
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: top;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 0;
+}
+
+.guide_row_mt {
+    margin-top: 9px;
+}
+
+.nonmember {
+    padding-top: 18px;
+    border-top: 1px solid #eaeaea;
+}
+
+.delivery_guide_text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.delivery_type {
+    font-weight: 500;
+}
+
+.type_sm {
+    margin: 1px 0 0 3px;
+}
+
+.ico_info {
+    background-size: 16px 16px;
+    background-image: url("/images/common/btn_tooltip_sm@2x.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 22px !important;
+    height: 22px !important;
+    display: inline-block;
+}
+
+.badge_sm {
+    min-height: 20px;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+}
+
+
+.badge_pill {
+    padding: 3px 7px 0;
+    border-radius: 20px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.badge {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top;
+}
+
+.deli_text {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.badge_deli {
+    color: #474c98;
+    border: 1px solid #ededf7;
+    background: #ededf7;
+}
