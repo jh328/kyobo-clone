@@ -69,7 +69,7 @@ export default function Detail() {
                                                     <span
                                                         className={`${styles.prod_price}  ${styles.book_price}`}>
 
-                                                       {formatPrice(book.price)}원
+                                                       {formatPrice(discountedPrice)}원
                                                     </span>
                                                 </Link>
                                             </li>
@@ -349,7 +349,94 @@ export default function Detail() {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.tab_wrap}></div>
+                    <div className={styles.tab_wrap}>
+                        <div className={styles.tab_list_wrap}>
+                            <div className={`${styles.sps} ${styles.scroll_fixed}`}>
+                                <div className={styles.sps_inner}>
+                                    <ul className={styles.tabs}>
+                                        <li className={styles.tab_item}>
+                                            <Link href="" className={styles.tab_link}>
+                                                <span className={styles.tab_text}>이벤트</span>
+                                            </Link>
+                                        </li>
+                                        <li className={`${styles.tab_pa} ${styles.tab_item}`}>
+                                            <Link href="" className={styles.tab_link}>
+                                                <span className={styles.tab_text}>상품정보</span>
+                                            </Link>
+                                        </li>
+                                        <li className={styles.tab_item}>
+                                            <Link href="" className={styles.tab_link}>
+                                                <span className={styles.tab_text}>
+                                                    리뷰
+                                                    <span className={styles.num}>(93)</span>
+                                                </span>
+                                            </Link>
+                                        </li>
+                                        <li className={styles.tab_item}>
+                                            <Link href="" className={styles.tab_link}>
+                                                <span className={styles.tab_text}>교환/반품/품절</span>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div className={styles.prod_detail_contents}>
+                            <div className={styles.detail_contents_inner}>
+                                {/*section 총 4개 */}
+                                {/*첫 번째 section 이 책의 이벤트*/}
+                                {/*두번째 section함께 구매한 상품 ~~ 책의 기본정보까지 제일 김 ㅈ됨 */}
+                                {/*세 번째 section Klover 리뷰 ~~ 교환 반품 품절 안내 위에까지 */}
+                                {/*네 번째 section 교환 반품 품절 안내 ~ .상품 설명에 반품 / 교환 관련한 안내가 있는 경우 그 내용을 우선으로 한다는 텍스트까지 */}
+                                <section className={styles.tap_content}>
+                                    <div className={styles.product_detail_area}>
+                                        <div className={`${styles.title_sm} ${styles.title_wrap}`}>
+                                            <h4 className={styles.title_heading}>이 책의 이벤트</h4>
+                                            <div className={styles.right_area}>
+                                                <p className={`${styles.bul_item_asterisk} ${styles.font_size_xxs} ${styles.bul_item_base}`}>
+                                                    해외주문/바로드림/제휴사주문/업체배송건의 경우 1+1 증정상품이 발송되지 않습니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className={styles.product_event_contents}>
+                                            <ul className={styles.event_list}>
+                                                <li className={`${styles.event_item}`}>
+                                                    <div className={styles.event_area}>
+                                                        <Link href="" className={styles.event_link}>
+                                                            <div className={styles.event_thumb_box}>
+                                                                <span className={styles.img_box}>
+                                                                    <img src="/images/event/1795130cbbf34e959a8be67d207e6a52.jpg" alt=""/>
+                                                                </span>
+                                                            </div>
+                                                            <div className={styles.event_info_box}>
+                                                                <div className={styles.event_name}>OttOn 어떤 2호: 이름</div>
+                                                                <div className={styles.event_period}>2025/02/19 ~ 2025/03/31</div>
+                                                            </div>
+                                                        </Link>
+                                                    </div>
+                                                </li>
+                                                <li className={`${styles.event_item}`}>
+                                                    <div className={styles.event_area}>
+                                                        <Link href="" className={styles.event_link}>
+                                                            <div></div>
+                                                            <div className={styles.event_info_box}>
+                                                                <div className={styles.event_name}>기술스택 별 개발자 추천도서</div>
+                                                                <div className={styles.event_period}>2021.12.24 ~ 2022.12.31</div>
+                                                            </div>
+                                                        </Link>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </section>
+                            </div>
+                            <div className={styles.detail_recommend}></div>
+                        </div>
+                    </div>
                     <div className={styles.detail_footer}></div>
                 </section>
                 <div></div>
