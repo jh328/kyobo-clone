@@ -740,6 +740,10 @@ export default function Detail() {
                                         </div>
                                     </div>
                                     {/*!-- //책 소개*/}
+
+                                    <div></div>
+
+                                    {/*!-->이 책의 총서*/}
                                     <div className={styles.product_detail_together}>
                                         <div className={`${styles.title_wrap} ${styles.title_size_md_btn}`}>
                                             <p className={`${styles.title_heading}`}>
@@ -791,15 +795,19 @@ export default function Detail() {
                                                         </span>
                                                         <div className={`${styles.prod_area} `}>
                                                             <div className={`${styles.prod_thumb_box}`}>
-                                                                <Link href="https://product.kyobobook.co.kr/detail/S000214420933" className={styles.prod_link}>
+                                                                <Link
+                                                                    href="https://product.kyobobook.co.kr/detail/S000214420933"
+                                                                    className={styles.prod_link}>
                                                                     <span className={styles.img_box}>
-                                                                        <img src="/images/book/9791158394592.jpg" alt="" className={styles.img}/>
+                                                                        <img src="/images/book/9791158394592.jpg" alt=""
+                                                                             className={styles.img}/>
                                                                     </span>
                                                                 </Link>
                                                             </div>
                                                             <div className={`${styles.mt16}`}>
                                                                 <Link href="" className={styles.prod_info}>
-                                                                    <span className={`${styles.prod_name} ${styles.book_sm_title}`}>문제풀이로 완성하는 알고리즘+자료구조</span>
+                                                                    <span
+                                                                        className={`${styles.prod_name} ${styles.book_sm_title}`}>문제풀이로 완성하는 알고리즘+자료구조</span>
                                                                 </Link>
                                                             </div>
                                                         </div>
@@ -824,13 +832,48 @@ export default function Detail() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    {/*!-->이 책의 총서*/}
-                                    <div></div>
                                     {/*!-- //이 책의 총서*/}
 
                                     {/*!-->작가정보*/}
-                                    <div></div>
+                                    <div className={styles.product_detail_together}>
+                                        <div className={`${styles.title_wrap} ${styles.title_size_md}`}>
+                                            <h2 className={styles.title_heading}>작가정보</h2>
+                                        </div>
+                                        <div className={`${styles.round_gray_box}`}>
+                                            <div className={`${styles.title_wrap}`} >
+                                                <h3 className={styles.title_heading}>
+                                                    <span className={styles.title_perfix}>저자(글)</span>
+                                                    <Link href="">
+                                                        <span className={`${styles.prod_desc_normal} ${styles.color}`}> 이응모</span>
+                                                    </Link>
+                                                </h3>
+                                            </div>
+                                            <div className={`${styles.writer_info_box} ${styles.prod_info_box}`}>
+                                                <div className={styles.overflow_wrap}>
+                                                    <div className={`${styles.auto_overflow}`}>
+                                                        <div className={`${styles.auto_overflow_inner}`}>
+                                                            <p className={`${styles.auto_info_text}`}>
+                                                                일본에서 컴퓨터공학을 전공한 후 일본의 자동차 연구소 공용 웹 프레임워크 개발 프로젝트를 시작으로 프로그래밍 세계에 발을 들여 놓았다. 이후 외국계 IT 기업에서 소프트웨어 컨설턴트로 재직하였고 현재 소프트웨어 개발사의 대표를 맡고 있다. 프런트엔드 튜토리얼 poiemaweb.com의 운영자이며 패스트캠퍼스에서 자바스크립트를 강의 중이다. 지은 책으로 《Angular Essentials》(루비페이퍼, 2018)가 있다.
+                                                                <br/>
+                                                                <br/>
+                                                                ㆍ 블로그: https://poiemaweb.com
+                                                                <br/>
+                                                                ㆍ 페이스북: https://www.facebook.com/poiemaweb
+                                                                <br/>
+                                                                ㆍ 유튜브: https://www.youtube.com/channel/UCmcB2RZ8OjfS1vqdaGDxzjw
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div className={`${styles.auto_overflow_footer}`}>
+                                                        <button className={`${styles.btn_more_body} ${styles.pl0}`}>
+                                                            <span className={styles.text}>펼치기</span>
+                                                            <span className={`${styles.ico_arw} ${styles.ico_size} ${styles.ml3}`}></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     {/*!-- //작가정보*/}
 
                                     {/*!-->목차*/}

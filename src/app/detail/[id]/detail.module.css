@@ -84,7 +84,7 @@
     display: inline
 }
 
-.book_sm_title{
+.book_sm_title {
     font-size: 13px !important;
     line-height: 19px !important;
     letter-spacing: -0.01em;
@@ -186,6 +186,11 @@
     letter-spacing: -0.01em;
 }
 
+.color {
+    color: #000;
+    font-weight: 700;
+}
+
 .type_area {
     display: block;
     position: relative;
@@ -223,6 +228,11 @@
     flex: 1;
     min-width: 114px;
     vertical-align: top;
+}
+
+.overflow_wrap {
+    flex: 1;
+    align-items: center;
 }
 
 .book_select {
@@ -319,6 +329,22 @@
 .auto_overflow {
     max-height: 66px;
     overflow: hidden;
+}
+
+.auto_overflow_inner {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 66px;
+    line-height: 22px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    word-break: break-all;
+}
+
+.auto_overflow_footer {
+    display: block;
+    margin-top: 12px;
 }
 
 .author {
@@ -810,6 +836,10 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin-left: 3px;
 }
 
+.ml3 {
+    margin-left: 3px !important;
+}
+
 .ico_preview {
     width: 12px;
     background: url("/images/common/ico_preview@2x.png") left center no-repeat;
@@ -1081,6 +1111,12 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin-left: 0;
 }
 
+.ico_size {
+    width: 20px !important;
+    height: 20px !important;
+    background-size: 20px 20px !important;
+}
+
 .guide_row_mt {
     margin-top: 9px;
 }
@@ -1099,6 +1135,17 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 .delivery_type {
     font-weight: 500;
 }
+
+.title_perfix {
+    display: inline-block;
+    color: #595959;
+    margin-right: 3px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+}
+
 
 .type_sm {
     margin: 1px 0 0 3px;
@@ -1197,6 +1244,24 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 
 .login_text {
     text-decoration: underline;
+}
+
+.btn_more_body {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    color: #767676;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+.auto_info_text {
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    color: #595959;
 }
 
 .info_text {
@@ -1622,6 +1687,15 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin-top: 70px;
 }
 
+.writer_info_box {
+    flex-direction: row;
+    align-items: flex-start;
+    -webkit-box-align: start;
+    justify-content: flex-start;
+    -webkit-box-pack: start;
+    display: -webkit-flex;
+}
+
 .title_size_md {
     padding-bottom: 20px;
 }
@@ -1642,16 +1716,16 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     padding-bottom: 20px;
 }
 
-.mz{
+.mz {
     transition-timing-function: ease-out;
     margin: 0 auto;
-    font-size:0;
+    font-size: 0;
 }
 
-.wh22{
-    width:22px;
-    height:22px;
-    min-height:auto !important;
+.wh22 {
+    width: 22px;
+    height: 22px;
+    min-height: auto !important;
     margin-bottom: 10px !important;
 }
 
@@ -1679,7 +1753,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     overflow: hidden !important;
 }
 
-.h250{
+.h250 {
     height: 250px;
 }
 
@@ -1756,7 +1830,6 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 }
 
 
-
 .prod_area .prod_thumb_box {
     width: 100%;
 }
@@ -1783,7 +1856,6 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 .prod_info_box {
     margin-top: 16px;
 }
-
 
 
 .prod_area .prod_info_box {
@@ -1818,7 +1890,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     -webkit-box-orient: vertical;
 }
 
-.sm_title{
+.sm_title {
     display: -webkit-box;
     overflow: hidden;
     max-height: 46px;
@@ -1933,8 +2005,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 }
 
 
-
-.mt16{
+.mt16 {
     margin-top: 16px;
 }
 
@@ -2013,7 +2084,6 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     font-weight: 400;
     color: #767676;
 }
-
 
 
 .btn_more_plus:before {
@@ -2222,7 +2292,6 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     transition: color 0.2s ease-out;
     -webkit-user-select: none;
 }
-
 
 
 .form_chk .input + label:before {
