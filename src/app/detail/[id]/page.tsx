@@ -746,13 +746,83 @@ export default function Detail() {
                                                 이 책의 총서
                                                 <span>(33)</span>
                                             </p>
-                                            <button type="button" className={`${styles.btn_wish_alarm} ${styles.wish_base} ${styles.wish_ml}`}>
+                                            <button type="button"
+                                                    className={`${styles.btn_wish_alarm} ${styles.wish_base} ${styles.wish_ml}`}>
                                                 <span className={`${styles.ico_wish} ${styles.ico_wish_base}`}></span>
                                                 <span className={styles.hidden}>찜</span>
                                             </button>
-                                            <div></div>
+                                            <div className={styles.right_area}>
+                                                <span className={styles.form_chk}>
+                                                    <input type="checkbox" className={styles.input}/>
+                                                    <label htmlFor="">
+                                                        전체선택
+                                                    </label>
+                                                </span>
+                                                <div className={`${styles.switch_list} ${styles.btn_all_text}`}>
+                                                    <button type="button"
+                                                            className={`${styles.btn_switch} ${styles.btn_switch_base} ${styles.btn_sm} ${styles.active}`}>
+                                                        <span className={`${styles.hidden} `}>이미지형 으로 보기</span>
+                                                    </button>
+                                                    <button type="button"
+                                                            className={`${styles.btn_switch} ${styles.btn_switch_base} ${styles.btn_sm} ${styles.ml_0} ${styles.ico_text}`}>
+                                                        <span className={styles.hidden}>텍스트로</span>
+                                                    </button>
+                                                </div>
+                                                <button
+                                                    className={`${styles.btn_switch_base} ${styles.ml6_bl} ${styles.btn_sm}`}>
+                                                    <span className={styles.ico_all_view}></span>
+                                                    <span className={styles.text}>전체목록</span>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div className={`${styles.round_gray_box}`}></div>
+                                        <div className={`${styles.round_gray_box}`}>
+                                            <div
+                                                className={`${styles.prod_swiper_wrap} ${styles.swiper_container} ${styles.title_sm} ${styles.h250}`}>
+                                                <ul className={`${styles.swiper_wrapper} ${styles.mz}`}
+                                                    style={{transform: "translate3d(0,0,0)"}}>
+                                                    <li className={`${styles.prod_item} ${styles.swiper_slide} ${styles.purchase_book} ${styles.slide}`}>
+                                                        <span
+                                                            className={`${styles.form_chk} ${styles.wh22}`}>
+                                                            <input type="text" className={styles.input}/>
+                                                            <label htmlFor="" className={styles.label_a}>
+                                                                <span className={styles.hidden}>선택</span>
+                                                                <span className={styles.hidden}>선택</span>
+                                                            </label>
+                                                        </span>
+                                                        <div className={`${styles.prod_area} `}>
+                                                            <div className={`${styles.prod_thumb_box}`}>
+                                                                <Link href="https://product.kyobobook.co.kr/detail/S000214420933" className={styles.prod_link}>
+                                                                    <span className={styles.img_box}>
+                                                                        <img src="/images/book/9791158394592.jpg" alt="" className={styles.img}/>
+                                                                    </span>
+                                                                </Link>
+                                                            </div>
+                                                            <div className={`${styles.mt16}`}>
+                                                                <Link href="" className={styles.prod_info}>
+                                                                    <span className={`${styles.prod_name} ${styles.book_sm_title}`}>문제풀이로 완성하는 알고리즘+자료구조</span>
+                                                                </Link>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div className={`${styles.swiper_scrollbar} ${styles.scrollbar}`}>
+                                                    <div
+                                                        className={`${styles.scrollbar_drag} ${styles.scrollbar_inner}`}></div>
+                                                </div>
+                                            </div>
+                                            <div></div>
+                                            <div className={styles.btn_area}>
+                                                <button type="button"
+                                                        className={`${styles.ico_wish_base} ${styles.letter_wish}`}>
+                                                    <span className={styles.letter_ico_wish}></span>
+                                                    <span className={styles.hidden}>찜</span>
+                                                </button>
+                                                <button type="button"
+                                                        className={`${styles.btn_ip} ${styles.btn_light_gray}`}>
+                                                    <span className={styles.text}>장바구니</span>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     {/*!-->이 책의 총서*/}

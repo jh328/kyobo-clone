@@ -84,6 +84,14 @@
     display: inline
 }
 
+.book_sm_title{
+    font-size: 13px !important;
+    line-height: 19px !important;
+    letter-spacing: -0.01em;
+    font-weight: 400 !important;
+    text-align: center;
+}
+
 .prod_title {
     display: inline;
     color: #000;
@@ -823,6 +831,26 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin-right: 3px;
 }
 
+.ml6_bl {
+    margin-left: 6px;
+    border: 1px solid #ccc !important;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.ico_all_view {
+    width: 12px;
+    background-image: url("/images/common/ico_all_view@2x.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    height: 19px;
+    margin-right: 3px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
 .pord_brea {
     word-break: break-all;
 }
@@ -1272,6 +1300,9 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     line-height: 19px;
     letter-spacing: -0.01em;
     justify-content: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
 }
 
 .ico_locate {
@@ -1611,6 +1642,30 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     padding-bottom: 20px;
 }
 
+.mz{
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+    font-size:0;
+}
+
+.wh22{
+    width:22px;
+    height:22px;
+    min-height:auto !important;
+    margin-bottom: 10px !important;
+}
+
+.mb22 {
+    margin-bottom: 22px !important;
+    display: block;
+}
+
+.btn_area {
+    margin: 30px 0 -10px;
+    text-align: center;
+    font-size: 0;
+}
+
 .title_size_def .title_heading {
     font-size: 16px;
     line-height: 24px;
@@ -1622,6 +1677,10 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     padding-left: 30px;
     padding-right: 30px;
     overflow: hidden !important;
+}
+
+.h250{
+    height: 250px;
 }
 
 .horizontal {
@@ -1696,6 +1755,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     overflow: hidden;
 }
 
+
+
 .prod_area .prod_thumb_box {
     width: 100%;
 }
@@ -1723,6 +1784,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin-top: 16px;
 }
 
+
+
 .prod_area .prod_info_box {
     text-align: left;
 }
@@ -1742,6 +1805,20 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 }
 
 .prod_name {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 46px;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    word-break: break-all;
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    -webkit-box-orient: vertical;
+}
+
+.sm_title{
     display: -webkit-box;
     overflow: hidden;
     max-height: 46px;
@@ -1855,6 +1932,12 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     outline: none;
 }
 
+
+
+.mt16{
+    margin-top: 16px;
+}
+
 .mt12 {
     margin-top: 12px;
 }
@@ -1930,6 +2013,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     font-weight: 400;
     color: #767676;
 }
+
+
 
 .btn_more_plus:before {
     content: "";
@@ -2044,22 +2129,214 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     box-sizing: border-box;
 }
 
-.wish_ml{
+.wish_ml {
     margin-left: 6px;
-    transform:translateY(-1px);
+    transform: translateY(-1px);
 }
 
-.ico_wish{
-    width:22px;
-    height:22px;
-    background-image:url("/images/common/ico_wish_alarm@2x.png");
+.ico_wish {
+    width: 22px;
+    height: 22px;
+    background-image: url("/images/common/ico_wish_alarm@2x.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 22px 22px;
 }
 
-.ico_wish_base{
-    display:inline-block;
-    vertical-align: top;
-    position:relative;
+.letter_wish {
+    width: 44px;
+    height: 44px;
+    color: #fff;
+    letter-spacing: -0.01em;
+    line-height: 42px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
+
+.ico_wish_base {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+.form_chk {
+    display: inline-block;
+    position: relative;
+    min-height: 22px;
+    vertical-align: top;
+}
+
+.ml_0 {
+    margin-left: 0;
+}
+
+.active:after {
+    background-image: url("/images/common/ico_view_img_active@2x.png");
+    background-size: 14px 14px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.ico_text:after {
+    position: relative;
+    display: block;
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: url("/images/common/ico_view_txt@2x.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    margin: 0 auto;
+}
+
+.form_chk .input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.form_chk .input + label {
+    display: inline-block;
+    position: relative;
+    padding: 2px 0 0 27px;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    line-height: 20px;
+    color: #000;
+    cursor: pointer;
+    vertical-align: top;
+    transition: color 0.2s ease-out;
+    -webkit-user-select: none;
+}
+
+
+
+.form_chk .input + label:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.form_chk .input + label:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-position: center 8px;
+    background-repeat: no-repeat;
+    background-size: 10px 7px;
+    background-image: url("/images/common/ico_checkbox_active@2x.png");
+}
+
+.btn_all_text {
+    margin-left: 20px;
+}
+
+.switch_list {
+    display: inline-block;
+    width: 75px;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.btn_switch {
+    display: inline-block;
+    width: 50%;
+    height: 38px;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.right_area .btn_switch:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+.right_area .btn_switch:last-child {
+    padding: 0 0 0 0;
+}
+
+
+.btn_switch_base {
+    color: #000;
+    background: #fff;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out
+}
+
+
+.letter_ico_wish {
+    width: 18px;
+    height: 18px;
+    background-image: url("/images/common/ico_wish_alarm@2x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px 18px;
+    margin-top: 12px;
+    transition: background 0.2s ease-out;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.btn_ip {
+    display: -webkit-inline-flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    min-width: 86px;
+    height: 44px;
+    padding: 0 19px 1px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+}
+
+.btn_light_gray {
+    margin-left: 5px;
+    color: #fff;
+    background: #767676;
+    border: 1px solid #767676;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+
+
