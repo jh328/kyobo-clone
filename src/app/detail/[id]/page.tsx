@@ -452,8 +452,10 @@ export default function Detail() {
                                             <div className={`${styles.title_wrap} ${styles.title_size_def}`}>
                                                 <p className={styles.title_heading}>도서</p>
                                             </div>
-                                            <div className={`${styles.swiper_container} ${styles.horizontal} ${styles.prod_swiper_wrap} `}>
-                                                <ul className={`${styles.prod_list} ${styles.swiper_wrapper_product}`} style={{transition: "translate3d(0,0,0)", transitionDuration: "0"}}>
+                                            <div
+                                                className={`${styles.swiper_container} ${styles.horizontal} ${styles.prod_swiper_wrap} `}>
+                                                <ul className={`${styles.prod_list} ${styles.swiper_wrapper_product}`}
+                                                    style={{transition: "translate3d(0,0,0)", transitionDuration: "0"}}>
                                                     <li className={`${styles.swiper_slide} ${styles.purchase_book} ${styles.prod_item} ${styles.slide}`}>
                                                         <div className={styles.prod_area}>
                                                             <div className={styles.prod_thumb_box}>
@@ -486,7 +488,8 @@ export default function Detail() {
                                                     </li>
                                                 </ul>
                                                 <div className={`${styles.swiper_scrollbar} ${styles.scrollbar}`}>
-                                                    <div className={`${styles.scrollbar_drag} ${styles.scrollbar_inner}`}></div>
+                                                    <div
+                                                        className={`${styles.scrollbar_drag} ${styles.scrollbar_inner}`}></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -494,14 +497,17 @@ export default function Detail() {
                                             <div className={`${styles.title_wrap} ${styles.title_size_def}`}>
                                                 <p className={styles.title_heading}>라이프</p>
                                             </div>
-                                            <div className={`${styles.prod_swiper_wrap} ${styles.horizontal} ${styles.swiper_container}`}>
+                                            <div
+                                                className={`${styles.prod_swiper_wrap} ${styles.horizontal} ${styles.swiper_container}`}>
                                                 <ul className={`${styles.prod_list} ${styles.swiper_wrapper_product} ${styles.ul_slide}`}>
                                                     <li className={`${styles.swiper_slide} ${styles.purchase_book} ${styles.slide}`}>
                                                         <div className={styles.prod_area}>
                                                             <div className={styles.prod_thumb_box}>
                                                                 <Link href="" className={styles.prod_link}>
-                                                                        <span className={`${styles.img_box} ${styles.life_span}`}>
-                                                                            <img src="/images/life/hot1721714687427.jpg" alt="" className={styles.life_img}/>
+                                                                        <span
+                                                                            className={`${styles.img_box} ${styles.life_span}`}>
+                                                                            <img src="/images/life/hot1721714687427.jpg"
+                                                                                 alt="" className={styles.life_img}/>
                                                                         </span>
                                                                 </Link>
                                                             </div>
@@ -532,8 +538,140 @@ export default function Detail() {
                                         </div>
                                     </div>
                                     {/*!-- //함께 구매한 상품 끝*/}
+                                    {/* !--키워드 픽 -->*/}
+                                    <div className={styles.product_detail_together}>
+                                        <div className={`${styles.title_wrap} ${styles.title_size_md}`}>
+                                            <h4 className={styles.title_heading}>키워드 Pick</h4>
+                                            <div className={`${styles.tooltip_wrap} ${styles.tool_ml}`}>
+                                                <button className={`${styles.btn_tooltip}`}>
+                                                    <span className={styles.ico_info}></span>
+                                                    <span className={styles.hidden}>하 언제 다하지</span>
+                                                </button>
+                                                <div>{/*툴틸 열면 나오는 속성*/}</div>
+                                            </div>
+                                        </div>
+                                        <div className={`${styles.tab_wrap}`}>
+                                            <div
+                                                className={`${styles.tab_list_wrap} ${styles.mb12} ${styles.posi} ${styles.pick_tt}`}>
+                                                <ul className={`${styles.tabs} ${styles.ui_helper_reset} ${styles.pick_ui}`}>
+                                                    {/*li에서 선택이 된 태그는 회색으로 렌더링해줘야함. selected_li_tage*/}
+                                                    <li className={`${styles.keyword_tab_item} ${styles.selected_li_tage} ${styles.keyword_li} ${styles.ui_tabs}`}>
+                                                        <Link href="" className={`${styles.tab_link} ${styles.p15}`}>
+                                                            <span
+                                                                className={`${styles.tab_text} ${styles.pick_text}`}>메서드</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li className={`${styles.keyword_tab_item} ${styles.selected_li_tage} ${styles.keyword_li} ${styles.ui_tabs}`}>
+                                                        <Link href="" className={`${styles.tab_link} ${styles.p15}`}>
+                                                            <span
+                                                                className={`${styles.tab_text} ${styles.pick_text}`}>표현식</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li className={`${styles.keyword_tab_item} ${styles.selected_li_tage} ${styles.keyword_li} ${styles.ui_tabs}`}>
+                                                        <Link href="" className={`${styles.tab_link} ${styles.p15}`}>
+                                                            <span
+                                                                className={`${styles.tab_text} ${styles.pick_text}`}>프로토타입</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li className={`${styles.keyword_tab_item} ${styles.selected_li_tage} ${styles.keyword_li} ${styles.ui_tabs}`}>
+                                                        <Link href="" className={`${styles.tab_link} ${styles.p15}`}>
+                                                            <span
+                                                                className={`${styles.tab_text} ${styles.pick_text}`}>스턴스</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li className={`${styles.keyword_tab_item} ${styles.selected_li_tage} ${styles.keyword_li} ${styles.ui_tabs}`}>
+                                                        <Link href="" className={`${styles.tab_link} ${styles.p15}`}>
+                                                            <span
+                                                                className={`${styles.tab_text} ${styles.pick_text}`}>파싱</span>
+                                                        </Link>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className={`${styles.tab_content} ${styles.mt12}`}>
+                                                <ul className={`${styles.keyword_pick_list} ${styles.pl0} `}>
+                                                    <li className={styles.prod_item}>
+                                                        <div className={styles.area}>
+                                                            <div className={styles.prod_thumb_box}>
+                                                                <Link href="" className={styles.prod_link}>
+                                                                    <span className={styles.img_box}>
+                                                                        <img src="/images/book/javaScriptDeepDive.jpg"
+                                                                             alt="" className={styles.img}/>
+                                                                    </span>
+                                                                </Link>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li className={styles.prod_item}>
+                                                        <div className={styles.area}>
+                                                            <div className={styles.prod_thumb_box}>
+                                                                <Link href="" className={styles.prod_link}>
+                                                                    <span className={styles.img_box}>
+                                                                        <img src="/images/book/javaScriptDeepDive.jpg"
+                                                                             alt="" className={styles.img}/>
+                                                                    </span>
+                                                                </Link>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li className={styles.prod_item}>
+                                                        <div className={styles.area}>
+                                                            <div className={styles.prod_thumb_box}>
+                                                                <Link href="" className={styles.prod_link}>
+                                                                    <span className={styles.img_box}>
+                                                                        <img src="/images/book/javaScriptDeepDive.jpg"
+                                                                             alt="" className={styles.img}/>
+                                                                    </span>
+                                                                </Link>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li className={styles.prod_item}>
+                                                        <div className={styles.area}>
+                                                            <div className={styles.prod_thumb_box}>
+                                                                <Link href="" className={styles.prod_link}>
+                                                                    <span className={styles.img_box}>
+                                                                        <img src="/images/book/javaScriptDeepDive.jpg"
+                                                                             alt="" className={styles.img}/>
+                                                                    </span>
+                                                                </Link>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li className={styles.prod_item}>
+                                                        <div className={styles.area}>
+                                                            <div className={styles.prod_thumb_box}>
+                                                                <Link href="" className={styles.prod_link}>
+                                                                    <span className={styles.img_box}>
+                                                                        <img src="/images/book/javaScriptDeepDive.jpg"
+                                                                             alt="" className={styles.img}/>
+                                                                    </span>
+                                                                </Link>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li className={styles.prod_item}>
+                                                        <div className={styles.area}>
+                                                            <div className={styles.prod_thumb_box}>
+                                                                <Link href="" className={styles.prod_link}>
+                                                                    <span className={styles.img_box}>
+                                                                        <img src="/images/book/javaScriptDeepDive.jpg"
+                                                                             alt="" className={styles.img}/>
+                                                                    </span>
+                                                                </Link>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li className={styles.li_more}>
+                                                        <button type="button" className={styles.btn_more_plus}>
+                                                            <span className={styles.text}>더보기</span>
+                                                        </button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* !-- //키워드 픽 -->*/}
 
-                                    <div>{/*키워드 픽*/}</div>
                                     <div>{/*책 상세 이미지*/}</div>
                                     <div>{/*책 소개*/}</div>
                                     <div></div>
