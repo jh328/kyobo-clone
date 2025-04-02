@@ -406,12 +406,16 @@ export default function Detail() {
                                                         <Link href="" className={styles.event_link}>
                                                             <div className={styles.event_thumb_box}>
                                                                 <span className={styles.img_box}>
-                                                                    <img src="/images/event/1795130cbbf34e959a8be67d207e6a52.jpg" alt=""/>
+                                                                    <img
+                                                                        src="/images/event/1795130cbbf34e959a8be67d207e6a52.jpg"
+                                                                        alt=""/>
                                                                 </span>
                                                             </div>
                                                             <div className={styles.event_info_box}>
                                                                 <div className={styles.event_name}>OttOn 어떤 2호: 이름</div>
-                                                                <div className={styles.event_period}>2025/02/19 ~ 2025/03/31</div>
+                                                                <div className={styles.event_period}>2025/02/19 ~
+                                                                    2025/03/31
+                                                                </div>
                                                             </div>
                                                         </Link>
                                                     </div>
@@ -422,7 +426,9 @@ export default function Detail() {
                                                             <div></div>
                                                             <div className={styles.event_info_box}>
                                                                 <div className={styles.event_name}>기술스택 별 개발자 추천도서</div>
-                                                                <div className={styles.event_period}>2021.12.24 ~ 2022.12.31</div>
+                                                                <div className={styles.event_period}>2021.12.24 ~
+                                                                    2022.12.31
+                                                                </div>
                                                             </div>
                                                         </Link>
                                                     </div>
@@ -431,6 +437,110 @@ export default function Detail() {
                                             <div></div>
                                         </div>
                                     </div>
+                                    <div></div>
+                                </section>
+                                <section className={styles.tap_content}>
+                                    {/*div 11개 */}
+                                    <div></div>
+
+                                    {/*!--함께 구매한 상품 -->*/}
+                                    <div className={styles.product_detail_together}>
+                                        <div className={`${styles.title_wrap} ${styles.title_size_md}`}>
+                                            <h4 className={styles.title_heading}>함께 구매한 상품</h4>
+                                        </div>
+                                        <div className={styles.round_gray_box}>
+                                            <div className={`${styles.title_wrap} ${styles.title_size_def}`}>
+                                                <p className={styles.title_heading}>도서</p>
+                                            </div>
+                                            <div className={`${styles.swiper_container} ${styles.horizontal} ${styles.prod_swiper_wrap} `}>
+                                                <ul className={`${styles.prod_list} ${styles.swiper_wrapper_product}`} style={{transition: "translate3d(0,0,0)", transitionDuration: "0"}}>
+                                                    <li className={`${styles.swiper_slide} ${styles.purchase_book} ${styles.prod_item} ${styles.slide}`}>
+                                                        <div className={styles.prod_area}>
+                                                            <div className={styles.prod_thumb_box}>
+                                                                <Link href="" className={styles.prod_link}>
+                                                                    <span className={styles.img_box}>
+                                                                        <img src="/images/book/javaScriptDeepDive.jpg"
+                                                                             alt="" className={styles.img}/>
+                                                                    </span>
+                                                                </Link>
+                                                            </div>
+                                                            <div className={styles.prod_info_box}>
+                                                                <Link href=""
+                                                                      className={`${styles.no_width} ${styles.prod_info}`}>
+                                                                    <span
+                                                                        className={styles.prod_name}>{book.title}</span>
+                                                                </Link>
+                                                                <span
+                                                                    className={styles.prod_author}>{book.author}</span>
+                                                                <div
+                                                                    className={`${styles.prod_price} ${styles.width_atuo_price}`}>
+                                                                    <span className={`${styles.together_book}`}>
+                                                                        <span
+                                                                            className={styles.val}>{formatPrice(discountedPrice)}</span>
+                                                                        <span
+                                                                            className={`${styles.no_color} ${styles.together_unit}`}>원</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div className={`${styles.swiper_scrollbar} ${styles.scrollbar}`}>
+                                                    <div className={`${styles.scrollbar_drag} ${styles.scrollbar_inner}`}></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className={styles.round_gray_box}>
+                                            <div className={`${styles.title_wrap} ${styles.title_size_def}`}>
+                                                <p className={styles.title_heading}>라이프</p>
+                                            </div>
+                                            <div className={`${styles.prod_swiper_wrap} ${styles.horizontal} ${styles.swiper_container}`}>
+                                                <ul className={`${styles.prod_list} ${styles.swiper_wrapper_product} ${styles.ul_slide}`}>
+                                                    <li className={`${styles.swiper_slide} ${styles.purchase_book} ${styles.slide}`}>
+                                                        <div className={styles.prod_area}>
+                                                            <div className={styles.prod_thumb_box}>
+                                                                <Link href="" className={styles.prod_link}>
+                                                                        <span className={`${styles.img_box} ${styles.life_span}`}>
+                                                                            <img src="/images/life/hot1721714687427.jpg" alt="" className={styles.life_img}/>
+                                                                        </span>
+                                                                </Link>
+                                                            </div>
+                                                            <div className={styles.prod_info_box}>
+                                                                <Link href=""
+                                                                      className={`${styles.no_width} ${styles.prod_info}`}>
+                                                                    <span
+                                                                        className={styles.prod_name}>[리히텐] 나눔3칸 내열유리 밀폐용기 950ml x 2개</span>
+                                                                </Link>
+                                                                <div
+                                                                    className={`${styles.prod_price} ${styles.width_atuo_price}`}>
+                                                                    <span className={`${styles.together_book}`}>
+                                                                        <span
+                                                                            className={styles.val}>{formatPrice(discountedPrice)}</span>
+                                                                        <span
+                                                                            className={`${styles.no_color} ${styles.together_unit}`}>원</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div className={`${styles.swiper_scrollbar} ${styles.scrollbar}`}>
+                                                    <div
+                                                        className={`${styles.scrollbar_drag} ${styles.scrollbar_inner}`}></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/*!-- //함께 구매한 상품 끝*/}
+
+                                    <div>{/*키워드 픽*/}</div>
+                                    <div>{/*책 상세 이미지*/}</div>
+                                    <div>{/*책 소개*/}</div>
+                                    <div></div>
+                                    <div>{/*이 책의 총서*/}</div>
+                                    <div>{/*작가정보*/}</div>
+                                    <div>{/*목차*/}</div>
+                                    <div>{/*기본정보*/}</div>
                                     <div></div>
                                 </section>
                             </div>

@@ -658,6 +658,11 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     overflow: hidden;
 }
 
+.life_span {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
 .books_img {
     position: static;
     transform: none;
@@ -1391,6 +1396,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-box-pack: start;
 }
 
 .title_sm {
@@ -1511,4 +1518,244 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     font-size: 13px;
     line-height: 19px;
     letter-spacing: -0.01em;
+}
+
+.product_detail_together {
+    margin-top: 70px;
+}
+
+.title_size_md {
+    padding-bottom: 20px;
+}
+
+.round_gray_box {
+    display: block;
+    padding: 36px 30px 40px;
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+}
+
+.round_gray_box + .round_gray_box {
+    margin-top: 20px;
+}
+
+.title_size_def {
+    padding-bottom: 20px;
+}
+
+.title_size_def .title_heading {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+}
+
+.prod_swiper_wrap {
+    margin: 0 -30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow: hidden !important;
+}
+
+.horizontal {
+    padding-bottom: 22px;
+}
+
+.prod_list {
+    font-size: 0;
+    padding-left: 0;
+}
+
+.swiper_wrapper_product {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    box-sizing: content-box;
+}
+
+.swiper_slide {
+    margin: 0 20px 0 0;
+}
+
+.purchase_book {
+    width: auto;
+    height: auto;
+}
+
+.prod_item {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.slide {
+    flex-shrink: 0;
+    position: relative;
+    transition-property: transform, -webkit-transform;
+}
+
+.together_book {
+    margin-left: 0;
+    display: inline-flex;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.together_book .val {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+}
+
+.together_unit {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    vertical-align: top;
+}
+
+.no_color {
+    color: #000;
+}
+
+.prod_area {
+    width: 118px;
+}
+
+.prod_thumb_box {
+    position: relative;
+    overflow: hidden;
+}
+
+.prod_area .prod_thumb_box {
+    width: 100%;
+}
+
+.prod_area .prod_thumb_box .prod_link {
+    display: block;
+    height: 100%;
+}
+
+.prod_thumb_box .prod_link .img_box {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+}
+
+.prod_thumb_box .prod_link .img_box .img {
+    width: 116px;
+    height: 145px
+}
+
+
+.prod_info_box {
+    margin-top: 16px;
+}
+
+.prod_area .prod_info_box {
+    text-align: left;
+}
+
+.prod_area .prod_info_box .prod_info {
+    display: block;
+    height: 100%;
+    font-size: 0;
+}
+
+.no_width {
+    width: auto;
+}
+
+.prod_name {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 46px;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    word-break: break-all;
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    -webkit-box-orient: vertical;
+}
+
+.swiper_scrollbar {
+    position: absolute;
+    bottom: 0;
+    z-index: 50;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.scrollbar {
+    left: 30px;
+    width: calc(100% - 60px);
+}
+
+.scrollbar_drag {
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+    left: 0;
+    top: 0;
+}
+
+.scrollbar_inner {
+    transform: translate3d(0, 0, 0);
+    width: 288px;
+    background: #000;
+}
+
+.prod_author {
+    margin-top: 5px;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    display: -webkit-flex;
+    overflow: hidden;
+    max-height: 38px;
+    line-height: 19px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    word-break: break-all;
+}
+
+.prod_area .prod_info_box .prod_price {
+    display: block;
+    margin-top: 12px;
+    font-size: 0;
+}
+
+.prod_area .prod_info_box .prod_price .price:first-child {
+    margin-left: 0;
+}
+
+
+.prod_price .prica {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.width_atuo_price {
+    width: 55px;
+    height: 22px;
+}
+
+.ul_slide {
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+    transform: translate3d(0, 0, 0);
+}
+
+.life_img {
+    width: 116px;
+    height: 116px;
 }
