@@ -1727,6 +1727,10 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     text-align: left;
 }
 
+.book_img_detail {
+    text-align: center;
+}
+
 .prod_area .prod_info_box .prod_info {
     display: block;
     height: 100%;
@@ -1951,7 +1955,111 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     line-height: 22px;
     letter-spacing: -0.01em;
     color: #767676;
-    display:inline-block;
-    position:relative;
+    display: inline-block;
+    position: relative;
     vertical-align: top;
+}
+
+.inner {
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 20px;
+    vertical-align: top;
+}
+
+.text_letter {
+    letter-spacing: -0.01em;
+}
+
+.intro_book {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 30px;
+}
+
+.intro_bottom {
+    padding-top: 30px;
+}
+
+.book_info_tet {
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+}
+
+.text_bold {
+    font-weight: 700;
+}
+
+.mt_zero {
+    margin-top: 0;
+}
+
+.mt_zero .title_heading {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    display: inline-block;
+    position: relative;
+    overflow-wrap: anywhere;
+    font-weight: 500;
+}
+
+.category_link {
+    color: #595959;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+}
+
+.arw_category {
+    display: inline-block;
+    width: 6px;
+    height: 22px;
+    font-size: 0;
+    line-height: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 6px 9px;
+    background-image: url("/images/common/arw_footer_link@2x.png");
+    margin: 0 6px;
+    vertical-align: top;
+}
+
+.title_size_md_btn {
+    min-height: 38px;
+    padding-bottom: 16px;
+}
+
+.btn_wish_alarm {
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    transition: background -.2s ease-out;
+}
+
+.wish_base {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.wish_ml{
+    margin-left: 6px;
+    transform:translateY(-1px);
+}
+
+.ico_wish{
+    width:22px;
+    height:22px;
+    background-image:url("/images/common/ico_wish_alarm@2x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 22px;
+}
+
+.ico_wish_base{
+    display:inline-block;
+    vertical-align: top;
+    position:relative;
 }

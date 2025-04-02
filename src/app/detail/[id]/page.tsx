@@ -670,15 +670,107 @@ export default function Detail() {
                                             </div>
                                         </div>
                                     </div>
-                                    {/* !-- //키워드 픽 -->*/}
+                                    {/* !-- //키워드 픽 */}
 
-                                    <div>{/*책 상세 이미지*/}</div>
-                                    <div>{/*책 소개*/}</div>
+                                    {/*!-- 책 상세 이미지 -->*/}
+                                    <div className={`${styles.product_detail_together} ${styles.book_img_detail}`}>
+                                        <div className={styles.inner}>
+                                            <img src="/images/detail/js-detail-img.jpg" alt=""/>
+                                        </div>
+                                    </div>
+                                    {/*!-- //책 상세 이미지 */}
+
+                                    {/*!-->책 소개*/}
+                                    <div className={`${styles.product_detail_together} ${styles.text_letter}`}>
+                                        <div className={styles.intro_book}>
+                                            <div className={`${styles.title_wrap} ${styles.title_sm}`}>
+                                                <h2 className={styles.title_heading}>책 소개</h2>
+                                            </div>
+                                            <div
+                                                className={`${styles.title_wrap} ${styles.title_sm} ${styles.mt_zero}`}>
+                                                <p className={styles.title_heading}>이 책이 속한 분야</p>
+                                            </div>
+                                            <ul className={`${styles.intro_category} ${styles.pl0}`}>
+                                                <li className={styles.mb12}>
+                                                    <Link href="" className={styles.category_link}>국내도서</Link>
+                                                    <span className={styles.arw_category}> &gt; </span>
+                                                    <Link href="" className={styles.category_link}>컴퓨터/IT</Link>
+                                                    <span className={styles.arw_category}> &gt; </span>
+                                                    <Link href="" className={styles.category_link}>웹프로그래밍</Link>
+                                                    <span className={styles.arw_category}> &gt; </span>
+                                                    <Link href="" className={styles.category_link}>JavaScript</Link>
+                                                </li>
+                                                <li className={styles.mb12}>
+                                                    <Link href="" className={styles.category_link}>국내도서</Link>
+                                                    <span className={styles.arw_category}> &gt; </span>
+                                                    <Link href="" className={styles.category_link}>컴퓨터/IT</Link>
+                                                    <span className={styles.arw_category}> &gt; </span>
+                                                    <Link href="" className={styles.category_link}>대학교재</Link>
+                                                </li>
+                                                <li className={styles.mb12}>
+                                                    <Link href="" className={styles.category_link}>국내도서</Link>
+                                                    <span className={styles.arw_category}> &gt; </span>
+                                                    <Link href="" className={styles.category_link}>대학교재</Link>
+                                                    <span className={styles.arw_category}> &gt; </span>
+                                                    <Link href="" className={styles.category_link}>컴퓨터</Link>
+                                                </li>
+                                            </ul>
+                                            <div></div>
+                                        </div>
+                                        <div className={styles.intro_bottom}>
+                                            <div className={`${styles.book_info_tet} ${styles.text_bold}`}>269개의 그림과 원리를
+                                                파헤치는 설명으로 &quot; 자바스크립트의 기본 개념과 동작 원리&quot;를 이해하자!
+                                            </div>
+                                            <div className={`${styles.prod_info_box} ${styles.book_info_tet}`}>
+                                                웹페이지의 단순한 보조 기능을 처리하기 위한 제한적인 용도로 태어난 자바스크립트는 과도하다고 느껴질 만큼 친절한 프로그래밍
+                                                언어입니다. 이러한 자바스크립트의 특징ㄹ은 편리한 경우도 있지만 이해하기 어렵게 만들기도 합니다.
+                                                <br/>
+                                                <br/>
+                                                하지만 자바스크립트는 더 이상 제한적인 용도의 프로그래밍 언어가 아닙니다. 오랜 변화를 거쳐 이제 자바스크립트는 프런트엔드와
+                                                백엔드 영역의 프로그래밍 언어로 사용할 수 있는 명실상부한 범용 애플리케이션 개발 언어로 성장했습니다. 따라서 자바스크립트를
+                                                학습하는 방식도 이에 걸맞게 변화해야 하며, 이 책은 자바스크립트의 기본 개념과 동작 원리를 깊이 있게 학습하고자 하는 독자를
+                                                위해 기획도었습니다.
+                                                <br/>
+                                                <br/>
+                                                (모던 자바스크립트 Deep Dive)에서는 자바스크립트를 둘러싼 기본 개념을 정확하고 구체적으로 설명하고, 자바스크립트 코드의
+                                                동작 원리를 집요하게 파헤칩니다. 따라서 여러분이 작성한 코드가 컴퓨터 내부에서 어떻게 동작할 것인지 예측하고, 명확히 설명할 수
+                                                있도록 돕습니다. 또한 최신 자바스크립트 명세를 반영해 안정적이고 효율적인 코드를 작성할 수 있는 기본기를 다지고, 실전에서
+                                                쓰이는 모던 자바스크립트 프레임워크나 도구를 완벽하게 이해하고 활용 수 있게 도와줍니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/*!-- //책 소개*/}
+                                    <div className={styles.product_detail_together}>
+                                        <div className={`${styles.title_wrap} ${styles.title_size_md_btn}`}>
+                                            <p className={`${styles.title_heading}`}>
+                                                이 책의 총서
+                                                <span>(33)</span>
+                                            </p>
+                                            <button type="button" className={`${styles.btn_wish_alarm} ${styles.wish_base} ${styles.wish_ml}`}>
+                                                <span className={`${styles.ico_wish} ${styles.ico_wish_base}`}></span>
+                                                <span className={styles.hidden}>찜</span>
+                                            </button>
+                                            <div></div>
+                                        </div>
+                                        <div className={`${styles.round_gray_box}`}></div>
+                                    </div>
+
+                                    {/*!-->이 책의 총서*/}
                                     <div></div>
-                                    <div>{/*이 책의 총서*/}</div>
-                                    <div>{/*작가정보*/}</div>
-                                    <div>{/*목차*/}</div>
-                                    <div>{/*기본정보*/}</div>
+                                    {/*!-- //이 책의 총서*/}
+
+                                    {/*!-->작가정보*/}
+                                    <div></div>
+                                    {/*!-- //작가정보*/}
+
+                                    {/*!-->목차*/}
+                                    <div></div>
+                                    {/*!--//목차*/}
+
+                                    {/*!-->기본정보*/}
+                                    <div></div>
+                                    {/*!-- //기본정보*/}
+
                                     <div></div>
                                 </section>
                             </div>
