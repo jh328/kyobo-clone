@@ -80,6 +80,10 @@
     display: block;
 }
 
+.overflow_hidden {
+    overflow: hidden
+}
+
 .book_title {
     display: inline
 }
@@ -330,6 +334,14 @@
     max-height: 66px;
     overflow: hidden;
 }
+
+.book_contents_item {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    color: #595959;
+}
+
 
 .auto_overflow_inner {
     display: -webkit-box;
@@ -830,6 +842,11 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     letter-spacing: -0.01em;
     font-weight: 500;
 }
+
+.mb0 {
+    margin-bottom: 0;
+}
+
 
 .mb {
     margin-bottom: 6px;
@@ -1696,9 +1713,18 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     display: -webkit-flex;
 }
 
+.auto_overflow_contents {
+    max-height: 180px;
+}
+
 .title_size_md {
     padding-bottom: 20px;
 }
+
+.h212 {
+    height: 212px;
+}
+
 
 .round_gray_box {
     display: block;
@@ -2023,13 +2049,17 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 }
 
 .pl0 {
-    padding-left: 0;
+    padding-left: 0 !important;
 }
 
 .keyword_pick_list .prod_item {
     display: inline-block;
     width: 118px;
     vertical-align: top;
+}
+
+.line_he {
+
 }
 
 .keyword_pick_list .prod_item .area .prod_thumb_box {
@@ -2180,10 +2210,53 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin: 0 6px;
     vertical-align: top;
 }
+.tbl_row {
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border:0;
+}
+
+.row{
+    padding: 12px 10px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: #000;
+    font-weight: 500;
+    vertical-align: top;
+}
+
+.btn_text_box{
+    padding: 12px 10px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: #767676;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.tbl_row_wrap {
+    display: block;
+    width: 100%;
+    padding: 18px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #eaeaea;
+    box-sizing: border-box;
+}
 
 .title_size_md_btn {
     min-height: 38px;
     padding-bottom: 16px;
+}
+
+.pb_t {
+    padding-bottom: 70px;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .btn_wish_alarm {

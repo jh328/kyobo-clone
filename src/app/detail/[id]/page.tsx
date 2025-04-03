@@ -840,11 +840,12 @@ export default function Detail() {
                                             <h2 className={styles.title_heading}>작가정보</h2>
                                         </div>
                                         <div className={`${styles.round_gray_box}`}>
-                                            <div className={`${styles.title_wrap}`} >
+                                            <div className={`${styles.title_wrap}`}>
                                                 <h3 className={styles.title_heading}>
                                                     <span className={styles.title_perfix}>저자(글)</span>
                                                     <Link href="">
-                                                        <span className={`${styles.prod_desc_normal} ${styles.color}`}> 이응모</span>
+                                                        <span
+                                                            className={`${styles.prod_desc_normal} ${styles.color}`}> 이응모</span>
                                                     </Link>
                                                 </h3>
                                             </div>
@@ -853,21 +854,27 @@ export default function Detail() {
                                                     <div className={`${styles.auto_overflow}`}>
                                                         <div className={`${styles.auto_overflow_inner}`}>
                                                             <p className={`${styles.auto_info_text}`}>
-                                                                일본에서 컴퓨터공학을 전공한 후 일본의 자동차 연구소 공용 웹 프레임워크 개발 프로젝트를 시작으로 프로그래밍 세계에 발을 들여 놓았다. 이후 외국계 IT 기업에서 소프트웨어 컨설턴트로 재직하였고 현재 소프트웨어 개발사의 대표를 맡고 있다. 프런트엔드 튜토리얼 poiemaweb.com의 운영자이며 패스트캠퍼스에서 자바스크립트를 강의 중이다. 지은 책으로 《Angular Essentials》(루비페이퍼, 2018)가 있다.
+                                                                일본에서 컴퓨터공학을 전공한 후 일본의 자동차 연구소 공용 웹 프레임워크 개발 프로젝트를 시작으로
+                                                                프로그래밍 세계에 발을 들여 놓았다. 이후 외국계 IT 기업에서 소프트웨어 컨설턴트로 재직하였고 현재
+                                                                소프트웨어 개발사의 대표를 맡고 있다. 프런트엔드 튜토리얼 poiemaweb.com의 운영자이며
+                                                                패스트캠퍼스에서 자바스크립트를 강의 중이다. 지은 책으로 《Angular
+                                                                Essentials》(루비페이퍼, 2018)가 있다.
                                                                 <br/>
                                                                 <br/>
                                                                 ㆍ 블로그: https://poiemaweb.com
                                                                 <br/>
                                                                 ㆍ 페이스북: https://www.facebook.com/poiemaweb
                                                                 <br/>
-                                                                ㆍ 유튜브: https://www.youtube.com/channel/UCmcB2RZ8OjfS1vqdaGDxzjw
+                                                                ㆍ 유튜브:
+                                                                https://www.youtube.com/channel/UCmcB2RZ8OjfS1vqdaGDxzjw
                                                             </p>
                                                         </div>
                                                     </div>
                                                     <div className={`${styles.auto_overflow_footer}`}>
                                                         <button className={`${styles.btn_more_body} ${styles.pl0}`}>
                                                             <span className={styles.text}>펼치기</span>
-                                                            <span className={`${styles.ico_arw} ${styles.ico_size} ${styles.ml3}`}></span>
+                                                            <span
+                                                                className={`${styles.ico_arw} ${styles.ico_size} ${styles.ml3}`}></span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -877,11 +884,91 @@ export default function Detail() {
                                     {/*!-- //작가정보*/}
 
                                     {/*!-->목차*/}
-                                    <div></div>
+                                    <div className={`${styles.pb_t} ${styles.product_detail_together}`}>
+                                        <div className={`${styles.title_wrap} ${styles.title_size_md}`}>
+                                            <h2 className={`${styles.title_heading}`}>목차</h2>
+                                        </div>
+                                        <div className={`${styles.h212}`}>
+                                            <div className={`${styles.auto_overflow_contents} ${styles.overflow_hidden}`}>
+                                                <div className={`${styles.auto_overflow_in}`}>
+                                                    <ul className={`${styles.book_contents_list} ${styles.pl0} ${styles.mt_zero}`}>
+                                                        <li className={`${styles.book_contents_item} ${styles.mb0}`}>
+                                                            &#9635; 01장 : 프로그래밍
+                                                            <br/>
+                                                            1.1 프로그래밍이란?
+                                                            <br/>
+                                                            1.2 프로그래밍 언어
+                                                            <br/>
+                                                            1.3 구문과 의미
+                                                            <br/>
+                                                            <br/>
+                                                            &#9635; 02장: 자바스크립트란?
+                                                            <br/>
+                                                            2.1 자바스크립트의 탄생
+                                                            <br/>
+                                                            2.2 자바스크립트의 표준화
+                                                            <br/>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className={`${styles.auto_overflow_footer}`}>
+                                                <button type="button" className={`${styles.btn_more_body} ${styles.pl0}`}>
+                                                    <span className={`${styles.text}`}>펼치기</span>
+                                                    <span className={`${styles.ico_arw} ${styles.ico_size} ${styles.ml3}`}></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                     {/*!--//목차*/}
 
                                     {/*!-->기본정보*/}
-                                    <div></div>
+                                    <div className={`${styles.product_detail_together}`}>
+                                        <div className={`${styles.title_wrap} ${styles.title_size_md_btn}`}>
+                                            <h2 className={`${styles.title_heading}`}>기본정보</h2>
+                                        </div>
+                                        <div className={`${styles.tbl_row_wrap}`}>
+                                            <table className={`${styles.tbl_row}`}>
+                                                <caption></caption>
+                                                <colgroup>
+                                                    <col style={{width:"20%"}}/>
+                                                    <col style={{width:"80%"}}/>
+                                                </colgroup>
+                                                <tbody>
+                                                <tr>
+                                                    <th className={`${styles.row}`}>ISBN</th>
+                                                    <td>9791158392239</td>
+                                                </tr>
+                                                <tr>
+                                                    <th className={`${styles.row}`}>발행(출시)일자</th>
+                                                    <td>2020년 09월 25일</td>
+                                                </tr>
+                                                <tr>
+                                                    <th className={`${styles.row}`}>쪽수</th>
+                                                    <td>956일</td>
+                                                </tr>
+                                                <tr>
+                                                    <th className={`${styles.row}`}>크기</th>
+                                                    <td>
+                                                        <div className={`${styles.btn_text_box} ${styles.pl0}`}>
+                                                            <span className={`${styles.text} `}>189 * 242 * 43 mm / 1763 g</span>
+                                                            <button></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th className={`${styles.row}`}>총권수</th>
+                                                    <td>1권</td>
+                                                </tr>
+                                                <tr>
+                                                    <th className={`${styles.row}`}>시리즈명</th>
+                                                    <td>위키북스 프로그래밍 & 프랙티스 시리즈</td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                     {/*!-- //기본정보*/}
 
                                     <div></div>
