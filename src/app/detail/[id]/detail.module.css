@@ -264,6 +264,17 @@
     margin-top: 30px;
 }
 
+.rating_footer{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.mt3{
+    margin-top: 3px !important;
+}
 .type_list {
     display: block;
     text-align: center;
@@ -659,6 +670,11 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     white-space: nowrap;
 }
 
+.z{
+    text-align:left;
+    font-size:0;
+}
+
 .wh {
     width: 88px !important;
     height: 18px !important;
@@ -707,6 +723,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     box-shadow: none;
     background: 0 0;
 }
+
+
 
 .star {
     margin: 0 2px;
@@ -811,6 +829,26 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 
 .no_before::before {
     display: none;
+}
+
+
+.comment_util_box {
+    display: -webkit-flex;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.util {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.no_display {
+    display: none !important;
 }
 
 .prod_thumb_swiper {
@@ -1175,6 +1213,12 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 }
 
 .badge-text {
+    display: inline-block !important;
+    position: relative !important;
+    vertical-align: top !important;
+}
+
+.footer_text {
     display: inline-block;
     position: relative;
     vertical-align: top;
@@ -1310,6 +1354,23 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin-left: 0;
 }
 
+.footer_ico_arw {
+    background-size: 20px 20px;
+    background-image: url("/images/common/arw_tooltip@2x.png");
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: top;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 4px;
+    color: #767676;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    text-align: left
+}
+
 .ico_size {
     width: 20px !important;
     height: 20px !important;
@@ -1386,6 +1447,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     text-align: center;
     vertical-align: top;
 }
+
 
 .deli_text {
     display: inline-block;
@@ -1766,6 +1828,46 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 
 .detail_contents_inner {
     width: calc(100% - 330px - 56px);
+}
+
+.comment_view_wrap {
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: start;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.comment_text_box {
+    display: block;
+    flex: 1;
+    width: 100%;
+}
+
+.comment_text {
+    color: #000;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 66px;
+    line-height: 22px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    white-space: normal;
+    word-break: break-all;
+}
+
+.comment_footer {
+    display: block;
+    position: relative;
+    margin-top: 12px;
+}
+
+
+.contents_inner {
+    max-height: 66px;
+    overflow: hidden
 }
 
 .detail_recommend {
@@ -2588,6 +2690,11 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     position: relative;
 }
 
+.text_wh {
+    height: 12px;
+    width: 33px
+}
+
 .form_chk {
     display: inline-block;
     position: relative;
@@ -2597,6 +2704,51 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 
 .ml6 {
     margin-left: 6px;
+}
+
+.ico_like {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-image: url("/images/common/ico_like@2x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    transition:background 0.2s ease-out
+}
+
+.reply_text{
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin-top: 1px;
+    color: #767676;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    vertical-align: top;
+    transition: color 0.2s ease-out;
+}
+.ico_reply{
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-image: url("/images/common/ico_reply@2x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    transition:background 0.2s ease-out
+}
+.like_text{
+    font-size:13px;
+    line-height:19px;
+    letter-spacing:-0.01em;
+    padding-top: 1px;
+    transition:color 0.2s ease-out
+}
+
+.ml16{
+    margin-left: 16px;
 }
 
 .ml_0 {
@@ -2983,3 +3135,234 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     align-self: flex-start;
     margin-left: 30px;
 }
+
+.footer_area{
+    flex: 0 auto;
+    margin-left: auto;
+    font-size:0;
+}
+
+.comment_wrap {
+    display: block;
+    word-break: break-all;
+}
+
+.commnet_list {
+    border-top: none;
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.pagination {
+    display: block;
+    text-align: center;
+    font-size: 0;
+    margin-top: 30px;
+}
+
+.h24 {
+    height: 24px;
+    line-height: 0;
+    font-size: 0;
+    text-align: center;
+}
+
+.comment_list {
+    border-top: none;
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.num_page {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 24px;
+    letter-spacing: -0.13px;
+    line-height: 13px;
+    text-align: center;
+
+}
+
+.comment_item {
+    display: block;
+    position: relative;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+.btn_page {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    vertical-align: top;
+}
+
+.next {
+    background-image: url("/images/common/btn_pagination_next@2x.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+}
+
+.prev {
+    background-image: url("/images/common/btn_pagination_prev@2x.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+}
+
+.page_num {
+    display: inline-block;
+    margin: 0 8px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.btn_page_num {
+    min-width: 24px !important;
+    height: 24px !important;
+    padding: 5px 4px 6px 4px;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    border-radius: 12px;
+}
+
+.comment_header {
+    display: -webkit-flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 16px;
+}
+
+.ac {
+    height: 22px;
+    width: 794px;
+}
+
+.height_ex {
+    height: 20px;
+    width: 104px;
+}
+
+.text_ex {
+    border: 1px solid transparent;
+    background: rgba(23, 23, 237, 0.1);
+    min-height: 20px;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+}
+
+.purchaser_text {
+    background: #fff;
+    border: 1px solid #ccc;
+    min-height: 20px;
+    font-size: 12px;
+}
+
+.left_area {
+    flex: 1 0;
+}
+
+.review_right_area {
+    flex: 0 auto;
+}
+
+.user_info_box {
+    display: block;
+    color: #767676;
+    font-size: 0;
+}
+
+.bg_white {
+    background-color: white !important;
+}
+
+.summary_gap {
+    display: inline-block;
+    width: 4px;
+    height: 8px;
+    margin: 6px 6px 0;
+    background-image: url("/images/common/ico_slash@2x.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 4px 8px;
+    vertical-align: top;
+}
+
+.reivew_summary_wrap {
+    display: block;
+    font-size: 0;
+}
+
+.badge_box {
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: top;
+}
+
+.badge_base {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.bl_br {
+    border-left: 1px;
+    border-right: 1px;
+}
+
+.badge_class {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top;
+}
+
+.font_xs {
+    font-weight: 500;
+}
+
+.badge_line_gray {
+    background-color: #767676;
+    color: #000;
+}
+
+.info_item {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    vertical-align: top;
+}
+
+.pt_1 {
+    padding-top: 1px;
+}
+
+.gap_margin {
+    margin: 6px 6px 0 8px;
+    height: 9px;
+    box-sizing: border-box;
+}
+
+.btn_comment_util {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.btn_comment_util .text {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    color: inherit;
+    vertical-align: top;
+}
+
