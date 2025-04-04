@@ -889,7 +889,8 @@ export default function Detail() {
                                             <h2 className={`${styles.title_heading}`}>목차</h2>
                                         </div>
                                         <div className={`${styles.h212}`}>
-                                            <div className={`${styles.auto_overflow_contents} ${styles.overflow_hidden}`}>
+                                            <div
+                                                className={`${styles.auto_overflow_contents} ${styles.overflow_hidden}`}>
                                                 <div className={`${styles.auto_overflow_in}`}>
                                                     <ul className={`${styles.book_contents_list} ${styles.pl0} ${styles.mt_zero}`}>
                                                         <li className={`${styles.book_contents_item} ${styles.mb0}`}>
@@ -913,9 +914,11 @@ export default function Detail() {
                                                 </div>
                                             </div>
                                             <div className={`${styles.auto_overflow_footer}`}>
-                                                <button type="button" className={`${styles.btn_more_body} ${styles.pl0}`}>
+                                                <button type="button"
+                                                        className={`${styles.btn_more_body} ${styles.pl0}`}>
                                                     <span className={`${styles.text}`}>펼치기</span>
-                                                    <span className={`${styles.ico_arw} ${styles.ico_size} ${styles.ml3}`}></span>
+                                                    <span
+                                                        className={`${styles.ico_arw} ${styles.ico_size} ${styles.ml3}`}></span>
                                                 </button>
                                             </div>
                                         </div>
@@ -931,8 +934,8 @@ export default function Detail() {
                                             <table className={`${styles.tbl_row}`}>
                                                 <caption></caption>
                                                 <colgroup>
-                                                    <col style={{width:"20%"}}/>
-                                                    <col style={{width:"80%"}}/>
+                                                    <col style={{width: "20%"}}/>
+                                                    <col style={{width: "80%"}}/>
                                                 </colgroup>
                                                 <tbody>
                                                 <tr>
@@ -973,6 +976,359 @@ export default function Detail() {
 
                                     <div></div>
                                 </section>
+                                {/*!--> 리뷰시작*/}
+                                <section className={styles.tab_content}>
+                                    <div className={`${styles.product_detail_together}`}>
+                                        <div className={`${styles.title_size_md_btn} ${styles.title_wrap}`}>
+                                            <p className={`${styles.title_heading}`}>Klover 리뷰 (93)</p>
+                                            <button className={`${styles.btn_size_lg} ${styles.ml6}`}>
+                                                <span className={`${styles.ico_info} ${styles.b_size}`}></span>
+                                                <span className={`${styles.hidden}`}>하 팝업웰케 많아</span>
+                                            </button>
+                                            <div className={`${styles.right_area}`}>
+                                                <p className={`${styles.klover_asterisk} `}>
+                                                    구매 후 리뷰 작성 시, e교환권 200원 적립
+                                                </p>
+                                                <button
+                                                    className={`${styles.btn_sm} ${styles.btn_primary} ${styles.btn_all_text}`}>
+                                                    <span className={`${styles.ico_review}`}></span>
+                                                    <span className={styles.text}>리뷰작성</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className={`${styles.klover_review_box} ${styles.klover_padding}`}>
+                                            <div className={`${styles.klover_box_left} ${styles.pl0}`}>
+                                                <div className={`${styles.box_top}`}>
+                                                    <p className={`${styles.text_user_score}`}>사용자 총점</p>
+                                                    <div className={`${styles.rating_container} ${styles.ml_minus}`}>
+                                                        <div>{/*x*/}</div>
+                                                        <div className={`${styles.rating_stars} ${styles.wh}`}>
+                                                            <span className={styles.empty_stars}></span>
+                                                            <span className={`${styles.filled_start}`}
+                                                                  style={{width: "98%"}}>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                            </span>
+                                                            {/*<span className={`${styles.empty_stars}`}>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                                <span className={styles.star}>
+                                                                    <i className={styles.icon_star}></i>
+                                                                </span>
+                                                            </span>*/}
+                                                        </div>
+                                                        <div className={`${styles.caption}`}>
+                                                            <span className={`${styles.caption_badge}`}>
+                                                                10점 중 9.8점 {/*이게 데이터임.*/}
+                                                                <span className={`${styles.caption_val}`}>9.81</span>
+                                                                <span className={`${styles.total}`}>10</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <input type="text" className={styles.rating_input}/>
+                                                </div>
+                                                <div className={`${styles.box_bottom} ${styles.ml_0}`}>
+                                                    <div className={`${styles.score_bar_wrap}`}>
+                                                        <div
+                                                            className={`${styles.rating_sm} ${styles.rating_container} `}>
+                                                            <div title="초기화라고 적혀 있음."></div>
+                                                            <div className={`${styles.rating_stars} ${styles.w68}`}>
+                                                                <span className={`${styles.empty_stars}`}></span>
+                                                                <span className={`${styles.filled_start}`}>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+
+                                                                </span>
+                                                            </div>
+                                                            <div></div>
+                                                        </div>
+                                                        <div className={`${styles.flex195} ${styles.score_bar}`}>
+                                                            <span
+                                                                className={`${styles.score_bar_inner} ${styles.score_best}`}
+                                                                style={{width: "91%"}}></span>
+                                                        </div>
+                                                        <span className={styles.text_score_bar}>91%</span>{/*실제 데이터*/}
+                                                    </div>
+                                                    <div className={`${styles.score_bar_wrap} ${styles.mt13}`}>
+                                                        <div
+                                                            className={`${styles.rating_sm} ${styles.rating_container} `}>
+                                                            <div title="초기화라고 적혀 있음."></div>
+                                                            <div className={`${styles.rating_stars} ${styles.w68}`}>
+                                                                <span className={`${styles.empty_stars}`}></span>
+                                                                <span className={`${styles.filled_start}`}
+                                                                      style={{width: "75%"}}>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <div></div>
+                                                        </div>
+                                                        <div className={`${styles.flex195} ${styles.score_bar}`}>
+                                                            <span
+                                                                className={`${styles.score_bar_inner} ${styles.score_best}`}
+                                                                style={{width: "11%"}}></span>
+                                                        </div>
+                                                        <span className={styles.text_score_bar}>7%</span>{/*실제 데이터*/}
+                                                    </div>
+                                                    <div className={`${styles.score_bar_wrap} ${styles.mt13}`}>
+                                                        <div
+                                                            className={`${styles.rating_sm} ${styles.rating_container} `}>
+                                                            <div title="초기화라고 적혀 있음."></div>
+                                                            <div className={`${styles.rating_stars} ${styles.w68}`}>
+                                                                <span className={`${styles.empty_stars}`}></span>
+                                                                <span className={`${styles.filled_start}`}
+                                                                      style={{width: "50%"}}>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <div></div>
+                                                        </div>
+                                                        <div className={`${styles.flex195} ${styles.score_bar}`}>
+                                                            <span
+                                                                className={`${styles.score_bar_inner} ${styles.score_best}`}
+                                                                style={{width: "1%"}}></span>
+                                                        </div>
+                                                        <span className={styles.text_score_bar}>1%</span>{/*실제 데이터*/}
+                                                    </div>
+                                                    <div className={`${styles.score_bar_wrap} ${styles.mt13}`}>
+                                                        <div
+                                                            className={`${styles.rating_sm} ${styles.rating_container} `}>
+                                                            <div title="초기화라고 적혀 있음."></div>
+                                                            <div className={`${styles.rating_stars} ${styles.w68}`}>
+                                                                <span className={`${styles.empty_stars}`}></span>
+                                                                <span className={`${styles.filled_start}`}
+                                                                      style={{width: "25%"}}>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                    <span className={`${styles.star} ${styles.ml01}`}>
+                                                                        <i className={styles.icon_score_start}>
+
+                                                                        </i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <div></div>
+                                                        </div>
+                                                        <div className={`${styles.flex195} ${styles.score_bar}`}>
+                                                            <span
+                                                                className={`${styles.score_bar_inner} ${styles.score_best}`}
+                                                                style={{width: "1%"}}></span>
+                                                        </div>
+                                                        <span className={styles.text_score_bar}>1%</span>{/*실제 데이터*/}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className={`${styles.klover_box_right}`}>
+                                                <div className={`${styles.box_top}`}>
+                                                    <p className={`${styles.text_good_respon}`}>
+                                                        33#의 구매자가
+                                                        <br/>
+                                                        <span className={`${styles.fc_spot}`}>
+                                                            <span className={`${styles.pt0} ${styles.image_ex}`}>
+                                                                집중돼요
+                                                            </span>
+                                                        </span>
+                                                        라고 응답했어요
+
+                                                    </p>
+                                                </div>
+                                                <div className={`${styles.box_bottom}`}>
+                                                    <div className={`${styles.reply_score_list}`}>
+                                                        <div className={`${styles.reply_score_item} ${styles.pl0}`}>
+                                                            <div className={`${styles.books_inner}`}>
+                                                                <span
+                                                                    className={`${styles.num_score_bar} ${styles.num_score_best}`}>
+                                                                    33%
+                                                                </span>
+                                                                <div
+                                                                    className={`${styles.average_score_bar} ${styles.average_bar_color}`}>
+                                                                    <span
+                                                                        className={`${styles.best_score_bar_inner}`}></span>
+                                                                </div>
+                                                            </div>
+                                                            <p className={`${styles.text_replay}`}>집중돼요</p>
+                                                        </div>
+                                                        <div className={`${styles.reply_score_item} `}>
+                                                            <div className={`${styles.books_inner}`}>
+                                                                <span
+                                                                    className={`${styles.num_score_bar} ${styles.average_num_score_bar}`}>29%</span>
+                                                                <div className={`${styles.average_score_bar}`}>
+                                                                    <span className={styles.average_score_bar_inner}
+                                                                          style={{height: "29%"}}></span>
+                                                                </div>
+                                                            </div>
+                                                            <p className={`${styles.text_gray}`}>도움돼요</p>
+                                                        </div>
+                                                        <div className={`${styles.reply_score_item} `}>
+                                                            <div className={`${styles.books_inner}`}>
+                                                                <span
+                                                                    className={`${styles.num_score_bar} ${styles.average_num_score_bar}`}>16%</span>
+                                                                <div className={`${styles.average_score_bar}`}>
+                                                                    <span
+                                                                        className={styles.average_score_bar_inner}
+                                                                        style={{height: "16%"}}></span>
+                                                                </div>
+                                                            </div>
+                                                            <p className={`${styles.text_gray}`}>쉬웠어요</p>
+                                                        </div>
+                                                        <div className={`${styles.reply_score_item} `}>
+                                                            <div className={`${styles.books_inner}`}>
+                                                                <span
+                                                                    className={`${styles.num_score_bar} ${styles.average_num_score_bar}`}>6%</span>
+                                                                <div className={`${styles.average_score_bar}`}>
+                                                                    <span
+                                                                        className={styles.average_score_bar_inner}
+                                                                        style={{height: "6%"}}></span>
+                                                                </div>
+                                                            </div>
+                                                            <p className={`${styles.text_gray}`}>최고예요</p>
+                                                        </div>
+                                                        <div className={`${styles.reply_score_item} ${styles.pr0}`}>
+                                                            <div className={`${styles.books_inner}`}>
+                                                                <span
+                                                                    className={`${styles.num_score_bar} ${styles.average_num_score_bar}`}>15%</span>
+                                                                <div className={`${styles.average_score_bar}`}>
+                                                                    <span
+                                                                        className={styles.average_score_bar_inner}
+                                                                        style={{height: "15%"}}></span>
+                                                                </div>
+                                                            </div>
+                                                            <p className={`${styles.text_gray}`}>추천해요</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className={`${styles.tab_wrap}`}>
+                                            <div className={`${styles.tab_list_wrap}`} style={{height: "44px"}}>
+                                                <ul className={`${styles.tabs} ${styles.tabs_sup}`}>
+                                                    <li className={`${styles.tab_item} ${styles.pl0} ${styles.tab_padding}`}>
+                                                        <button className={`${styles.tab_link}`}>
+                                                            <span className={`${styles.tab_text} ${styles.review_text}`}>전체 리뷰</span>
+                                                        </button>
+                                                    </li>
+                                                    <li className={`${styles.tab_item} ${styles.tab_padding} ${styles.z_sup}`}>
+                                                        <button className={`${styles.tab_link}`}>
+                                                            <span className={`${styles.tab_text} ${styles.review_text}`}>구매 리뷰</span>
+                                                        </button>
+                                                    </li>
+                                                    <li className={`${styles.tab_item} ${styles.tab_padding}`}>
+                                                        <button className={`${styles.tab_link}`}>
+                                                            <span className={`${styles.tab_text} ${styles.review_text}`}>한 달 후 리뷰</span>
+                                                        </button>
+                                                    </li>
+                                                </ul>
+                                                <div className={`${styles.tab_review_option}`}>
+                                                    <div className={`${styles.form_sel}`}>
+                                                        {/*<select name="" id="">
+                                                            <option value="">좋아요 순</option>
+                                                            <option value="">최신 순</option>
+                                                        </select>*/}
+                                                        <span style={{width:"100%" , height:"38px"}} className={`${styles.ui_selectmenu_button}`}>
+                                                            <span className={`${styles.ui_selectmenu_icon}`}></span>
+                                                            <span className={`${styles.ui_selectmenu_text}`}>좋아요 순</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className={`${styles.tab_content}`}></div>
+                                        </div>
+                                    </div>
+                                    <div className={`${styles.product_detail_together}`}></div>
+                                </section>
+                                {/*!-- // 리뷰끝*/}
+                                <section></section>
                             </div>
                             <div className={styles.detail_recommend}></div>
                         </div>
