@@ -264,7 +264,7 @@
     margin-top: 30px;
 }
 
-.rating_footer{
+.rating_footer {
     position: relative;
     display: inline-block;
     text-align: left;
@@ -272,9 +272,10 @@
     vertical-align: top;
 }
 
-.mt3{
+.mt3 {
     margin-top: 3px !important;
 }
+
 .type_list {
     display: block;
     text-align: center;
@@ -670,9 +671,9 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     white-space: nowrap;
 }
 
-.z{
-    text-align:left;
-    font-size:0;
+.z {
+    text-align: left;
+    font-size: 0;
 }
 
 .wh {
@@ -723,7 +724,6 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     box-shadow: none;
     background: 0 0;
 }
-
 
 
 .star {
@@ -838,6 +838,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     -webkit-box-align: center;
     align-items: center;
     flex-direction: row;
+    -webkit-justify-content:space-between;
 }
 
 .util {
@@ -1836,6 +1837,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     justify-content: start;
     flex-direction: row;
     align-items: stretch;
+    -webkit-box-align: start;
 }
 
 .comment_text_box {
@@ -2412,6 +2414,11 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     outline: none;
 }
 
+.commnet_wrap {
+    display: block;
+    word-break: break-all;
+}
+
 .mt13 {
     margin-top: 13px;
 }
@@ -2714,10 +2721,10 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
-    transition:background 0.2s ease-out
+    transition: background 0.2s ease-out
 }
 
-.reply_text{
+.reply_text {
     display: inline-block;
     position: relative;
     vertical-align: top;
@@ -2729,7 +2736,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     vertical-align: top;
     transition: color 0.2s ease-out;
 }
-.ico_reply{
+
+.ico_reply {
     width: 20px;
     height: 20px;
     margin-right: 4px;
@@ -2737,17 +2745,18 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px 20px;
-    transition:background 0.2s ease-out
-}
-.like_text{
-    font-size:13px;
-    line-height:19px;
-    letter-spacing:-0.01em;
-    padding-top: 1px;
-    transition:color 0.2s ease-out
+    transition: background 0.2s ease-out
 }
 
-.ml16{
+.like_text {
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    padding-top: 1px;
+    transition: color 0.2s ease-out
+}
+
+.ml16 {
     margin-left: 16px;
 }
 
@@ -3136,10 +3145,10 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin-left: 30px;
 }
 
-.footer_area{
+.footer_area {
     flex: 0 auto;
     margin-left: auto;
-    font-size:0;
+    font-size: 0;
 }
 
 .comment_wrap {
@@ -3173,6 +3182,11 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     border-bottom: 1px solid #eaeaea;
 }
 
+/*alone*/
+.bt_no{
+    border-top: none;
+}
+
 .num_page {
     box-sizing: border-box;
     display: inline-block;
@@ -3188,6 +3202,10 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     position: relative;
     padding: 20px 10px;
     box-sizing: border-box;
+}
+
+.w794 {
+    width: 814px;
 }
 
 .btn_page {
@@ -3273,6 +3291,11 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 
 .review_right_area {
     flex: 0 auto;
+}
+
+.w150 {
+    width: 151px;
+    height: 22px;
 }
 
 .user_info_box {
@@ -3366,3 +3389,31 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     vertical-align: top;
 }
 
+.review_quotes_text {
+    display: inline-block;
+    position: relative;
+    padding-left: 18px;
+    color: #474c98;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    vertical-align: top;
+}
+
+.mr1 {
+    margin-right: 1px;
+}
+
+.review_quotes_text:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 13px;
+    height: 13px;
+    background-image: url("/images/common/ico_quotes_lg@2x.png");
+    background-size: 13px 13px;
+    background-position: center;
+    background-repeat: no-repeat;
+}

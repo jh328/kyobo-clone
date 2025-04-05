@@ -6,8 +6,12 @@ import {books} from "@/app/lib/book";
 import {useParams} from "next/navigation";
 import Link from "next/link";
 import {formatPrice} from "@/utils/format";
+import {useState} from "react";
+import ReviewModal from "@/app/components/reviewmodal/ReviewModal";
 
 export default function Detail() {
+    const [showModal, setShowModal] = useState(false);
+
     const {id} = useParams();
     const book = books.find((b) => b.id === Number(id));
 
@@ -15,6 +19,10 @@ export default function Detail() {
     if (!book) return <div>책을 찾을 수 없습니다.</div>;  // 책이 없을 때 메시지 출력
 
     const discountedPrice = book.price * (1 - book.discount / 100);
+
+
+    // 리뷰 작성 버튼 눌렀을 때 호출 하는 함수
+    console.log("showModal", showModal)
 
     return (
         <div className={styles.detail_wrapper}>
@@ -976,9 +984,11 @@ export default function Detail() {
 
                                     <div></div>
                                 </section>
+
                                 {/*!--> 리뷰시작*/}
                                 <section className={styles.tab_content}>
                                     <div className={`${styles.product_detail_together}`}>
+                                        {/*!--> Klover 리뷰 제목*/}
                                         <div className={`${styles.title_size_md_btn} ${styles.title_wrap}`}>
                                             <p className={`${styles.title_heading}`}>Klover 리뷰 (93)</p>
                                             <button className={`${styles.btn_size_lg} ${styles.ml6}`}>
@@ -990,12 +1000,19 @@ export default function Detail() {
                                                     구매 후 리뷰 작성 시, e교환권 200원 적립
                                                 </p>
                                                 <button
+                                                    onClick={() => setShowModal(true)}
                                                     className={`${styles.btn_sm} ${styles.btn_primary} ${styles.btn_all_text}`}>
                                                     <span className={`${styles.ico_review}`}></span>
                                                     <span className={styles.text}>리뷰작성</span>
                                                 </button>
                                             </div>
+
+                                            {/*모달 조건부 showModal이 true면 컴포넌트 렌더링 false이면 렌더링x*/}
+                                            {showModal && <ReviewModal onClose={() => setShowModal(false)}/>}
                                         </div>
+                                        {/*!-- // Klover 리뷰 제목*/}
+
+                                        {/*!--> 사용자 총점 */}
                                         <div className={`${styles.klover_review_box} ${styles.klover_padding}`}>
                                             <div className={`${styles.klover_box_left} ${styles.pl0}`}>
                                                 <div className={`${styles.box_top}`}>
@@ -1290,7 +1307,11 @@ export default function Detail() {
                                                 </div>
                                             </div>
                                         </div>
+                                        {/*!-- //사용자 총점 */}
+
+                                        {/*리뷰 적을 수 있는 칸 ㅆ비ㅏㄹ..*/}
                                         <div className={`${styles.tab_wrap}`}>
+                                            {/*!--> 리뷰 ul 태그*/}
                                             <div className={`${styles.tab_list_wrap}`} style={{height: "44px"}}>
                                                 <ul className={`${styles.tabs} ${styles.tabs_sup}`}>
                                                     <li className={`${styles.tab_item} ${styles.pl0} ${styles.tab_padding}`}>
@@ -1327,159 +1348,173 @@ export default function Detail() {
                                                     </div>
                                                 </div>
                                             </div>
+                                            {/*!-- //리뷰 ul 태그*/}
+
+                                            {/*리뷰 리스트 시작..*/}
                                             <div className={`${styles.tab_content}`}>
                                                 <div className={`${styles.comment_wrap}`}>
-                                                    <div className={`${styles.commnet_list}`}>
+
+                                                    {/*!--> 리뷰 리스트*/}
+                                                    <div className={`${styles.comment_list} ${styles.bt_no}`}>
                                                         <div className={`${styles.comment_item}`}>
-                                                            <div className={`${styles.comment_list}`}>
-                                                                <div className={styles.comment_item}>
-                                                                    {/*!-->리뷰 헤더*/}
-                                                                    <div className={`${styles.comment_header} ${styles.ac}`}>
-                                                                        <div className={`${styles.left_area}`}>
-                                                                            <div className={`${styles.user_info_box}`}>
-                                                                                <span className={`${styles.badge_box} ${styles.badge_base} ${styles.height_ex}`}>
+                                                            <div className={`${styles.comment_header}`}>
+                                                                <div className={`${styles.left_area}`}>
+                                                                    <div className={`${styles.user_info_box}`}>
+                                                                        <span
+                                                                            className={`${styles.badge_box} ${styles.badge_base}`}>
+                                                                            <span
+                                                                                className={`${styles.badge_pill} ${styles.badge_class} ${styles.font_xs} ${styles.bl_br} ${styles.text_ex}`}>
+                                                                                <span
+                                                                                    className={`${styles.ico_wish_base} ${styles.text_wh}`}>종이책</span>
+                                                                            </span>
+                                                                            <span
+                                                                                className={`${styles.badge_pill} ${styles.badge_class} ${styles.badge_line_gray} ${styles.ml6} ${styles.purchaser_text} ${styles.bg_white}`}>
+                                                                                <span className={styles.text}>구메자</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span
+                                                                            className={`${styles.info_item} ${styles.pt_1}`}>유저아이디</span>
+                                                                        <span
+                                                                            className={`${styles.gap} ${styles.gap_margin}`}>&#47;</span>
+                                                                        <span
+                                                                            className={`${styles.info_item} ${styles.pt_1}`}>작성기간</span>
+                                                                        <span
+                                                                            className={`${styles.gap} ${styles.gap_margin}`}>&#47;</span>
+                                                                        <span
+                                                                            className={`${styles.info_item} ${styles.pt_1}`}>
+                                                                            <button
+                                                                                className={`${styles.btn_comment_util}`}>
+                                                                                 <span
+                                                                                     className={styles.text}>신고/차단</span>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div className={`${styles.review_right_area}`}>
+                                                                    <div className={`${styles.reivew_summary_wrap}`}>
+                                                                        <div
+                                                                            className={`${styles.rating_sm} ${styles.mt3} ${styles.rating_footer} ${styles.w68}`}>
+                                                                            <div>{/*초기화*/}</div>
+                                                                            <div
+                                                                                className={`${styles.rating_stars} ${styles.z} ${styles.w68}`}>
+                                                                                <span
+                                                                                    className={`${styles.empty_stars}`}></span>
+                                                                                <span
+                                                                                    className={`${styles.filled_start}`}>
                                                                                     <span
-                                                                                        className={`${styles.badge_pill} ${styles.badge_class} ${styles.font_xs} ${styles.bl_br} ${styles.text_ex}`}>
-                                                                                        <span
-                                                                                            className={`${styles.ico_wish_base} ${styles.text_wh}`}>종이책</span>
+                                                                                        className={`${styles.ml01} ${styles.star}`}>
+                                                                                        <i className={`${styles.icon_score_start}`}></i>
                                                                                     </span>
                                                                                     <span
-                                                                                        className={`${styles.badge_pill} ${styles.badge_class} ${styles.badge_line_gray} ${styles.ml6} ${styles.purchaser_text} ${styles.bg_white}`}>
-                                                                                        <span className={styles.text}>구매자</span>
+                                                                                        className={`${styles.ml01} ${styles.star}`}>
+                                                                                        <i className={`${styles.icon_score_start}`}></i>
                                                                                     </span>
-                                                                                </span>
-                                                                                <span className={`${styles.info_item} ${styles.pt_1}`}>유저아이디</span>
-                                                                                <span className={`${styles.gap} ${styles.gap_margin}`}></span>
-                                                                                <span className={`${styles.info_item} ${styles.pt_1}`}>리뷰 작성 기간</span>
-                                                                                <span className={`${styles.gap} ${styles.gap_margin}`}></span>
-                                                                                <span className={`${styles.info_item} ${styles.pt_1}`}>
-                                                                                    <button type="button" className={`${styles.btn_comment_util}`}>
-                                                                                        <span className={styles.text}>신고/차단</span>
-                                                                                    </button>
-                                                                                </span>
+                                                                                    <span
+                                                                                        className={`${styles.ml01} ${styles.star}`}>
+                                                                                        <i className={`${styles.icon_score_start}`}></i>
+                                                                                    </span>
+                                                                                    <span
+                                                                                        className={`${styles.ml01} ${styles.star}`}>
+                                                                                        <i className={`${styles.icon_score_start}`}></i>
+                                                                                    </span>
+                                                                                 </span>
                                                                             </div>
+                                                                            <div>{/*caption*/}</div>
                                                                         </div>
-                                                                        <div className={`${styles.review_right_area}`}>
-                                                                            <div className={`${styles.reivew_summary_wrap}`}>
-                                                                                <div className={`${styles.rating_sm} ${styles.mt3} ${styles.rating_footer}`}>
-                                                                                    <div>{/*초기화*/}</div>
-                                                                                    <div className={`${styles.rating_stars} ${styles.z}`}>
-                                                                                        <span className={`${styles.empty_stars}`}></span>
-                                                                                        <span
-                                                                                            className={`${styles.filled_start}`}>
-                                                                                            <span
-                                                                                                className={`${styles.ml01} ${styles.star}`}>
-                                                                                                <i className={`${styles.icon_score_start}`}></i>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                className={`${styles.ml01} ${styles.star}`}>
-                                                                                                <i className={`${styles.icon_score_start}`}></i>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                className={`${styles.ml01} ${styles.star}`}>
-                                                                                                <i className={`${styles.icon_score_start}`}></i>
-                                                                                            </span>
-                                                                                            <span
-                                                                                                className={`${styles.ml01} ${styles.star}`}>
-                                                                                                <i className={`${styles.icon_score_start}`}></i>
-                                                                                            </span>
-                                                                                        </span>
-                                                                                    </div>
-                                                                                    <div>{/*caption*/}</div>
-                                                                                </div>
-                                                                                <input type="text" className={styles.rating_input}/>
-                                                                                <span className={`${styles.summary_gap}`}>&#47;</span>
-                                                                                <span></span>
+                                                                        <input type="text"
+                                                                               className={styles.rating_input}/>
+                                                                        <span
+                                                                            className={`${styles.summary_gap}`}>&#47;</span>
+                                                                        <span
+                                                                            className={`${styles.review_quotes_text} ${styles.mr1}`}>
+                                                                                    도움돼요
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className={`${styles.comment_contents}`}>
+                                                                <div className={`${styles.contents_inner}`}>
+                                                                    <div className={`${styles.comment_view_wrap}`}>
+                                                                        <div className={`${styles.comment_text_box}`}>
+                                                                            <div className={`${styles.comment_text}`}>
+                                                                                리뷰내용 3줄 넘어가는거 아니면, 펼치기 버튼 비활성화 되어야 한다.
+                                                                                리뷰 작성은 모달로 되어 있고, 모달이 나오면 화면이 조금 어두워진다.ㅣ
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    {/*!-- //리뷰 헤더 */}
-
-                                                                    {/*!--> 리뷰 내용*/}
-                                                                    <div className={`${styles.books_inner}`}>
-                                                                        <div className={`${styles.contents_inner}`}>
-                                                                            <div className={`${styles.comment_view_wrap}`}>
-                                                                                <div className={`${styles.comment_text_box}`}>
-                                                                                    <div className={`${styles.comment_text}`}>리뷰 실제 내용</div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    {/*!-- // 리뷰 내용*/}
-
-                                                                    {/*!--> 리뷰 바닥 좋아요, 대댓*/}
-                                                                    <div className={`${styles.comment_footer}`}>
+                                                                </div>
+                                                            </div>
+                                                            <div className={`${styles.comment_footer}`}>
+                                                                <button type="button"
+                                                                        className={`${styles.footer_text} ${styles.btn_more_body} ${styles.pl0}`}>
+                                                                    <span
+                                                                        className={`${styles.btn_more_body} ${styles.footer_text}`}>펼치기</span>
+                                                                    <span className={`${styles.footer_ico_arw}`}></span>
+                                                                </button>
+                                                                <div className={`${styles.comment_util_box}`}>
+                                                                    <div className={`${styles.footer_area}`}>
                                                                         <button type="button"
-                                                                                className={`${styles.footer_text} ${styles.btn_more_body}`}>
+                                                                                className={`${styles.ico_wish_base}`}>
                                                                             <span
-                                                                                className={`${styles.btn_more_body} ${styles.footer_text}`}>펼치기</span>
+                                                                                className={`${styles.ico_like} ${styles.ico_wish_base}`}></span>
                                                                             <span
-                                                                                className={`${styles.footer_ico_arw}`}></span>
+                                                                                className={`${styles.ico_wish_base} ${styles.like_text}`}>100</span>
                                                                         </button>
-                                                                        <div className={`${styles.comment_util_box} ${styles.util}`}>
-                                                                            <div className={`${styles.footer_area}`}>
-                                                                                <button type="button" className={`${styles.ico_wish_base}`}>
-                                                                                    <span className={`${styles.ico_like} ${styles.ico_wish_base}`}></span>
-                                                                                    <span className={`${styles.ico_wish_base} ${styles.like_text}`}>100</span>
-                                                                                </button>
-                                                                                <button type="button" className={`${styles.ico_wish_base} ${styles.ml16}`}>
-                                                                                    <span className={`${styles.ico_wish_base} ${styles.ico_reply}`}></span>
-                                                                                    <span className={styles.reply_text}>
-                                                                                        답글
-                                                                                        <span className={styles.count}>0</span>
-                                                                                    </span>
-                                                                                </button>
-                                                                            </div>
-                                                                        </div>
+                                                                        <button type="button"
+                                                                                className={`${styles.ico_wish_base} ${styles.ml16}`}>
+                                                                            <span
+                                                                                className={`${styles.ico_wish_base} ${styles.ico_reply}`}></span>
+                                                                            <span className={styles.reply_text}>
+                                                                                답글
+                                                                            <span
+                                                                                className={styles.count}>0</span>
+                                                                            </span>
+                                                                        </button>
                                                                     </div>
-                                                                    {/*!-- //끝*/}
-
-                                                                    {/*이거는 안나옴*/}
-                                                                    <div></div>
-                                                                    {/*이거는 안나옴*/}
                                                                 </div>
                                                             </div>
-                                                            <div className={`${styles.pagination} `}>
-                                                                <button type="button"
-                                                                        className={`${styles.btn_page} ${styles.prev}`}>
-                                                                    <span className={styles.hidden}>이전</span>
-                                                                </button>
-                                                                <div className={`${styles.page_num} ${styles.h24}`}>
-                                                                    <Link href=""
-                                                                          className={`${styles.btn_page_num} ${styles.num_page}`}>1</Link>
-                                                                    <span></span>
-                                                                    <Link href=""
-                                                                          className={`${styles.btn_page_num}`}>2</Link>
-                                                                    <Link href=""
-                                                                          className={`${styles.btn_page_num}`}>3</Link>
-                                                                    <Link href=""
-                                                                          className={`${styles.btn_page_num}`}>4</Link>
-                                                                    <Link href=""
-                                                                          className={`${styles.btn_page_num}`}>5</Link>
-                                                                    <Link href=""
-                                                                          className={`${styles.btn_page_num}`}>6</Link>
-                                                                    <Link href=""
-                                                                          className={`${styles.btn_page_num}`}>7</Link>
-                                                                    <span></span>
-                                                                    <Link href=""
-                                                                          className={`${styles.btn_page_num}`}>8</Link>
-                                                                </div>
-                                                                <button type="button"
-                                                                        className={`${styles.btn_page} ${styles.next}`}>
-                                                                    <span className={styles.hidden}>다음</span>
-                                                                </button>
-                                                            </div>
-
-                                                            {/*!-->리뷰 없는거*/}
-                                                            <div className={`${styles.no_data}`}></div>
-                                                            {/*!-- //리뷰 없는거*/}
+                                                            <div className={`${styles.reply_wrap}`}>{/*리플*/}</div>
                                                         </div>
                                                     </div>
-                                                    <div className={`${styles.pagination}`}></div>
-                                                    <div>{/*화면에 안나옴*/}</div>
+                                                    {/*!--> // 리뷰 리스트 */}
+
+                                                    {/*!--> 페이지네이션*/}
+                                                    <div className={`${styles.pagination} `}>
+                                                        <button type="button"
+                                                                className={`${styles.btn_page} ${styles.prev}`}>
+                                                            <span className={styles.hidden}>이전</span>
+                                                        </button>
+                                                        <div className={`${styles.page_num} ${styles.h24}`}>
+                                                            <Link href=""
+                                                                  className={`${styles.btn_page_num} ${styles.num_page}`}>1</Link>
+                                                            <span></span>
+                                                            <Link href=""
+                                                                  className={`${styles.btn_page_num}`}>2</Link>
+                                                            <Link href=""
+                                                                  className={`${styles.btn_page_num}`}>3</Link>
+                                                            <Link href=""
+                                                                  className={`${styles.btn_page_num}`}>4</Link>
+                                                            <Link href=""
+                                                                  className={`${styles.btn_page_num}`}>5</Link>
+                                                            <Link href=""
+                                                                  className={`${styles.btn_page_num}`}>6</Link>
+                                                            <Link href=""
+                                                                  className={`${styles.btn_page_num}`}>7</Link>
+                                                            <span></span>
+                                                            <Link href=""
+                                                                  className={`${styles.btn_page_num}`}>8</Link>
+                                                        </div>
+                                                        <button type="button"
+                                                                className={`${styles.btn_page} ${styles.next}`}>
+                                                            <span className={styles.hidden}>다음</span>
+                                                        </button>
+                                                    </div>
+                                                    {/*!--> //페이지네이션*/}
+                                                    <div className={`${styles.no_data}`}></div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                     <div className={`${styles.product_detail_together}`}></div>
                                 </section>
