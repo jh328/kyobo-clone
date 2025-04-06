@@ -1,0 +1,525 @@
+.wrapper {
+    position: relative;
+    min-width: 1440px;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.main_container {
+    position: relative;
+    min-height: calc(100vh - 80px);
+}
+
+/*alone*/
+.pt_50 {
+    padding-top: 50px;
+}
+
+.contents_inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/*alone*/
+.back_white {
+    background: #fff;
+}
+
+.cart_top_inner {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.title_wrap {
+    align-items: flex-start;
+}
+
+/*alone*/
+.pb_30 {
+    padding-bottom: 30px;
+}
+
+.title_base {
+    position: relative;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.title_heading {
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.title_text {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    position: relative;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/*alone*/
+.order {
+    display: inline-block;
+}
+
+.ml_4 {
+    margin-left: 4px;
+}
+
+/*alone*/
+.ml_12 {
+    margin-left: 12px;
+}
+
+.btn_gray {
+    color: #000;
+    background: #fff;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out
+}
+
+.btn_sm {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 38px;
+    padding: 0 13px 1px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+}
+
+.btn_base {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.btn_class {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.btn_wish {
+    color: #fff;
+    letter-spacing: -0.01em;
+    line-height: 42px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+/*alone*/
+.display_none {
+    display: none;
+}
+
+.ico_locate_black {
+    background-image: url("/images/common/ico_locate@2x.png");
+    background-position: left center;
+    background-size: 13px 19px;
+    margin-right: 3px;
+}
+
+
+.btn_locate {
+    width: 13px;
+    height: 19px;
+}
+
+.right_area {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.right {
+    margin-left: auto;
+    flex-shrink: 0;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+/*alone*/
+.head_list {
+    font-size: 0;
+}
+
+.step_item {
+    display: inline-block;
+    color: #767676;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    line-height: 20px;
+}
+
+.ml_16 {
+    margin-left: 16px;
+}
+
+.active {
+    color: #000;
+    font-weight: 700;
+}
+
+.step_num {
+    display: inline-block;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    background: #d5d5d5;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.current_num {
+    background: #4dac27;
+}
+
+.util_btn_box {
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 15px 20px 15px 18px;
+    margin-bottom: 24px;
+}
+
+.util_width {
+    width: 890px;
+    box-sizing: border-box;
+}
+
+.form_chk {
+    display: inline-block;
+    position: relative;
+    min-height: 22px;
+    vertical-align: top;
+}
+
+.form_input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.form_label {
+    display: inline-block;
+    position: relative;
+    padding: 2px 0 0 27px;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    line-height: 20px;
+    color: #000;
+    cursor: pointer;
+    vertical-align: top;
+    transition: color 0.2s ease-out;
+    -webkit-user-select: none;
+}
+
+.form_label:before {
+    background-color: #5055b1 !important;
+    border-color: #5055b1 !important;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+
+.label_all:before {
+    content: '';
+    border: 1px solid #ccc;
+    transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.form_label:after {
+    background-image: url("/images/common/ico_checkbox_active@2x.png");
+    background-size: 10px 7px;
+    background-position: center 8px;
+    background-repeat: no-repeat;
+}
+
+.label_all:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.btn_size_xs {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 4px;
+}
+
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.ico_wish {
+    width: 14px;
+    height: 14px;
+    margin-top: 7px;
+    background: url("/images/common/ico_wish_alarm@2x.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+}
+
+.btn_delete {
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.btn_xs {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 18px;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 0 9px 1px;
+    height: 30px;
+    flex-direction: row;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    display: -webkit-inline-flex;
+}
+
+.ico_delete {
+    width: 13px;
+    height: 13px;
+    margin-top: 7px;
+    margin-left: 1px;
+    background-image: url("/images/common/ico_delete_black@2x.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+}
+
+.mb_17 {
+    margin-bottom: 17px;
+}
+
+.label_head{
+    padding-top: 0;
+    font-size:16px;
+    line-height:24px;
+    letter-spacing: -0.01em;
+    font-weight:700;
+}
+
+.tag_wrap {
+    margin: -4px -3px;
+    font-size: 0;
+}
+
+.home_link {
+    margin: 4px 3px;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: #595959;
+    padding: 7px 16px 8px;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.23s, border-color 0.23s, color 0.23s;
+}
+
+.cart_body {
+    position: relative;
+    min-height: calc(100vh - 80px);
+    z-index: 1;
+}
+
+.cart_body_inner {
+    width: 890px;
+}
+
+.h67 {
+    height: 67px;
+}
+
+.cart_calculator {
+    width: 890px;
+    border-top: 1px solid #000;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.area {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.free:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin-right: 7px;
+    background: #f5f5fb url("/images/common/ico_free_del@2x.png") no-repeat center / 36px;
+}
+
+.pay_text {
+    color: #5055b1;
+    font-weight: bold;
+}
+
+.btn_info_popup {
+    vertical-align: middle;
+    margin: 0 0 2px 2px;
+    width: 16px;
+    height: 16px;
+}
+
+.ico_question {
+    border: 1px solid #d5d5d5;
+    border-radius: 100%;
+    background: url("/images/common/btn_tooltop_question_sm@2x.png") no-repeat center;
+    background-size: 16px 16px;
+}
+
+.que {
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    transition: background 0.2s ease-out
+}
+
+.progress {
+    width: 382px;
+    text-align: right;
+}
+
+.bar {
+    height: 6px;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: #eaeaea;
+}
+
+.bar_text {
+    margin-top: 2px;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    color: #767676;
+}
+
+.bar_color {
+    width: 100%;
+    transform: translate(0px);
+    display: block;
+    height: 0;
+    padding-top: 6px;
+    border-radius: 3px;
+    background-color: #7377c0;
+    transition: width 0.4s;
+    animation: progress_slide 0.8s ease both;
+}
+
+.mt_0 {
+    margin-top: 0;
+}
+
+.fold_box {
+    border: none;
+    border-radius: 0;
+}
+
+.box{
+    overflow:hidden;
+    box-sizing:border-box
+}
+
+.box_header{
+    border-top-color: #d5d5d5 !important;
+}
+
+.fold_box_header{
+    padding:20px 36px 20px 0;
+    border-top:1px solid #000;
+    border-bottom:1px solid #d5d5d5;
+}
+
+.header{
+    position:relative;
+    cursor:pointer;
+    font-size:15px;
+    line-height:23px;
+    letter-spacing: -0.01em;
+    font-weight:500;
+}
+
+.fold_box_header:after{
+    width: 16px;
+    height: 17px;
+    right: 10px;
+    background: url("/images/common/ico_checkbox_active@2x.png") 0 0 no-repeat;
+    background-size: 16px 17px;
+    transform:translateY(-50%) rotate(180deg);
+    content: "";
+    position: absolute;
+    display: block;
+    top:50%;
+}
+
