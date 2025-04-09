@@ -295,3 +295,39 @@ a[disabled], a[aria-disabled=true], a.disabled, button[disabled], button[aria-di
     background-image: url("/images/common/ico_cert_ipin_36x36@2x.png");
 }
 
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    border:0;
+}
+
+caption{
+    visibility: hidden;
+    overflow: hidden;
+    line-height: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    text-indent: -99999px;
+    font-size: 0;
+}
+
+colgroup {
+    display: table-column-group;
+    unicode-bidi:isolate
+}
+
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+tr{
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
