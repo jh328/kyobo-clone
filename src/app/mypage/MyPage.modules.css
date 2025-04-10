@@ -25,6 +25,16 @@
     background-image: url("/images/common/bg_myroom_main@2x.png");
 }
 
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
 .breadcrumb_wrap {
     position: relative;
     padding-top: 20px;

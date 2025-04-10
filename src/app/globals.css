@@ -73,6 +73,10 @@ input, button, select, textarea {
     vertical-align: top;
 }
 
+input {
+    vertical-align: middle;
+}
+
 address, caption, cite, code, dfn, em, var {
     font-style: normal;
 }
@@ -211,6 +215,8 @@ a[disabled], a[aria-disabled=true], a.disabled, button[disabled], button[aria-di
 .btn_sns_lg {
     min-width: 42px;
 }
+
+
 
 .btn_ico_arrow {
     width: 5px !important;
