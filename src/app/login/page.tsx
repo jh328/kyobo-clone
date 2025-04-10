@@ -9,18 +9,6 @@ export default function Page() {
 
     return (
         <div className={`${styles.wrapper} ${styles.member_login}`}>
-            {name ? (
-                <p>환영합니다, {name}님!</p> // ✅ 로그인된 경우 UI 변경
-            ) : (
-                <ul className={styles.sns_login_list}>
-                    <li className={`${styles.sns_login_item} ${styles.sns_item_ml}`}>
-                        {/* ✅ 카카오 로그인 버튼 */}
-                        <button onClick={() => signIn("kakao")} className={`${styles.btn_sns_login} ${styles.btn_kakao}`}>
-                            <span className={styles.hidden}>카카오 로그인</span>
-                        </button>
-                    </li>
-                </ul>
-            )}
             <header className={styles.header_wrapper}>
                 <div className={styles.header_inner}>
                     <div className={styles.logo_box}>
@@ -82,16 +70,25 @@ export default function Page() {
                             </div>
                         </div>
                         <div className={styles.sns_login_box}>
-                            <ul className={styles.sns_login_list}>
+                            <ul className={`${styles.sns_login_list}` }>
                                 <li className={styles.sns_login_item} >
                                     <button className={`${styles.btn_naver} ${styles.btn_sns_lg} ${styles.btn_sns_login}`}>
                                         <span className={styles.hidden}>네이버 로그인</span>
                                     </button>
                                 </li>
-                                <li className={`${styles.sns_login_item} ${styles.sns_item_ml}`}>
-                                    <button className={`${styles.btn_kakao} ${styles.btn_sns_lg} ${styles.btn_sns_login}`}>
-                                        <span className={styles.hidden}>카카오 로그인</span>
-                                    </button>
+                                <li className={`${styles.sns_login_item} ${styles.sns_item_ml} ${styles.pl_0} ${styles.ml_0}`}>
+                                    {name ? (
+                                        <p>환영합니다, {name}님!</p> // ✅ 로그인된 경우 UI 변경
+                                    ) : (
+                                        <ul className={`${styles.sns_login_list} ${styles.pl_0}`} style={{width:"50px"}}>
+                                            <li className={`${styles.sns_login_item} ${styles.sns_item_ml}`}>
+                                                {/* ✅ 카카오 로그인 버튼 */}
+                                                <button onClick={() => signIn("kakao")} className={`${styles.btn_sns_login} ${styles.btn_kakao}`}>
+                                                    <span className={styles.hidden}>카카오 로그인</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    )}
                                 </li>
                                 <li className={`${styles.sns_login_item} ${styles.sns_item_ml}`}>
                                     <button className={`${styles.btn_goolge} ${styles.btn_sns_lg} ${styles.btn_sns_login}`}>

@@ -539,3 +539,11 @@ input {
     background-image: url("/images/common/ico_sns_mail@2x.png");
     background-size: 42px 42px;
 }
+
+.pl_0{
+    padding-left: 0;
+}
+
+.ml_0{
+    margin-left: 0;
+}
