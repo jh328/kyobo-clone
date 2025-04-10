@@ -39,7 +39,7 @@
     border-radius: 12px;
 }
 
-.swiper-container_banner {
+.swiper_container_banner {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -230,6 +230,16 @@
     display: inline-block;
 }
 
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
 .swiper_button_next {
     display: inline-block;
     position: static;
@@ -258,11 +268,12 @@
     border: 0;
 }
 
-.button[class^=btn_], a[class^=btn_] {
+/*클래스*/
+/*.button[class^=btn_], a[class^=btn_] {
     display: inline-block;
     box-sizing: border-box;
     vertical-align: top;
-}
+}*/
 
 .welcome_top_special:before {
     content: "";
