@@ -6,11 +6,24 @@ import {books} from "@/app/lib/book";
 import {useParams} from "next/navigation";
 import Link from "next/link";
 import {formatPrice} from "@/utils/format";
-import {useState} from "react";
+import {useRef, useState} from "react";
 import ReviewModal from "@/app/components/reviewmodal/ReviewModal";
 
 export default function Detail() {
     const [showModal, setShowModal] = useState(false);
+    const [quantity, setQuantity] = useState(1);
+
+    /*scroll event*/
+    const eventRef = {
+        event: useRef<HTMLDivElement>(null),
+        info:useRef<HTMLDivElement>(null),
+        review:useRef<HTMLDivElement>(null),
+        exchange:useRef<HTMLDivElement>(null),
+    }
+
+    /*quantity*/
+    const increase = ()=>setQuantity((prev) => prev + 1);
+    const decrease = () => setQuantity((prev) => Math.max(1, prev - 1));
 
     const {id} = useParams();
     const book = books.find((b) => b.id === Number(id));
@@ -23,6 +36,12 @@ export default function Detail() {
 
     // 리뷰 작성 버튼 눌렀을 때 호출 하는 함수
     console.log("showModal", showModal)
+
+    const handleScroll = (key: keyof typeof eventRef) => {
+        eventRef[key].current?.scrollIntoView({behavior: "smooth"});
+    }
+
+
 
     return (
         <div className={styles.detail_wrapper}>
@@ -363,27 +382,27 @@ export default function Detail() {
                                 <div className={styles.sps_inner}>
                                     <ul className={styles.tabs}>
                                         <li className={styles.tab_item}>
-                                            <Link href="" className={styles.tab_link}>
+                                            <button onClick={()=> handleScroll("event")} className={styles.tab_link}>
                                                 <span className={styles.tab_text}>이벤트</span>
-                                            </Link>
+                                            </button>
                                         </li>
                                         <li className={`${styles.tab_pa} ${styles.tab_item}`}>
-                                            <Link href="" className={styles.tab_link}>
+                                            <button onClick={()=> handleScroll("info")} className={styles.tab_link}>
                                                 <span className={styles.tab_text}>상품정보</span>
-                                            </Link>
+                                            </button>
                                         </li>
                                         <li className={styles.tab_item}>
-                                            <Link href="" className={styles.tab_link}>
+                                            <button onClick={()=> handleScroll('review')} className={styles.tab_link}>
                                                 <span className={styles.tab_text}>
                                                     리뷰
                                                     <span className={styles.num}>(93)</span>
                                                 </span>
-                                            </Link>
+                                            </button>
                                         </li>
                                         <li className={styles.tab_item}>
-                                            <Link href="" className={styles.tab_link}>
+                                            <button onClick={()=>handleScroll('exchange')} className={styles.tab_link}>
                                                 <span className={styles.tab_text}>교환/반품/품절</span>
-                                            </Link>
+                                            </button>
                                         </li>
                                     </ul>
                                 </div>
@@ -400,7 +419,9 @@ export default function Detail() {
                                 <section className={styles.tap_content}>
                                     <div className={styles.product_detail_area}>
                                         <div className={`${styles.title_sm} ${styles.title_wrap}`}>
-                                            <h4 className={styles.title_heading}>이 책의 이벤트</h4>
+                                            <section ref={eventRef.event}>
+                                                <h4 className={styles.title_heading}>이 책의 이벤트</h4>
+                                            </section>
                                             <div className={styles.right_area}>
                                                 <p className={`${styles.bul_item_asterisk} ${styles.font_size_xxs} ${styles.bul_item_base}`}>
                                                     해외주문/바로드림/제휴사주문/업체배송건의 경우 1+1 증정상품이 발송되지 않습니다.
@@ -454,7 +475,9 @@ export default function Detail() {
                                     {/*!--함께 구매한 상품 -->*/}
                                     <div className={styles.product_detail_together}>
                                         <div className={`${styles.title_wrap} ${styles.title_size_md}`}>
-                                            <h4 className={styles.title_heading}>함께 구매한 상품</h4>
+                                            <section ref={eventRef.info}>
+                                                <h4 className={styles.title_heading}>함께 구매한 상품</h4>
+                                            </section>
                                         </div>
                                         <div className={styles.round_gray_box}>
                                             <div className={`${styles.title_wrap} ${styles.title_size_def}`}>
@@ -990,7 +1013,9 @@ export default function Detail() {
                                     <div className={`${styles.product_detail_together}`}>
                                         {/*!--> Klover 리뷰 제목*/}
                                         <div className={`${styles.title_size_md_btn} ${styles.title_wrap}`}>
-                                            <p className={`${styles.title_heading}`}>Klover 리뷰 (93)</p>
+                                            <section ref={eventRef.review}>
+                                                <p className={`${styles.title_heading}`}>Klover 리뷰 (93)</p>
+                                            </section>
                                             <button className={`${styles.btn_size_lg} ${styles.ml6}`}>
                                                 <span className={`${styles.ico_info} ${styles.b_size}`}></span>
                                                 <span className={`${styles.hidden}`}>하 팝업웰케 많아</span>
@@ -1524,10 +1549,44 @@ export default function Detail() {
                             <div className={styles.detail_recommend}></div>
                         </div>
                     </div>
-                    <div className={styles.detail_footer}></div>
+                    <div className={styles.detail_footer}>
+                        <div className={`${styles.prod_purchase_info_wrap}`}>
+                            <div className={`${styles.footer_contents_inner} ${styles.prod_detail_contents} ${styles.footer}`}>
+                                <div>
+                                    <span className={`${styles.prod_info_title}`}>총 상품 금액</span>
+                                    <span className={`${styles.footer_price}`}>
+                                        <span className={`${styles.footer_val} ${styles.color}`}>40,500</span>
+                                        <span className={`${styles.footer_val}`}>원</span>
+                                    </span>
+                                </div>
+                                <div className={`${styles.footer_right}`}>
+                                    <div id="count" className={`${styles.mr_20} ${styles.prod_item} ${styles.h_44}`}>
+                                        <span className={`${styles.ui_spiner} ${styles.h_44}`}>
+                                            <button type="button"
+                                                    onClick={decrease}
+                                                    className={`${styles.btn_quantity} ${styles.btn_spinner} ${styles.btn_up}`}>
+                                                <span className={`${styles.down_icon} ${styles.btn_quantity_up_down}`}>수량 줄</span>
+                                            </button>
+                                            <input type="number"
+                                                   value={quantity}
+                                                   onChange={(e)=> setQuantity(Number(e.target.value))}
+                                                   min={1}
+                                                   className={`${styles.form_spinner}`}/>
+                                            <button type="button"
+                                                    onClick={increase}
+                                                    className={`${styles.btn_quantity} ${styles.btn_spinner} ${styles.btn_down}`}>
+                                                <span className={`${styles.up_icon}  ${styles.btn_quantity_up_down}`}>수량 늘</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div className={`${styles.btn_wrap}`}></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <div></div>
             </main>
         </div>
     );
-}
+};

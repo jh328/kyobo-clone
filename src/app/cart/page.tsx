@@ -409,7 +409,7 @@ export default function Page() {
                                         <button type="button" className={`${style.btn_primary} ${style.btn_md} ${style.btn_class}`}>
                                             <span className={style.btn_base}>
                                                 바로드림 주문 (
-                                                <span >1</span>
+                                                <span >10000000</span>
                                                 )
                                             </span>
                                         </button>
