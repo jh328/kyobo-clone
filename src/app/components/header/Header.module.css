@@ -1,4 +1,4 @@
-.header-wrapper {
+.header_wrapper {
     position: relative;
     background-color: #fff;
     border-bottom: 1px solid #eaeaea;
@@ -203,11 +203,11 @@
     box-sizing: border-box;
 }
 
-button[class^=btn_], a[class^=btn_] {
+/*button[class^=btn_], a[class^=btn_] {
     display: inline-block;
     box-sizing: border-box;
     vertical-align: top;
-}
+}*/
 
 
 button[class^=btn_] .text, a[class^=btn_] .text {
@@ -462,9 +462,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     justify-content: flex-start;
     -webkit-box-align: center;
     align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
     flex-direction: row;
+    display: -webkit-flex;
 }
 
 .user_menu_item_cash {
@@ -484,7 +483,6 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     width: 32px;
     height: 32px;
     margin-left: 20px;
-    padding-top: 5px;
 }
 
 .my {
@@ -508,7 +506,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url("/images/common/btn_header_cart@2x.png");
+    background-image: url("/images/header/btn_header_cart@2x.png");
     vertical-align: top;
 }
 
@@ -586,7 +584,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     text-decoration: none;
 }
 
-.em-green {
+.em_green {
     font-weight: 700;
     color: #4dac27;
 }
@@ -620,10 +618,10 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     border: 0;
 }
 
-button[class^=btn_], a[class^=btn_] {
+/*button[class^=btn_], a[class^=btn_] {
     box-sizing: border-box;
     vertical-align: top;
-}
+}*/
 
 .gnb_sub_list {
     margin-top: 3px;
