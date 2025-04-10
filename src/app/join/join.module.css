@@ -9,6 +9,50 @@
     box-sizing: border-box;
 }
 
+.header_wrapper {
+    width: 100%;
+    border-bottom: none;
+    flex-shrink: 0;
+    height: 54px;
+}
+
+.header_wp {
+    position: relative;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.header_inner {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0;
+    position: relative;
+}
+
+.logo_box {
+    display: inline-block;
+    width: 171px;
+    height: 56px;
+    vertical-align: top;
+}
+
+.logo_link {
+    display: block;
+    height: 100%;
+}
+
+.logo_link_img {
+    width: 100%;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    min-width: 1440px;
+    min-height: 100vh;
+}
+
 .container_wrapper {
     flex: 1 0 auto;
     width: 100%;
@@ -227,6 +271,16 @@
     height: 3px;
 }
 
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
 /*개인회원 회원가입 탭*/
 .member_join_wrap {
 
@@ -270,6 +324,11 @@
     min-width: auto;
 }
 
+.btn_join {
+    flex: 1;
+    min-width: auto;
+}
+
 .btn_lg {
     display: -webkit-inline-flex;
     -webkit-box-pack: center;
@@ -288,6 +347,7 @@
     font-weight: 700;
 }
 
+
 .btn_primary {
     color: #fff;
     background: #5055b1;
@@ -295,10 +355,11 @@
     transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
 }
 
-button[class^=btn_], a[class^=btn_] {
+/*클래스*/
+/*button[class^=btn_], a[class^=btn_] {
     box-sizing: border-box;
     vertical-align: top;
-}
+}*/
 
 .benefit_title {
     margin-bottom: 16px;
@@ -451,4 +512,107 @@ button[class^=btn_], a[class^=btn_] {
     line-height: 19px;
     letter-spacing: -0.01em;
     color: #767676;
+}
+
+
+.sns_login_list {
+    display: -webkit-flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    font-size: 0;
+}
+
+.sns_list_under {
+    margin-top: 20px;
+}
+
+.sns_login_item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top
+}
+
+/*li 태그 sns 로그인 4개중 3개는 이 속성이 필요함*/
+.sns_item_ml {
+    margin-left: 14px;
+}
+
+.btn_sns_login {
+    display: block;
+    min-width: 50px;
+    min-height: 42px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.btn_naver {
+    background-size: 42px 42px;
+    background-image: url("/images/common/ico_sns_naver@2x.png");
+}
+
+.btn_kakao {
+    background-size: 42px 42px;
+    background-image: url("/images/common/ico_sns_kakao@2x.png");
+}
+
+.btn_goolge {
+    background-image: url("/images/common/ico_sns_google@2x.png");
+    background-size: 42px 42px;
+}
+
+.btn_apple {
+    background-size: 42px 42px;
+    background-image: url("/images/common/ico_sns_apple@2x.png");
+}
+
+.btn_mobile {
+    background-size: 42px 42px;
+    background-image: url("/images/common/ico_sns_phone@2x.png");
+}
+
+.btn_email {
+    background-image: url("/images/common/ico_sns_mail@2x.png");
+    background-size: 42px 42px;
+}
+
+.unit {
+    font-size: 12px;
+    vertical-align: 1px;
+    color: #000;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+/*클래스*/
+/*a[disabled], a[aria-disabled=true], a.disabled, button[disabled], button[aria-disabled=true], button.disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+    text-decoration: none !important;
+}*/
+
+.btn_sns_lg {
+    min-width: 42px;
+}
+
+.btn_ico_arrow {
+    width: 5px !important;
+    height: 9px !important;
+    margin-top: 5px;
+    background-image: url("/images/common/btn_swiper_list_wh@2x.png");
+    background-size: 5px 9px;
+}
+
+.ico_phone {
+    background-size: 36px 36px;
+    background-image: url("/images/common/ico_cert_phone_36x36@2x.png");
+}
+
+.ico_ipin {
+    background-size: 36px 36px;
+    background-image: url("/images/common/ico_cert_ipin_36x36@2x.png");
 }
