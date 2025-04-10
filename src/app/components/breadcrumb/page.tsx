@@ -33,7 +33,6 @@ export default function Breadcrumb() {
                         </Link>
                         <div>패스..</div>
                     </li>
-
                 </ol>
             </div>
         </section>

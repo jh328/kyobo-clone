@@ -113,7 +113,7 @@
     vertical-align: top;
 }
 
-.footer_menu_item.no-before:before {
+.footer_menu_item.no_before:before {
     content: none;
     display: none;
 }
