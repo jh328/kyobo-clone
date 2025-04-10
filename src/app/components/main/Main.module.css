@@ -1,3 +1,8 @@
+.contents_inner{
+    width:1200px;
+    margin:0 auto;
+}
+
 .title_size_xxl {
     padding-bottom: 30px;
     position: relative;
@@ -163,6 +168,7 @@
     margin: 6px 0 0 6px;
     background: url("/images/common/ico_plus_h10_bold@2x.png");
     background-size: 10px 10px;
+    display: inline-block;
 }
 
 .thumb_swiper_wrap {
@@ -274,6 +280,16 @@
     white-space: normal;
     word-break: break-all;
     font-weight: 500;
+}
+
+.hidden{
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .prod_author {
