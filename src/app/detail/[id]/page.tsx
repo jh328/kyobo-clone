@@ -16,13 +16,13 @@ export default function Detail() {
     /*scroll event*/
     const eventRef = {
         event: useRef<HTMLDivElement>(null),
-        info:useRef<HTMLDivElement>(null),
-        review:useRef<HTMLDivElement>(null),
-        exchange:useRef<HTMLDivElement>(null),
+        info: useRef<HTMLDivElement>(null),
+        review: useRef<HTMLDivElement>(null),
+        exchange: useRef<HTMLDivElement>(null),
     }
 
     /*quantity*/
-    const increase = ()=>setQuantity((prev) => prev + 1);
+    const increase = () => setQuantity((prev) => prev + 1);
     const decrease = () => setQuantity((prev) => Math.max(1, prev - 1));
 
     const {id} = useParams();
@@ -378,21 +378,23 @@ export default function Detail() {
                     </div>
                     <div className={styles.tab_wrap}>
                         <div className={styles.tab_list_wrap}>
-                            <div className={`${styles.sps} ${styles.scroll_fixed}`}>
+                            {/*이벤트 상품정보 리뷰 교환/반품/품절 탭*/}
+                            <div className={`${styles.sps} ${styles.scroll_fixed} ${styles.scroll_fixe}`}>
+                                {/*이벤트 상품정보 리뷰 교환/반품/품절 탭*/}
                                 <div className={styles.sps_inner}>
                                     <ul className={styles.tabs}>
                                         <li className={styles.tab_item}>
-                                            <button onClick={()=> handleScroll("event")} className={styles.tab_link}>
+                                            <button onClick={() => handleScroll("event")} className={styles.tab_link}>
                                                 <span className={styles.tab_text}>이벤트</span>
                                             </button>
                                         </li>
                                         <li className={`${styles.tab_pa} ${styles.tab_item}`}>
-                                            <button onClick={()=> handleScroll("info")} className={styles.tab_link}>
+                                            <button onClick={() => handleScroll("info")} className={styles.tab_link}>
                                                 <span className={styles.tab_text}>상품정보</span>
                                             </button>
                                         </li>
                                         <li className={styles.tab_item}>
-                                            <button onClick={()=> handleScroll('review')} className={styles.tab_link}>
+                                            <button onClick={() => handleScroll('review')} className={styles.tab_link}>
                                                 <span className={styles.tab_text}>
                                                     리뷰
                                                     <span className={styles.num}>(93)</span>
@@ -400,7 +402,8 @@ export default function Detail() {
                                             </button>
                                         </li>
                                         <li className={styles.tab_item}>
-                                            <button onClick={()=>handleScroll('exchange')} className={styles.tab_link}>
+                                            <button onClick={() => handleScroll('exchange')}
+                                                    className={styles.tab_link}>
                                                 <span className={styles.tab_text}>교환/반품/품절</span>
                                             </button>
                                         </li>
@@ -1551,7 +1554,8 @@ export default function Detail() {
                     </div>
                     <div className={styles.detail_footer}>
                         <div className={`${styles.prod_purchase_info_wrap}`}>
-                            <div className={`${styles.footer_contents_inner} ${styles.prod_detail_contents} ${styles.footer}`}>
+                            <div
+                                className={`${styles.footer_contents_inner} ${styles.prod_detail_contents} ${styles.footer}`}>
                                 <div>
                                     <span className={`${styles.prod_info_title}`}>총 상품 금액</span>
                                     <span className={`${styles.footer_price}`}>
@@ -1569,7 +1573,7 @@ export default function Detail() {
                                             </button>
                                             <input type="number"
                                                    value={quantity}
-                                                   onChange={(e)=> setQuantity(Number(e.target.value))}
+                                                   onChange={(e) => setQuantity(Number(e.target.value))}
                                                    min={1}
                                                    className={`${styles.form_spinner}`}/>
                                             <button type="button"
@@ -1579,7 +1583,33 @@ export default function Detail() {
                                             </button>
                                         </span>
                                     </div>
-                                    <div className={`${styles.btn_wrap}`}></div>
+                                    <div className={`${styles.prod_item}`} style={{textAlign: "center"}}>
+                                        <button type="button"
+                                                className={`${styles.btn_comment_util} ${styles.btn_lg} ${styles.btn_footer_wish}`}>
+                                            <span
+                                                className={`${styles.footer_ico_wish} ${styles.btn_comment_util}`}></span>
+                                            <span className={`${styles.hidden}`}>내 마음의 저장~</span>
+                                        </button>
+                                        <Link href=""
+                                              className={`${styles.ml6} ${styles.btn_gray} ${styles.mw_120} ${styles.btn_comment_util} ${styles.btn_footer_link}`}>
+                                            <span className={`${styles.ico_gift} ${styles.locate_text}`}></span>
+                                            <span className={`${styles.locate_text}`} style={{top: "2px"}}>선물하기</span>
+                                        </Link>
+                                        <button type="button"
+                                                className={`${styles.btn_comment_util} ${styles.ico_wish_base} ${styles.ml6} ${styles.mw_120} ${styles.btn_footer_link} ${styles.btn_cart}`}>
+                                            <span className={styles.locate_text}>장바구니</span>
+                                        </button>
+                                        <div className={`${styles.prod_item} ${styles.footer_pay} ${styles.ml6}`}>
+                                            <Link href=""
+                                                  className={`${styles.mw_120} ${styles.btn_cart} ${styles.btn_footer_link} ${styles.baro} ${styles.btn_comment_util}`}>
+                                                <span className={styles.locate_text}>바로드림</span>
+                                            </Link>
+                                            <Link href=""
+                                                  className={`${styles.mw_120} ${styles.ml_0} ${styles.baro_pur} ${styles.btn_footer_link} ${styles.btn_pur} ${styles.btn_comment_util}`}>
+                                                <span className={`${styles.locate_text}`}>바로구매</span>
+                                            </Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

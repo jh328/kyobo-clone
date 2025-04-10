@@ -312,6 +312,20 @@
     transition: background-color 0.2s ease-out, border-color 0.2s ease-out !important;
 }
 
+.btn_cart{
+    color:#474c98;
+    border:1px solid #5055b1;
+    background:#fff;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.btn_pur{
+    color:#fff;
+    border:1px solid #5055b1;
+    background:#5055b1;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
 .book_select {
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -564,6 +578,18 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     line-height: 18px;
     letter-spacing: -0.01em;
     font-weight: 500;
+}
+
+.btn_gray {
+    color: #000;
+    background: #fff;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+/*alone*/
+.mw_120 {
+    min-width: 120px;
 }
 
 .p15 {
@@ -865,6 +891,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     display: block;
     font-size: 0;
 }
+
 
 .swiper_container {
     overflow: visible;
@@ -1673,6 +1700,10 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin-right: 3px;
 }
 
+.baro_pur{
+    border-radius: 0 6px 6px 0 !important;
+}
+
 .locate_text {
     display: inline-block;
     position: relative;
@@ -2179,9 +2210,16 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     height: auto;
 }
 
+/*two*/
 .prod_item {
     display: inline-block;
     vertical-align: top;
+}
+
+.footer_pay{
+    border-radius: 6px;
+    font-size:0;
+    text-align: center;
 }
 
 .slide {
@@ -2702,6 +2740,17 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     background-size: 22px 22px;
 }
 
+.footer_ico_wish {
+    width: 20px;
+    height: 20px;
+    background-image: url("/images/common/ico_wish_alarm@2x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    transition: background 0.2s ease-out;
+    margin-top: 11px;
+}
+
 .letter_wish {
     width: 44px;
     height: 44px;
@@ -2725,8 +2774,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     width: 33px
 }
 
-.h_44{
-    height:44px;
+.h_44 {
+    height: 44px;
 }
 
 .form_chk {
@@ -3407,6 +3456,27 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     vertical-align: top;
 }
 
+.baro{
+    border-radius: 6px 0 0 6px !important;
+}
+
+.btn_footer_link {
+    display: -webkit-inline-flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 50px;
+    padding: 0 23px 1px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+}
+
+
+
 .btn_comment_util .text {
     display: inline-block;
     position: relative;
@@ -3510,15 +3580,15 @@ button[class^=btn_] .text, a[class^=btn_] .text {
 .btn_up {
     border-right: none;
     border-radius: 6px 0 0 6px;
-    left:0;
+    left: 0;
 }
 
-.btn_down{
+.btn_down {
     border-left: none;
     border-radius: 0 6px 6px 0;
 }
 
-.up_icon{
+.up_icon {
     width: 12px;
     height: 12px;
     background-size: 12px 12px;
@@ -3528,7 +3598,7 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     margin: 0;
 }
 
-.down_icon{
+.down_icon {
     background-size: 12px 12px;
     background-image: url("/images/common/ico_spinner_down_sm@2x.png");
     width: 12px;
@@ -3544,7 +3614,8 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     overflow: hidden;
     background-repeat: no-repeat;
 }
-.form_spinner{
+
+.form_spinner {
     width: 100%;
     height: 44px;
     margin: 0;
@@ -3561,8 +3632,34 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     vertical-align: top;
 }
 
-.form_input{
+.form_input {
     border: 0;
     background: 0 0;
     border-radius: 0;
+}
+
+.btn_lg {
+    width: 50px;
+    height: 50px;
+}
+
+.btn_footer_wish {
+    color: #fff;
+    letter-spacing: -0.01em;
+    line-height: 42px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.ico_gift {
+    width: 18px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-image: url("/images/common/ico_gift@2x.png");
+    background-size: 18px 24px;
+    height: 24px;
+    margin-right: 5px;
+
 }
