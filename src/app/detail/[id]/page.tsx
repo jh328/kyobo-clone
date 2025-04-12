@@ -11,13 +11,44 @@ import {useRef, useState} from "react";
 import ReviewModal from "@/app/components/modals/ReviewModal/ReviewModal";
 import GenericModal from "@/app/components/modals/GenericModal";
 import {useRouter} from 'next/navigation'
+import {useSession} from "next-auth/react";
+import ToastNotification from "@/app/components/toast/ToastNotification";
 
 export default function Detail() {
+    const router = useRouter();
+    const {data: session} = useSession();
+
     const [showModal, setShowModal] = useState(false);
     const [quantity, setQuantity] = useState(1);
     const [showCartModal, setShowCartModal] = useState(false);
 
-    const router = useRouter();
+    /* 로그인 하라고 알려주는 모달 */
+    const [isWished, setIsWished] = useState(false);
+    const [showToast, setShowToast] = useState(false);
+    const [toastText, setToastText] = useState('');
+    const [showLoginModal, setShowLoginModal] = useState(false);
+
+    const checkLogin = () => {
+        if (!session) {
+            setShowLoginModal(true);
+            return false; /*리턴값을 주는데 여기에서 왜 false를 주는거지? */
+        }
+        return true;
+    }
+
+    const toggleWish = () => {
+        const newWish = !isWished;
+        setIsWished(newWish);
+        setToastText(newWish ? "찜 설정되었어요." : "찜 해제되었어요.");
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 1500);
+    }
+
+    const handleWishClick = () => {
+        if (!checkLogin()) return;
+        toggleWish();
+    };
+
     /*scroll event*/
     const eventRef = {
         event: useRef<HTMLDivElement>(null),
@@ -25,7 +56,6 @@ export default function Detail() {
         review: useRef<HTMLDivElement>(null),
         exchange: useRef<HTMLDivElement>(null),
     };
-
 
 
     /*quantity*/
@@ -40,9 +70,6 @@ export default function Detail() {
 
     const discountedPrice = book.price * (1 - book.discount / 100);
 
-
-    // 리뷰 작성 버튼 눌렀을 때 호출 하는 함수
-    console.log("showModal", showModal)
 
     const handleScroll = (key: keyof typeof eventRef) => {
         eventRef[key].current?.scrollIntoView({behavior: "smooth"});
@@ -1575,6 +1602,23 @@ export default function Detail() {
                         />
                     )}
 
+                    {showToast && (
+                        <ToastNotification message={toastText} onClose={() => setShowToast(false)}/>
+                    )}
+
+                    {showLoginModal && (
+                        <GenericModal
+                            title="찜하기는 로그인 후 이용할 수 있어요."
+                            confirmText="이동하기"
+                            cancelText="취소"
+                            onClose={() => setShowLoginModal(false)}
+                            onConfirm={() => {
+                                setShowLoginModal(false);
+                                router.push("/login");
+                            }}
+                            />
+                        )}
+
                     <div className={styles.detail_footer}>
                         <div className={`${styles.prod_purchase_info_wrap}`}>
                             <div
@@ -1606,11 +1650,9 @@ export default function Detail() {
                                             </button>
                                         </span>
                                     </div>
-                                    {/*{showCartModal && (
-                                        <CartModal onClose={()=> setShowCartModal(false)}/>
-                                    )}*/}
                                     <div className={`${styles.prod_item}`} style={{textAlign: "center"}}>
                                         <button type="button"
+                                                onClick={handleWishClick}
                                                 className={`${styles.btn_comment_util} ${styles.btn_lg} ${styles.btn_footer_wish}`}>
                                             <span
                                                 className={`${styles.footer_ico_wish} ${styles.btn_comment_util}`}></span>

@@ -3,9 +3,12 @@ import styles from "./login.module.css"
 import Link from "next/link";
 import {useUserStore} from "@/app/store/userStore";
 import { signIn } from "next-auth/react";
+import {useRouter} from "next/navigation";
 
 export default function Page() {
+    const router = useRouter();
     const {name} = useUserStore();
+
 
     return (
         <div className={`${styles.wrapper} ${styles.member_login}`}>

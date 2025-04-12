@@ -3,7 +3,7 @@ import styles from "./Generic.module.css"
 
 
 type ModalProps = {
-    title: string;               // 모달 제목
+    title: string;              // 모달 제목
     description?: string;       // 서브 텍스트 (없어도 됨)
     confirmText?: string;       // 확인 버튼 문구
     cancelText?: string;        // 취소 버튼 문구
