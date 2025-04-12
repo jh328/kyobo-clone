@@ -1,4 +1,5 @@
 'use client'
+
 import styles from './detail.module.css'
 import Header from "@/app/components/header/Header";
 import Breadcrumb from "@/app/components/breadcrumb/page";
@@ -7,19 +8,25 @@ import {useParams} from "next/navigation";
 import Link from "next/link";
 import {formatPrice} from "@/utils/format";
 import {useRef, useState} from "react";
-import ReviewModal from "@/app/components/reviewmodal/ReviewModal";
+import ReviewModal from "@/app/components/modals/ReviewModal/ReviewModal";
+import GenericModal from "@/app/components/modals/GenericModal";
+import {useRouter} from 'next/navigation'
 
 export default function Detail() {
     const [showModal, setShowModal] = useState(false);
     const [quantity, setQuantity] = useState(1);
+    const [showCartModal, setShowCartModal] = useState(false);
 
+    const router = useRouter();
     /*scroll event*/
     const eventRef = {
         event: useRef<HTMLDivElement>(null),
         info: useRef<HTMLDivElement>(null),
         review: useRef<HTMLDivElement>(null),
         exchange: useRef<HTMLDivElement>(null),
-    }
+    };
+
+
 
     /*quantity*/
     const increase = () => setQuantity((prev) => prev + 1);
@@ -40,7 +47,6 @@ export default function Detail() {
     const handleScroll = (key: keyof typeof eventRef) => {
         eventRef[key].current?.scrollIntoView({behavior: "smooth"});
     }
-
 
 
     return (
@@ -784,6 +790,7 @@ export default function Detail() {
                                                 이 책의 총서
                                                 <span>(33)</span>
                                             </p>
+
                                             <button type="button"
                                                     className={`${styles.btn_wish_alarm} ${styles.wish_base} ${styles.wish_ml}`}>
                                                 <span className={`${styles.ico_wish} ${styles.ico_wish_base}`}></span>
@@ -1552,6 +1559,22 @@ export default function Detail() {
                             <div className={styles.detail_recommend}></div>
                         </div>
                     </div>
+
+                    {/*장바구니 모달 컴포넌트*/}
+                    {showCartModal && (
+                        <GenericModal
+                            title="상품이 장바구니에 담겼습니다."
+                            description="장바구니로 이동하시겠습니까?"
+                            confirmText="이동"
+                            cancelText="취소"
+                            onClose={() => setShowCartModal(false)}
+                            onConfirm={() => {
+                                setShowCartModal(false);
+                                router.push('/cart');
+                            }}
+                        />
+                    )}
+
                     <div className={styles.detail_footer}>
                         <div className={`${styles.prod_purchase_info_wrap}`}>
                             <div
@@ -1583,6 +1606,9 @@ export default function Detail() {
                                             </button>
                                         </span>
                                     </div>
+                                    {/*{showCartModal && (
+                                        <CartModal onClose={()=> setShowCartModal(false)}/>
+                                    )}*/}
                                     <div className={`${styles.prod_item}`} style={{textAlign: "center"}}>
                                         <button type="button"
                                                 className={`${styles.btn_comment_util} ${styles.btn_lg} ${styles.btn_footer_wish}`}>
@@ -1596,6 +1622,7 @@ export default function Detail() {
                                             <span className={`${styles.locate_text}`} style={{top: "2px"}}>선물하기</span>
                                         </Link>
                                         <button type="button"
+                                                onClick={() => setShowCartModal(true)}
                                                 className={`${styles.btn_comment_util} ${styles.ico_wish_base} ${styles.ml6} ${styles.mw_120} ${styles.btn_footer_link} ${styles.btn_cart}`}>
                                             <span className={styles.locate_text}>장바구니</span>
                                         </button>

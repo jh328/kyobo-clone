@@ -1,12 +1,21 @@
+'use client'
 import style from "./cart.module.css";
 import Link from "next/link";
+import {useSession} from "next-auth/react";
+import SearchHeader from "@/app/components/search_header/search";
 
 export default function Page() {
+    const {data: session} = useSession();
+
+    let userName;
+    if (session && session.user?.name) {
+        userName = session.user.name;
+    }
+
     return (
         <div className={style.wrapper}>
-            <header/>
+            <SearchHeader/>
             <div>{/*플로팅 액션 버튼, 플로팅 고객센터 버튼 그룹, */}</div>
-            장바구니
             <main className={style.main_container}>
                 <section className={style.pt_50}>
                     <div className={style.contents_inner}>
@@ -22,14 +31,16 @@ export default function Page() {
                                     <div className={`${style.title_wrap} ${style.pb_30} ${style.title_base}`}>
                                         <h1 className={`${style.title_heading} ${style.title_text}`}>장바구니 (1)</h1>
                                         <div className={style.order}>
+                                            {userName && (
                                             <div className={`${style.ml_12} ${style.order}`}>
                                                 <button
                                                     className={`${style.btn_gray} ${style.btn_sm} ${style.btn_base} `}>
                                                     <span
                                                         className={`${style.ico_locate_black} ${style.btn_base} ${style.btn_locate}`}></span>
-                                                    <span className={`${style.text}`}>로그아웃 하면 안보여지고, 로그인 하면 보여짐 display none값 줘야한다.</span>
+                                                    <span className={`${style.text}`}>{userName}</span>
                                                 </button>
                                             </div>
+                                            )}
                                             <div className={`${style.order_sort_wrap}`}></div>
                                         </div>
                                         <div className={`${style.right_area} ${style.right}`}>
@@ -358,7 +369,8 @@ export default function Page() {
                                                     <p className={`${style.label}`}>상품 할인</p>
                                                     <div className={`${style.right_box}`}>
                                                         <span className={style.price}>
-                                                             <span className={`${style.spot}`} style={{color:"#5055b1"}}>+ 2200</span>
+                                                             <span className={`${style.spot}`}
+                                                                   style={{color: "#5055b1"}}>+ 2200</span>
                                                             <span className={`${style.unit}`}
                                                                   style={{marginLeft: "2px"}}>원</span>
                                                         </span>
@@ -369,16 +381,18 @@ export default function Page() {
                                         <div className={style.info_box}>
                                             <ul className={style.pl_0}>
                                                 <li className={`${style.payments_item}`}>
-                                                    <p className={` ${style.label} ${style.amount_pay}`} >결제 예정 금액</p>
+                                                    <p className={` ${style.label} ${style.amount_pay}`}>결제 예정 금액</p>
                                                     <div className={`${style.right_box}`}>
                                                         <span className={style.price}>
                                                             <span className={`${style.total_price}`}>19,800</span>
-                                                            <span className={`${style.unit}`} style={{verticalAlign:"1px"}}>원</span>
+                                                            <span className={`${style.unit}`}
+                                                                  style={{verticalAlign: "1px"}}>원</span>
                                                         </span>
                                                     </div>
                                                 </li>
                                                 <li className={`${style.payments_item} ${style.mt_10}`}>
-                                                    <p className={style.label} style={{fontSize:"13px", lineHeight:"19px"}}>적립 예정 포인트</p>
+                                                    <p className={style.label}
+                                                       style={{fontSize: "13px", lineHeight: "19px"}}>적립 예정 포인트</p>
                                                     <button type="button"
                                                             className={`${style.btn_info_ques} ${style.btn_class} ${style.p_0}`}>
                                                         <span className={`${style.ico_question} ${style.btn_base}`}
@@ -388,14 +402,16 @@ export default function Page() {
                                                     <div className={style.right_box}>
                                                         <span className={style.price}>
                                                             <span className={`${style.amount_price}`}>1,100</span>
-                                                            <span className={`${style.unit}`} style={{marginLeft:"2px"}}>P</span>
+                                                            <span className={`${style.unit}`}
+                                                                  style={{marginLeft: "2px"}}>P</span>
                                                         </span>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div className={`${style.btn_order} ${style.btn_wrap} ${style.mt_30}`}>
-                                            <button type="button" className={`${style.btn_pay} ${style.btn_class} ${style.btn_lg}`}>
+                                            <button type="button"
+                                                    className={`${style.btn_pay} ${style.btn_class} ${style.btn_lg}`}>
                                                 <span className={style.btn_base}>
                                                     주문하기 (
                                                     <span className={style.sum_total}>1</span>
@@ -406,10 +422,11 @@ export default function Page() {
                                         <div></div>
                                     </div>
                                     <div className={`${style.mt_10} ${style.btn_wrap}`}>
-                                        <button type="button" className={`${style.btn_primary} ${style.btn_md} ${style.btn_class}`}>
+                                        <button type="button"
+                                                className={`${style.btn_primary} ${style.btn_md} ${style.btn_class}`}>
                                             <span className={style.btn_base}>
                                                 바로드림 주문 (
-                                                <span >10000000</span>
+                                                <span>10000000</span>
                                                 )
                                             </span>
                                         </button>

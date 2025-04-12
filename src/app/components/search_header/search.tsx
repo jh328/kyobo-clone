@@ -96,7 +96,7 @@ export default function SearchHeader() {
                             </Link>
                         </li>
                         <li className={`${styles.user_menu_item} ${styles.cart}`}>
-                            <Link href="" className={styles.cart_link}>
+                            <Link href="/cart" className={styles.cart_link}>
                                 <span className={styles.hidden}>장바구니</span>
                                 <span className={styles.hidden}>카드 사이즈 값 주기 꼭 </span>
                             </Link>

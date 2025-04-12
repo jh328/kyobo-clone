@@ -1,4 +1,3 @@
-//src/app/components/reviewmodal/ReviewModal.tsx
 import style from "./Review.module.css"
 import Link from "next/link";
 
@@ -7,8 +6,10 @@ type ReviewModalProps = {
 }
 
 export default function ReviewModal({onClose}: ReviewModalProps) {
+    console.log("리뷰모달")
+
     return (
-        <div className={` ${style.base}`}>
+        <div className={`${style.base}`}>
             <div className={`${style.ui_dialog} ${style.dialog}`}>
                 <div></div>
                 <div className={`${style.dialog_content} ${style.ui_widget_content}`}>
@@ -291,7 +292,8 @@ export default function ReviewModal({onClose}: ReviewModalProps) {
 
                     {/*!--> footer*/}
                     <div className={`${style.dialog_footer}`}>
-                        <button type="button" className={`${style.btn_md} ${style.btn_primary} ${style.btn_base} ${style.btn_ev}`}>
+                        <button type="button"
+                                className={`${style.btn_md} ${style.btn_primary} ${style.btn_base} ${style.btn_ev}`}>
                             <span className={style.text_base}>등록</span>
                         </button>
                     </div>
