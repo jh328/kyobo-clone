@@ -1655,7 +1655,7 @@ export default function Detail() {
                                                 onClick={handleWishClick}
                                                 className={`${styles.btn_comment_util} ${styles.btn_lg} ${styles.btn_footer_wish}`}>
                                             <span
-                                                className={`${styles.footer_ico_wish} ${styles.btn_comment_util}`}></span>
+                                                className={isWished ? `${styles.footer_ico_wish} ${styles.btn_comment_util}` : `${styles.ico_active_wish} ${styles.btn_comment_util}`}></span>
                                             <span className={`${styles.hidden}`}>내 마음의 저장~</span>
                                         </button>
                                         <Link href=""

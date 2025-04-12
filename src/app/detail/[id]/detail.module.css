@@ -1687,6 +1687,16 @@ button[class^=btn_] .text, a[class^=btn_] .text {
     -webkit-justify-content: center;
 }
 
+.ico_active_wish{
+    background-image: url('/images/common/ico_heart_h20_active@2x.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 11px;
+}
+
 .ico_locate {
     width: 14px;
     background-size: 13px 19px;
