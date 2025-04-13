@@ -30,20 +30,6 @@
 }
 
 
-.toast_wrap1234 {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 1005;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    animation: fadeInOut 1.5s ease-in-out;
-}
-
 @keyframes fadeInOut {
     0% { opacity: 0; transform: translate(-50%, -60%); }
     10% { opacity: 1; transform: translate(-50%, -50%); }
@@ -51,6 +37,3 @@
     100% { opacity: 0; transform: translate(-50%, -40%); }
 }
 
-.toast_text1234 {
-    font-weight: bold;
-}

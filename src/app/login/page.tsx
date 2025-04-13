@@ -86,7 +86,7 @@ export default function Page() {
                                         <ul className={`${styles.sns_login_list} ${styles.pl_0}`} style={{width:"50px"}}>
                                             <li className={`${styles.sns_login_item} ${styles.sns_item_ml}`}>
                                                 {/* ✅ 카카오 로그인 버튼 */}
-                                                <button onClick={() => signIn("kakao")} className={`${styles.btn_sns_login} ${styles.btn_kakao}`}>
+                                                <button onClick={() => signIn("kakao", {callbackUrl:"/"})} className={`${styles.btn_sns_login} ${styles.btn_kakao}`}>
                                                     <span className={styles.hidden}>카카오 로그인</span>
                                                 </button>
                                             </li>

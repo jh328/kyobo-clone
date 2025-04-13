@@ -3,14 +3,42 @@ import style from "./cart.module.css";
 import Link from "next/link";
 import {useSession} from "next-auth/react";
 import SearchHeader from "@/app/components/search_header/search";
+import {useCartStore} from "@/app/store/cartStore";
+import {formatPrice} from "@/utils/format";
+import {useState} from "react";
+import GenericModal from "@/app/components/modals/GenericModal";
 
 export default function Page() {
     const {data: session} = useSession();
+    const [showOrderModal, setShowOrderModal] = useState(false);
 
     let userName;
     if (session && session.user?.name) {
         userName = session.user.name;
     }
+
+    const cartItems = useCartStore((state) => state.cartItems);
+
+    const bookCarts = cartItems.map((item) => {
+        const discountedPrice = Math.floor(item.price * (1 - item.discount / 100));
+        const point = Math.floor(discountedPrice * 0.05);
+
+        return {
+            ...item,
+            discountedPrice,
+            point,
+            totalPrice: discountedPrice * item.quantity
+        };
+    });
+
+    const totalAmount = bookCarts.reduce((acc, item) => acc + item.totalPrice, 0);
+    const totalPoint = bookCarts.reduce((acc, item) => acc + item.point * item.quantity, 0);
+    const totalDiscount = bookCarts.reduce(
+        (acc, item) => acc + (item.price - item.discountedPrice) * item.quantity,
+        0
+    );
+
+    const updateQuantity = useCartStore((state) => state.updateQuantity);
 
     return (
         <div className={style.wrapper}>
@@ -32,14 +60,14 @@ export default function Page() {
                                         <h1 className={`${style.title_heading} ${style.title_text}`}>장바구니 (1)</h1>
                                         <div className={style.order}>
                                             {userName && (
-                                            <div className={`${style.ml_12} ${style.order}`}>
-                                                <button
-                                                    className={`${style.btn_gray} ${style.btn_sm} ${style.btn_base} `}>
+                                                <div className={`${style.ml_12} ${style.order}`}>
+                                                    <button
+                                                        className={`${style.btn_gray} ${style.btn_sm} ${style.btn_base} `}>
                                                     <span
                                                         className={`${style.ico_locate_black} ${style.btn_base} ${style.btn_locate}`}></span>
-                                                    <span className={`${style.text}`}>{userName}</span>
-                                                </button>
-                                            </div>
+                                                        <span className={`${style.text}`}>{userName}</span>
+                                                    </button>
+                                                </div>
                                             )}
                                             <div className={`${style.order_sort_wrap}`}></div>
                                         </div>
@@ -61,7 +89,6 @@ export default function Page() {
                                                     <span className={`${style.step_num}`}>4</span>
                                                     주문완료
                                                 </li>
-
                                             </ol>
                                         </div>
                                     </div>
@@ -184,8 +211,9 @@ export default function Page() {
                                                             <col style={{width: "222px"}}/>
                                                         </colgroup>
                                                         <tbody>
-                                                        <tr>
-                                                            <td className={`${style.td_cart} ${style.chk} ${style.w122}`}>
+                                                        {bookCarts.map((item) => (
+                                                            <tr key={item.id}>
+                                                                <td className={`${style.td_cart} ${style.chk} ${style.w122}`}>
                                                                 <span className={`${style.form_no_label}`}>
                                                                     <input type="checkbox"
                                                                            className={`${style.form_input}`}/>
@@ -194,102 +222,115 @@ export default function Page() {
                                                                         상품 선택
                                                                     </label>
                                                                 </span>
-                                                            </td>
-                                                            <td className={`${style.td_cart} ${style.th_prod} ${style.bb_none} ${style.w461}`}
-                                                                style={{textAlign: "left"}}>
-                                                                <div className={`${style.td_prod} ${style.prod_area}`}>
+                                                                </td>
+                                                                <td className={`${style.td_cart} ${style.th_prod} ${style.bb_none} ${style.w461}`}
+                                                                    style={{textAlign: "left"}}>
                                                                     <div
-                                                                        className={`${style.size_sm} ${style.prod_thumb_box} ${style.alone_relative}`}>
-                                                                        <Link href=""
-                                                                              className={`${style.prod_link}`}></Link>
-                                                                        <Link href="" className={`${style.prod_link}`}>
+                                                                        className={`${style.td_prod} ${style.prod_area}`}>
+                                                                        <div
+                                                                            className={`${style.size_sm} ${style.prod_thumb_box} ${style.alone_relative}`}>
+                                                                            <Link href=""
+                                                                                  className={`${style.prod_link}`}></Link>
+                                                                            <Link href=""
+                                                                                  className={`${style.prod_link}`}>
                                                                             <span className={`${style.img_box}`}>
                                                                                 <img
-                                                                                    src="/images/book/javaScriptDeepDive.jpg"
-                                                                                    alt="" className={style.img}/>
+                                                                                    src={item.image}
+                                                                                    alt={item.title}
+                                                                                    className={style.img}/>
                                                                             </span>
-                                                                        </Link>
-                                                                    </div>
-                                                                    <div className={`${style.ml_12}`}
-                                                                         style={{overflow: "hidden"}}>
-                                                                        <Link href=""></Link>
-                                                                        <Link href="">
-                                                                            <span className={`${style.prod_name}`}>장바구니 책 이름</span>
-                                                                        </Link>
-                                                                        <div className={style.prod_price}>
-                                                                            <span
-                                                                                className={style.prod_percent}>10%</span>
-                                                                            <span className={style.price}>
+                                                                            </Link>
+                                                                        </div>
+                                                                        <div className={`${style.ml_12}`}
+                                                                             style={{overflow: "hidden"}}>
+                                                                            <Link href=""></Link>
+                                                                            <Link href="">
                                                                                 <span
-                                                                                    className={`${style.val} ${style.target}`}>19,800</span>
+                                                                                    className={`${style.prod_name}`}>{item.title}</span>
+                                                                            </Link>
+                                                                            <div className={style.prod_price}>
+                                                                            <span
+                                                                                className={style.prod_percent}>{item.discount}%</span>
+                                                                                <span className={style.price}>
+                                                                                <span
+                                                                                    className={`${style.val} ${style.target}`}>&nbsp;{formatPrice(item.discountedPrice)}</span>
                                                                                 <span
                                                                                     className={`${style.unit} ${style.target}`}>원</span>
                                                                             </span>
-                                                                            <span className={`${style.price_normal}`}>
                                                                                 <span
-                                                                                    className={style.normal_price}>22,200</span>
+                                                                                    className={`${style.price_normal}`}>
+                                                                                <span
+                                                                                    className={style.normal_price}>{formatPrice(item.price)}</span>
                                                                             </span>
-                                                                            <span
-                                                                                className={style.point}>(1,1000P)</span>
+                                                                                <span
+                                                                                    className={style.point}>({formatPrice(item.accumulation)}P)</span>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            </td>
-                                                            <td className={`${style.td_cart} ${style.td_line}`}>
+                                                                </td>
+                                                                {cartItems.map((item) => (
+                                                                    <td key={item.id}
+                                                                        className={`${style.td_cart} ${style.td_line}`}>
                                                                 <span style={{fontSize: "0px"}}>
                                                                     <span className={`${style.val} ${style.target}`}
                                                                           style={{
                                                                               fontSize: "16px",
                                                                               lineHeight: "24px"
-                                                                          }}>19,800</span>
+                                                                          }}>{formatPrice(totalAmount)}</span>
                                                                     <span className={`${style.unit}`}>원</span>
                                                                 </span>
-                                                                <div className={`${style.mt_10} ${style.form_box}`}>
+                                                                        <div
+                                                                            className={`${style.mt_10} ${style.form_box}`}>
                                                                     <span
                                                                         className={`${style.ui_spinner} ${style.numbers_books}`}>
                                                                         <button type="button"
+                                                                                onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                                                                 className={`${style.num_btn} ${style.btn_mar} ${style.sel_btn} ${style.ui_btn} ${style.bottom_0} ${style.down}`}>
                                                                             <span
                                                                                 className={`${style.ui_icon}`}>수량 1+</span>
                                                                         </button>
                                                                         <input type="number"
-                                                                               defaultValue="1"
+                                                                               value={item.quantity}
+                                                                               onChange={(e) =>updateQuantity(item.id,Math.max(1, Number(e.target.value)))}
                                                                                title="수량"
                                                                                className={`${style.spinner} ${style.num_input}`}/>
                                                                         <button type="button"
+                                                                                onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                                                                 className={`${style.num_btn} ${style.btn_ram} ${style.sel_btn} ${style.ui_btn} ${style.bb_none}`}>
                                                                             <span className={`${style.ui_icon_plus}`}>수량 1-</span>
                                                                         </button>
                                                                     </span>
-                                                                </div>
-                                                            </td>
-                                                            <td className={`${style.td_cart} ${style.td_line}`}>
-                                                                <div className={style.text_delivery}>
-                                                                    <div>
-                                                                        <p className={style.delivery_desc}>
+                                                                        </div>
+                                                                    </td>
+                                                                ))}
+                                                                <td className={`${style.td_cart} ${style.td_line}`}>
+                                                                    <div className={style.text_delivery}>
+                                                                        <div>
+                                                                            <p className={style.delivery_desc}>
                                                                             <span className={style.val}>
                                                                                 <strong>내일(4/10,목)도착</strong>
                                                                             </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div className={style.text_inner}>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div className={style.text_inner}>
                                                                         <span
                                                                             className={`${style.badge_pill} ${style.btn_cla} ${style.btn_primary} ${style.btn_size_sm}`}>
                                                                             <span className={style.btn_base}>바로드림</span>
                                                                         </span>
-                                                                        <p className={style.delivery_desc}>
+                                                                            <p className={style.delivery_desc}>
                                                                             <span className={style.val}>
                                                                                 04/10(목)부터 수령 가능
                                                                             </span>
-                                                                        </p>
+                                                                            </p>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <button
-                                                                    className={`${style.btn_delete_ord} ${style.btn_class}`}>
+                                                                    <button
+                                                                        className={`${style.btn_delete_ord} ${style.btn_class}`}>
 
-                                                                </button>
-                                                            </td>
-                                                        </tr>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        ))}
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -344,7 +385,8 @@ export default function Page() {
                                                     <p className={style.label}>상품 금액</p>
                                                     <div className={style.right_box}>
                                                         <span className={style.price}>
-                                                            <span className={`${style.spot}`}>22,000</span>
+                                                            <span
+                                                                className={`${style.spot}`}>{formatPrice(totalAmount)}</span>
                                                             <span className={`${style.unit}`}>원</span>
                                                         </span>
                                                     </div>
@@ -370,7 +412,7 @@ export default function Page() {
                                                     <div className={`${style.right_box}`}>
                                                         <span className={style.price}>
                                                              <span className={`${style.spot}`}
-                                                                   style={{color: "#5055b1"}}>+ 2200</span>
+                                                                   style={{color: "#5055b1"}}> - {formatPrice(totalDiscount)}</span>
                                                             <span className={`${style.unit}`}
                                                                   style={{marginLeft: "2px"}}>원</span>
                                                         </span>
@@ -378,13 +420,26 @@ export default function Page() {
                                                 </li>
                                             </ul>
                                         </div>
+                                        {showOrderModal && (
+                                            <GenericModal
+                                                title="1개의 상품을"
+                                                description="담으시겠어요?"
+                                                confirmText="확인"
+                                                cancelText="취소"
+                                                onClose={() => setShowOrderModal(false)}
+                                                onConfirm={() => {
+                                                    setShowOrderModal(true)
+                                                }}
+                                            />
+                                        )}
                                         <div className={style.info_box}>
                                             <ul className={style.pl_0}>
                                                 <li className={`${style.payments_item}`}>
                                                     <p className={` ${style.label} ${style.amount_pay}`}>결제 예정 금액</p>
                                                     <div className={`${style.right_box}`}>
                                                         <span className={style.price}>
-                                                            <span className={`${style.total_price}`}>19,800</span>
+                                                            <span
+                                                                className={`${style.total_price}`}>{formatPrice(totalAmount)}</span>
                                                             <span className={`${style.unit}`}
                                                                   style={{verticalAlign: "1px"}}>원</span>
                                                         </span>
@@ -401,7 +456,8 @@ export default function Page() {
                                                     </button>
                                                     <div className={style.right_box}>
                                                         <span className={style.price}>
-                                                            <span className={`${style.amount_price}`}>1,100</span>
+                                                            <span
+                                                                className={`${style.amount_price}`}>{formatPrice(totalPoint)}</span>
                                                             <span className={`${style.unit}`}
                                                                   style={{marginLeft: "2px"}}>P</span>
                                                         </span>
@@ -411,6 +467,7 @@ export default function Page() {
                                         </div>
                                         <div className={`${style.btn_order} ${style.btn_wrap} ${style.mt_30}`}>
                                             <button type="button"
+                                                    onClick={() => setShowOrderModal(true)}
                                                     className={`${style.btn_pay} ${style.btn_class} ${style.btn_lg}`}>
                                                 <span className={style.btn_base}>
                                                     주문하기 (

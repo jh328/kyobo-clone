@@ -7,38 +7,60 @@ import {books} from "@/app/lib/book";
 import {useParams} from "next/navigation";
 import Link from "next/link";
 import {formatPrice} from "@/utils/format";
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import ReviewModal from "@/app/components/modals/ReviewModal/ReviewModal";
-import GenericModal from "@/app/components/modals/GenericModal";
-import {useRouter} from 'next/navigation'
+ // import GenericModal from "@/app/components/modals/GenericModal";
+ // import {useRouter} from 'next/navigation'
 import {useSession} from "next-auth/react";
 import ToastNotification from "@/app/components/toast/ToastNotification";
+import {useCartStore} from "@/app/store/cartStore";
+import ModalManager from "@/app/components/modals/ModalManager";
 
 export default function Detail() {
-    const router = useRouter();
+    // const router = useRouter();
     const {data: session} = useSession();
+    const {id} = useParams();
 
-    const [showModal, setShowModal] = useState(false);
+    const [showReviewModal, setShowReviewModal] = useState(false);
     const [quantity, setQuantity] = useState(1);
     const [showCartModal, setShowCartModal] = useState(false);
 
-    /* 로그인 하라고 알려주는 모달 */
-    const [isWished, setIsWished] = useState(false);
     const [showToast, setShowToast] = useState(false);
     const [toastText, setToastText] = useState('');
     const [showLoginModal, setShowLoginModal] = useState(false);
+    const [showAlreadyCart, setShowAlreadyCart] = useState(false);
+    const [showWishLoginModal, setShowWishLoginModal] = useState(false);
+
+
+    const handleAddToCart = () => {
+        if (!book) return;
+
+        const result = useCartStore.getState().addToCart(book);
+
+        if (result === 'new') {
+            setShowCartModal(true);
+        } else {
+            setShowAlreadyCart(true);
+        }
+    };
+
+    const handleCreateReview = () => {
+        if (!checkLogin()) return;
+        setShowReviewModal(true)
+    }
+
 
     const checkLogin = () => {
         if (!session) {
             setShowLoginModal(true);
-            return false; /*리턴값을 주는데 여기에서 왜 false를 주는거지? */
+            return false;
         }
         return true;
     }
 
     const toggleWish = () => {
-        const newWish = !isWished;
-        setIsWished(newWish);
+        const newWish = !showWishLoginModal;
+        setShowWishLoginModal(newWish);
         setToastText(newWish ? "찜 설정되었어요." : "찜 해제되었어요.");
         setShowToast(true);
         setTimeout(() => setShowToast(false), 1500);
@@ -62,19 +84,23 @@ export default function Detail() {
     const increase = () => setQuantity((prev) => prev + 1);
     const decrease = () => setQuantity((prev) => Math.max(1, prev - 1));
 
-    const {id} = useParams();
-    const book = books.find((b) => b.id === Number(id));
-
-
-    if (!book) return <div>책을 찾을 수 없습니다.</div>;  // 책이 없을 때 메시지 출력
-
-    const discountedPrice = book.price * (1 - book.discount / 100);
-
-
     const handleScroll = (key: keyof typeof eventRef) => {
         eventRef[key].current?.scrollIntoView({behavior: "smooth"});
     }
 
+    useEffect(() => {
+        if (!session) {
+            setShowWishLoginModal(false);
+        }
+        console.log("위시 확인 : ", setShowWishLoginModal)
+    }, [session]);
+
+
+    const book = books.find((b) => b.id === Number(id));
+    if (!book) return <div>책을 찾을 수 없습니다.</div>;
+    const discountedPrice = book.price * (1 - book.discount / 100);
+
+    const totalPrice = discountedPrice * quantity;
 
     return (
         <div className={styles.detail_wrapper}>
@@ -1062,15 +1088,15 @@ export default function Detail() {
                                                     구매 후 리뷰 작성 시, e교환권 200원 적립
                                                 </p>
                                                 <button
-                                                    onClick={() => setShowModal(true)}
+                                                    onClick={handleCreateReview}
                                                     className={`${styles.btn_sm} ${styles.btn_primary} ${styles.btn_all_text}`}>
                                                     <span className={`${styles.ico_review}`}></span>
                                                     <span className={styles.text}>리뷰작성</span>
                                                 </button>
                                             </div>
 
-                                            {/*모달 조건부 showModal이 true면 컴포넌트 렌더링 false이면 렌더링x*/}
-                                            {showModal && <ReviewModal onClose={() => setShowModal(false)}/>}
+                                            {showReviewModal &&
+                                                <ReviewModal onClose={() => setShowReviewModal(false)}/>}
                                         </div>
                                         {/*!-- // Klover 리뷰 제목*/}
 
@@ -1587,37 +1613,21 @@ export default function Detail() {
                         </div>
                     </div>
 
-                    {/*장바구니 모달 컴포넌트*/}
-                    {showCartModal && (
-                        <GenericModal
-                            title="상품이 장바구니에 담겼습니다."
-                            description="장바구니로 이동하시겠습니까?"
-                            confirmText="이동"
-                            cancelText="취소"
-                            onClose={() => setShowCartModal(false)}
-                            onConfirm={() => {
-                                setShowCartModal(false);
-                                router.push('/cart');
-                            }}
-                        />
-                    )}
 
                     {showToast && (
                         <ToastNotification message={toastText} onClose={() => setShowToast(false)}/>
                     )}
 
-                    {showLoginModal && (
-                        <GenericModal
-                            title="찜하기는 로그인 후 이용할 수 있어요."
-                            confirmText="이동하기"
-                            cancelText="취소"
-                            onClose={() => setShowLoginModal(false)}
-                            onConfirm={() => {
-                                setShowLoginModal(false);
-                                router.push("/login");
-                            }}
-                            />
-                        )}
+                    <ModalManager
+                        showCartModal={showCartModal}
+                        setShowCartModal={setShowCartModal}
+                        showLoginModal={showLoginModal}
+                        setShowLoginModal={setShowLoginModal}
+                        showAlreadyCart={showAlreadyCart}
+                        setShowAlreadyCart={setShowAlreadyCart}
+                        showWishLoginModal={showWishLoginModal}
+                        setShowWishLoginModal={setShowWishLoginModal}
+                    />
 
                     <div className={styles.detail_footer}>
                         <div className={`${styles.prod_purchase_info_wrap}`}>
@@ -1626,7 +1636,8 @@ export default function Detail() {
                                 <div>
                                     <span className={`${styles.prod_info_title}`}>총 상품 금액</span>
                                     <span className={`${styles.footer_price}`}>
-                                        <span className={`${styles.footer_val} ${styles.color}`}>40,500</span>
+                                        <span
+                                            className={`${styles.footer_val} ${styles.color}`}>{formatPrice(totalPrice)}</span>
                                         <span className={`${styles.footer_val}`}>원</span>
                                     </span>
                                 </div>
@@ -1655,7 +1666,7 @@ export default function Detail() {
                                                 onClick={handleWishClick}
                                                 className={`${styles.btn_comment_util} ${styles.btn_lg} ${styles.btn_footer_wish}`}>
                                             <span
-                                                className={isWished ? `${styles.footer_ico_wish} ${styles.btn_comment_util}` : `${styles.ico_active_wish} ${styles.btn_comment_util}`}></span>
+                                                className={showWishLoginModal ? `${styles.ico_active_wish} ${styles.btn_comment_util}` : `${styles.footer_ico_wish} ${styles.btn_comment_util}`}></span>
                                             <span className={`${styles.hidden}`}>내 마음의 저장~</span>
                                         </button>
                                         <Link href=""
@@ -1664,7 +1675,7 @@ export default function Detail() {
                                             <span className={`${styles.locate_text}`} style={{top: "2px"}}>선물하기</span>
                                         </Link>
                                         <button type="button"
-                                                onClick={() => setShowCartModal(true)}
+                                                onClick={handleAddToCart}
                                                 className={`${styles.btn_comment_util} ${styles.ico_wish_base} ${styles.ml6} ${styles.mw_120} ${styles.btn_footer_link} ${styles.btn_cart}`}>
                                             <span className={styles.locate_text}>장바구니</span>
                                         </button>

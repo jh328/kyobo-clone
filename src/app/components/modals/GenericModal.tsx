@@ -3,12 +3,12 @@ import styles from "./Generic.module.css"
 
 
 type ModalProps = {
-    title: string;              // 모달 제목
-    description?: string;       // 서브 텍스트 (없어도 됨)
-    confirmText?: string;       // 확인 버튼 문구
-    cancelText?: string;        // 취소 버튼 문구
+    title: string;              // 1줄 텍
+    description?: string;       // 2줄 텍
+    confirmText?: string;       // 확인 버튼
+    cancelText?: string;        // 취소 버튼
     onClose: () => void;        // 닫기/취소 동작
-    onConfirm?: () => void;     // 확인 동작 (옵션)
+    onConfirm?: () => void;     // 확인
 }
 
 export default function GenericModal({
@@ -20,7 +20,6 @@ export default function GenericModal({
                                          onClose
                                      }: ModalProps) {
 
-    console.log("제니릭 모달 컴포넌트에 오신것을 환영합니다")
 
     return (
         <div className={styles.modal_overlay}>
