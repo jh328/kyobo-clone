@@ -373,7 +373,7 @@
 .text_base {
     display: inline-block;
     vertical-align: top;
-    position:relative;
+    position: relative;
 }
 
 .lh {
@@ -641,8 +641,13 @@
 
 
 .tag_wrap {
-    margin: -4px -3px;
-    font-size: 0;
+    margin: 4px 3px;
+    display: inline-block;
+    background-color: #f7f7f7;
+    border: 1px solid #f7f7f7;
+    border-radius: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.23s, border-color 0.23s, color 0.23s;
 }
 
 .btn_tab_base {
@@ -805,6 +810,11 @@
     border: 0;
 }
 
+.size_lg{
+    margin:-4px -3px;
+    font-size:0;
+}
+
 .img_label {
     display: block;
     width: 100%;
@@ -901,7 +911,7 @@
     justify-content: center;
 }
 
-.btn_ev{
+.btn_ev {
     pointer-events: none !important;
     cursor: default !important;
     text-decoration: none !important;

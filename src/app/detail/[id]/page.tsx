@@ -9,8 +9,8 @@ import Link from "next/link";
 import {formatPrice} from "@/utils/format";
 import {useEffect, useRef, useState} from "react";
 import ReviewModal from "@/app/components/modals/ReviewModal/ReviewModal";
- // import GenericModal from "@/app/components/modals/GenericModal";
- // import {useRouter} from 'next/navigation'
+// import GenericModal from "@/app/components/modals/GenericModal";
+// import {useRouter} from 'next/navigation'
 import {useSession} from "next-auth/react";
 import ToastNotification from "@/app/components/toast/ToastNotification";
 import {useCartStore} from "@/app/store/cartStore";
@@ -24,13 +24,13 @@ export default function Detail() {
     const [showReviewModal, setShowReviewModal] = useState(false);
     const [quantity, setQuantity] = useState(1);
     const [showCartModal, setShowCartModal] = useState(false);
-
+    const [isWished, setIsWished] = useState(false); // 찜 상태 전용.
     const [showToast, setShowToast] = useState(false);
     const [toastText, setToastText] = useState('');
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showAlreadyCart, setShowAlreadyCart] = useState(false);
     const [showWishLoginModal, setShowWishLoginModal] = useState(false);
-
+    const [showCreateReviewModal, setShowCreateReviewModal] = useState(false)
 
     const handleAddToCart = () => {
         if (!book) return;
@@ -45,29 +45,33 @@ export default function Detail() {
     };
 
     const handleCreateReview = () => {
-        if (!checkLogin()) return;
-        setShowReviewModal(true)
+        const isLoggedIn = checkLogin(() => {
+            setShowLoginModal(true);
+        })
+        if (!isLoggedIn) return;
+
+        setShowCreateReviewModal(true);
     }
 
 
-    const checkLogin = () => {
+    const checkLogin = (onNotLogin: () => void) => {
         if (!session) {
-            setShowLoginModal(true);
-            return false;
+            onNotLogin();
+            return false; // false 이면, 로그인이 안됨. 함수 탈출함.
         }
-        return true;
+        return true; // return true이면 로그인 상태
     }
 
     const toggleWish = () => {
-        const newWish = !showWishLoginModal;
-        setShowWishLoginModal(newWish);
+        const newWish = !isWished; // 찜 상태 변경
+        setIsWished(newWish);
         setToastText(newWish ? "찜 설정되었어요." : "찜 해제되었어요.");
         setShowToast(true);
         setTimeout(() => setShowToast(false), 1500);
     }
 
     const handleWishClick = () => {
-        if (!checkLogin()) return;
+        if (!checkLogin(() => setShowWishLoginModal(true))) return;
         toggleWish();
     };
 
@@ -1071,6 +1075,7 @@ export default function Detail() {
                                     <div></div>
                                 </section>
 
+
                                 {/*!--> 리뷰시작*/}
                                 <section className={styles.tab_content}>
                                     <div className={`${styles.product_detail_together}`}>
@@ -1095,8 +1100,6 @@ export default function Detail() {
                                                 </button>
                                             </div>
 
-                                            {showReviewModal &&
-                                                <ReviewModal onClose={() => setShowReviewModal(false)}/>}
                                         </div>
                                         {/*!-- // Klover 리뷰 제목*/}
 
@@ -1614,21 +1617,6 @@ export default function Detail() {
                     </div>
 
 
-                    {showToast && (
-                        <ToastNotification message={toastText} onClose={() => setShowToast(false)}/>
-                    )}
-
-                    <ModalManager
-                        showCartModal={showCartModal}
-                        setShowCartModal={setShowCartModal}
-                        showLoginModal={showLoginModal}
-                        setShowLoginModal={setShowLoginModal}
-                        showAlreadyCart={showAlreadyCart}
-                        setShowAlreadyCart={setShowAlreadyCart}
-                        showWishLoginModal={showWishLoginModal}
-                        setShowWishLoginModal={setShowWishLoginModal}
-                    />
-
                     <div className={styles.detail_footer}>
                         <div className={`${styles.prod_purchase_info_wrap}`}>
                             <div
@@ -1666,7 +1654,7 @@ export default function Detail() {
                                                 onClick={handleWishClick}
                                                 className={`${styles.btn_comment_util} ${styles.btn_lg} ${styles.btn_footer_wish}`}>
                                             <span
-                                                className={showWishLoginModal ? `${styles.ico_active_wish} ${styles.btn_comment_util}` : `${styles.footer_ico_wish} ${styles.btn_comment_util}`}></span>
+                                                className={isWished ? `${styles.ico_active_wish} ${styles.btn_comment_util}` : `${styles.footer_ico_wish} ${styles.btn_comment_util}`}></span>
                                             <span className={`${styles.hidden}`}>내 마음의 저장~</span>
                                         </button>
                                         <Link href=""
@@ -1696,6 +1684,28 @@ export default function Detail() {
                     </div>
                 </section>
                 <div></div>
+
+                <ModalManager
+                    // showReviewModal={showReviewModal}
+                    // setShowReviewModal={setShowReviewModal}
+                    showCartModal={showCartModal}
+                    setShowCartModal={setShowCartModal}
+                    showLoginModal={showLoginModal}
+                    setShowLoginModal={setShowLoginModal}
+                    showAlreadyCart={showAlreadyCart}
+                    setShowAlreadyCart={setShowAlreadyCart}
+                    showWishLoginModal={showWishLoginModal}
+                    setShowWishLoginModal={setShowWishLoginModal}
+                />
+
+                {showToast && (
+                    <ToastNotification message={toastText} onClose={() => setShowToast(false)}/>
+                )}
+
+                {showCreateReviewModal && (
+                    <ReviewModal onClose={()=>setShowCreateReviewModal(false)}/>
+                )}
+
             </main>
         </div>
     );

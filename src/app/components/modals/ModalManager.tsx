@@ -36,13 +36,38 @@ export default function ModalManager({
                                      }: ModalManagerProps) {
     const router = useRouter();
 
-    console.log("setShowCartModal : ", showCartModal);
-    console.log("setShowLoginModal : ", showLoginModal);
-    console.log("setShowAlreadyCart : ", showAlreadyCart);
-    console.log("setShowWishLoginModal : ", showWishLoginModal);
 
     return (
         <>
+
+            {showWishLoginModal && (
+                <GenericModal
+                    title="찜하기는 로그인 후 이용할 수 있어요"
+                    confirmText="이동하기"
+                    cancelText="취소"
+                    onClose={() => setShowWishLoginModal(false)}
+                    onConfirm={() => {
+                        setShowWishLoginModal(false);
+                        router.push("/login")
+                    }}
+                />
+            )}
+
+
+            {showLoginModal && (
+                <GenericModal
+                    title="로그인 후 이용가능합니다"
+                    description="로그인 페이지로 이동하시겠습니까?"
+                    confirmText="확인"
+                    cancelText="취소"
+                    onClose={() => setShowLoginModal(false)}
+                    onConfirm={() => {
+                        setShowLoginModal(false);
+                        router.push("/login")
+                    }}
+                />
+            )}
+
             {showCartModal && (
                 <GenericModal
                     title="상품이 장바구니에 담겼습니다."
@@ -53,19 +78,6 @@ export default function ModalManager({
                     onConfirm={() => {
                         setShowCartModal(false);
                         router.push("/cart")
-                    }}
-                />
-            )}
-
-            {showLoginModal && (
-                <GenericModal
-                    title="찜하기는 로그인 후 이용할 수 있어요"
-                    confirmText="확인"
-                    cancelText="취소"
-                    onClose={() => setShowLoginModal(false)}
-                    onConfirm={() => {
-                        setShowLoginModal(false);
-                        router.push("/login")
                     }}
                 />
             )}
@@ -84,18 +96,19 @@ export default function ModalManager({
                 />
             )}
 
-            {showWishLoginModal && (
+            {/*{showReviewModal && (
                 <GenericModal
-                    title="찜하기는 로그인 후 이용할 수 있어요"
-                    confirmText="이동하기"
+                    title="로그인 후 이용가능합니다"
+                    description="로그인 페이지로 이동하시겠습니까?"
+                    confirmText="확인"
                     cancelText="취소"
-                    onClose={()=> setShowWishLoginModal(false)}
-                    onConfirm={()=> {
-                        setShowWishLoginModal(false);
-                        router.push("/login")
+                    onClose={()=>setShowReviewModal(false)}
+                    onConfirm={()=>{
+                        setShowReviewModal(false);
+                        router.push('/login')
                     }}
                     />
-            )}
+            )}*/}
         </>
     )
 }

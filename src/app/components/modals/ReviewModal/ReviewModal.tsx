@@ -1,12 +1,15 @@
 import style from "./Review.module.css"
 import Link from "next/link";
+import {useState} from "react";
 
 type ReviewModalProps = {
     onClose: () => void;
 }
 
 export default function ReviewModal({onClose}: ReviewModalProps) {
-    console.log("리뷰모달")
+    const [selectedTag, setSelecttedTag] = useState<string | null>(null);
+
+    const tags = ["집중돼요", "도움돼요", "쉬웠어요", "최고예요", "추천해요"];
 
     return (
         <div className={`${style.base}`}>
@@ -161,32 +164,16 @@ export default function ReviewModal({onClose}: ReviewModalProps) {
                                                                     닿는 하나의 키워드를 선택해주세요.</p>
                                                             </div>
                                                             <div className={`${style.mt_10} ${style.gray_color}`}>
-                                                                <div className={`${style.tag_wrap}`}>
-                                                                    <button type="button"
-                                                                            className={`${style.btn_tab_base} ${style.tag} ${style.selected_tag}`}>
-                                                                        <span
-                                                                            className={`${style.tag_text}`}>집중돼요</span>
-                                                                    </button>
-                                                                    <button type="button"
-                                                                            className={`${style.btn_tab_base} ${style.tag} ${style.selected_tag}`}>
-                                                                        <span
-                                                                            className={`${style.tag_text}`}>도움돼요</span>
-                                                                    </button>
-                                                                    <button type="button"
-                                                                            className={`${style.btn_tab_base} ${style.tag} ${style.selected_tag}`}>
-                                                                        <span
-                                                                            className={`${style.tag_text}`}>쉬웠어요</span>
-                                                                    </button>
-                                                                    <button type="button"
-                                                                            className={`${style.btn_tab_base} ${style.tag} ${style.selected_tag}`}>
-                                                                        <span
-                                                                            className={`${style.tag_text}`}>최고예요</span>
-                                                                    </button>
-                                                                    <button type="button"
-                                                                            className={`${style.btn_tab_base} ${style.tag} ${style.selected_tag}`}>
-                                                                        <span
-                                                                            className={`${style.tag_text}`}>추천해요</span>
-                                                                    </button>
+                                                                <div className={`${style.size_lg}`}>
+                                                                    {tags.map((tag)=> (
+                                                                        <button type="button"
+                                                                                key={tag}
+                                                                                className={`${style.btn_tab_base} ${style.tag} ${selectedTag === tag ? style.selected_tag : ""}`}
+                                                                                onClick={()=>setSelecttedTag(tag)}
+                                                                        >
+                                                                            <span className={style.tag_text}>{tag}</span>
+                                                                        </button>
+                                                                    ))}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -205,14 +192,6 @@ export default function ReviewModal({onClose}: ReviewModalProps) {
                                                             </div>
                                                             <div className={`${style.mt_10}`}>
                                                                 <div className={`${style.byte_check_wrap}`}>
-                                                                    <div
-                                                                        className={`${style.byte_check_footer} ${style.byte_check}`}>
-                                                                        <span
-                                                                            className={`${style.count} ${style.review_text}`}>0</span>
-                                                                        <span className={style.review_total}>
-                                                                            3000
-                                                                        </span>
-                                                                    </div>
                                                                     <textarea name="review"
                                                                               id="review"
                                                                               placeholder="내용을 10자 이상 입력해 주세요.
@@ -221,6 +200,14 @@ export default function ReviewModal({onClose}: ReviewModalProps) {
                                                                               className={`${style.text_form} ${style.text_textarea}`}
                                                                     >
                                                                     </textarea>
+                                                                    <div
+                                                                        className={`${style.byte_check_footer} ${style.byte_check}`}>
+                                                                        <span
+                                                                            className={`${style.count} ${style.review_text}`}>0</span>
+                                                                        <span className={style.review_total}>
+                                                                            3000
+                                                                        </span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
