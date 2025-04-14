@@ -1,0 +1,44 @@
+.comment_wrap {
+    display: block;
+    word-break: break-all;
+}
+
+.size_sm {
+    padding: 60px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.line {
+    border-top: 1px solid #d5d5d5;
+}
+
+.no_data {
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.no_data_color {
+    color: #767676;
+}
+
+.no_data_desc {
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+.no_data_desc:before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 10px;
+    background: url("/images/common/ico_nodata@2x.png") 0 0 no-repeat;
+    background-size: 46px 46px;
+}

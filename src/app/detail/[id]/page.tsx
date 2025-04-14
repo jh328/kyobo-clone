@@ -15,6 +15,7 @@ import {useSession} from "next-auth/react";
 import ToastNotification from "@/app/components/toast/ToastNotification";
 import {useCartStore} from "@/app/store/cartStore";
 import ModalManager from "@/app/components/modals/ModalManager";
+import ReviewsHeader from "@/app/components/reviews/reviewsHeader/ReviewsHeader";
 
 export default function Detail() {
     // const router = useRouter();
@@ -1080,7 +1081,8 @@ export default function Detail() {
                                 <section className={styles.tab_content}>
                                     <div className={`${styles.product_detail_together}`}>
                                         {/*!--> Klover 리뷰 제목*/}
-                                        <div className={`${styles.title_size_md_btn} ${styles.title_wrap}`}>
+                                        <ReviewsHeader reviewRef={eventRef.review}/>
+                                      {/*  <div className={`${styles.title_size_md_btn} ${styles.title_wrap}`}>
                                             <section ref={eventRef.review}>
                                                 <p className={`${styles.title_heading}`}>Klover 리뷰 (93)</p>
                                             </section>
@@ -1100,7 +1102,7 @@ export default function Detail() {
                                                 </button>
                                             </div>
 
-                                        </div>
+                                        </div>*/}
                                         {/*!-- // Klover 리뷰 제목*/}
 
                                         {/*!--> 사용자 총점 */}
@@ -1705,7 +1707,6 @@ export default function Detail() {
                 {showCreateReviewModal && (
                     <ReviewModal onClose={()=>setShowCreateReviewModal(false)}/>
                 )}
-
             </main>
         </div>
     );
