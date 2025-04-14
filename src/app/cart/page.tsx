@@ -7,7 +7,6 @@ import {useCartStore} from "@/app/store/cartStore";
 import {formatPrice} from "@/utils/format";
 import {useState} from "react";
 import GenericModal from "@/app/components/modals/GenericModal";
-import NoReviews from "@/app/components/reviews/noReviews/NoReviews";
 
 export default function Page() {
     const {data: session} = useSession();

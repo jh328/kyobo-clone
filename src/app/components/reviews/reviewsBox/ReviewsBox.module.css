@@ -1,0 +1,467 @@
+.klover_review_box {
+    margin-bottom: 30px;
+    background-color: #f7f7f7;
+    border: 1px solid #d5d5d5;
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    flex-direction: row;
+    height:263px;
+}
+
+.klover_padding {
+    padding: 35px 49px;
+}
+
+
+
+.klover_box_left {
+    flex: 1;
+    padding-right: 50px !important;
+    border-right: 1px solid #eaeaea;
+}
+
+.pl_0 {
+    padding-left: 0 !important;
+}
+
+.box_top {
+    text-align: center;
+}
+
+.text_user_score {
+    margin-bottom: 5px !important;
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+}
+.rating_container {
+    display: inline-block;
+    margin: 3px 0 2px;
+    position: relative;
+    text-align: left;
+    font-size: 0;
+    vertical-align: top;
+}
+
+
+.ml_minus {
+    margin-left: -2px !important;
+}
+.rating_stars {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.w_h {
+    width: 88px !important;
+    height: 18px !important;
+}
+.empty_stars {
+    color: #aaa;
+}
+
+.filled_start {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: auto;
+    color: #fde16d;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-text-stroke: 1px #777;
+    text-shadow: 1px 1px #999;
+    transition: width .25s ease;
+}
+
+.star {
+    margin: 0 2px;
+    display: inline-block;
+    text-align: center;
+}
+
+.icon_star:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px 18px;
+    background-image: url("/images/common/ico_klover@2x.png");
+}
+.empty_stars {
+    color: #aaa;
+}
+.caption {
+    display: inline-block;
+    margin: 0 0 0 6px;
+    vertical-align: top;
+    font-size: 0;
+}
+
+.caption_badge {
+    width: 55px;
+    height: 20px;
+    padding: 0;
+    border-radius: 0;
+    font-size: 0;
+    background: none;
+    display: inline-block;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+
+.caption_val {
+    font-size: 23px;
+    letter-spacing: -0.01em;
+    color: #3c9a17;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+.total {
+    padding-top: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: #767676;
+    font-weight: 400;
+    line-height: 1;
+    top: 1px;
+}
+
+.total:before {
+    content: "/";
+    margin-right: 1px;
+}
+
+.rating_input {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    font-size: 1px;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    pointer-events: none;
+    border: none;
+    box-shadow: none;
+    background: 0 0;
+}
+
+
+.box_bottom {
+    margin-top: 28px;
+}
+
+.ml_0 {
+    margin-left: 0;
+}
+
+.score_bar_wrap {
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.rating_sm {
+    margin: 0 -2px 0 -1px !important;
+}
+
+
+.rating_container {
+    display: inline-block;
+    margin: 3px 0 2px;
+    position: relative;
+    text-align: left;
+    font-size: 0;
+    vertical-align: top;
+}
+
+
+.ml_minus .rating_stars {
+    margin-top: 2px;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: auto;
+    height: auto;
+}
+
+
+.w_68 {
+    width: 68px;
+    height: 14px;
+}
+
+
+.empty_stars {
+    color: #aaa;
+}
+
+
+.filled_start {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: auto;
+    color: #fde16d;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-text-stroke: 1px #777;
+    text-shadow: 1px 1px #999;
+    transition: width .25s ease;
+}
+
+.ml01 {
+    margin: 0 2px 0 1px !important;
+}
+
+
+.icon_score_start:before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+    background-image: url("/images/common/ico_klover@2x.png");
+}
+
+
+.flex195 {
+    flex: 0 0 195px;
+}
+
+
+.score_bar {
+    position: relative;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 2px;
+    margin: 0 12px;
+}
+
+
+.score_bar_inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: 4px;
+    border-radius: 2px;
+}
+
+
+.score_best {
+    background-color: #4dac27;
+}
+
+.text_score_bar {
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    flex: 1;
+    color: #595959;
+    text-align: right;
+}
+.score_bar_wrap {
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
+
+
+.mt_13 {
+    margin-top: 13px;
+}
+
+.klover_box_right {
+    flex: 1;
+    padding-left: 50px;
+}
+
+.reply_score_list {
+    display: -webkit-flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: start;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+
+.reply_score_item {
+    display: inline-block;
+    flex: 1 0;
+    padding: 0 4px;
+    text-align: center;
+}
+
+.books_inner {
+    display: block;
+}
+
+
+.num_score_bar {
+    height: 19px;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    line-height: 19px;
+    display: inline-block;
+    position: relative;
+    min-width: 38px;
+    padding: 0 7px;
+    margin-bottom: 9px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.num_score_best {
+    padding-top: 0;
+    background-color: rgba(80, 85, 177, 0.8);
+    color: #fff;
+    font-weight: 500;
+}
+
+
+.num_score_best:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 12px;
+    height: 4px;
+    background-image: url("/images/common/bg_best_score@2x.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 12px 4px;
+    transform: translateX(-50%)
+}
+
+
+.average_score_bar {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 6px;
+    height: 62px;
+    margin: 0 auto;
+    background-color: #eaeaea;
+    border-radius: 3px;
+}
+
+
+.average_bar_color {
+    background-color: rgba(184, 186, 223, 0.4);
+}
+
+
+.best_score_bar_inner {
+    background-color: rgba(80, 85, 177, 0.8);
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 3px;
+    height: 33%;
+}
+
+
+.text_replay {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #474c98;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    margin-top: 6px;
+}
+
+
+.average_num_score_bar {
+    height: 19px;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    line-height: 19px;
+}
+
+
+.average_score_bar_inner {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #767676;
+    border-radius: 3px;
+}
+
+
+.text_gray {
+    display: block;
+    color: #767676;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    margin-top: 6px;
+    text-align: center;
+}
+
+
+.image_ex {
+    padding-left: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+    color: #474c98;
+    vertical-align: top;
+}
+
+.image_ex:before {
+    top: 3px !important;
+    left: 0 !important;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-image: url("/images/common/ico_quotes_lg@2x.png");
+    position: absolute;
+}

@@ -7,9 +7,10 @@ type ReviewsHeaderProps = {
 };
 
 const ReviewsHeader = ({ reviewRef }: ReviewsHeaderProps) => {
+
     return (
         <div className={`${styles.title_size_md_btn} ${styles.title_wrap}`}>
-            <section ref={reviewRef}>
+            <section ref={reviewRef ?? undefined}>
                 <p className={`${styles.title_heading}`}>Klover 리뷰 (93)</p>
             </section>
             <button className={`${styles.btn_size_lg} ${styles.ml_6}`}>

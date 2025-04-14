@@ -16,6 +16,7 @@ import ToastNotification from "@/app/components/toast/ToastNotification";
 import {useCartStore} from "@/app/store/cartStore";
 import ModalManager from "@/app/components/modals/ModalManager";
 import ReviewsHeader from "@/app/components/reviews/reviewsHeader/ReviewsHeader";
+import ReviewsBox from "@/app/components/reviews/reviewsBox/ReviewsBox";
 
 export default function Detail() {
     // const router = useRouter();
@@ -80,7 +81,7 @@ export default function Detail() {
     const eventRef = {
         event: useRef<HTMLDivElement>(null),
         info: useRef<HTMLDivElement>(null),
-        review: useRef<HTMLDivElement>(null),
+        review: useRef<HTMLDivElement>(null!),
         exchange: useRef<HTMLDivElement>(null),
     };
 
@@ -1106,12 +1107,13 @@ export default function Detail() {
                                         {/*!-- // Klover 리뷰 제목*/}
 
                                         {/*!--> 사용자 총점 */}
-                                        <div className={`${styles.klover_review_box} ${styles.klover_padding}`}>
+                                        <ReviewsBox/>
+                                        {/*<div className={`${styles.klover_review_box} ${styles.klover_padding}`}>
                                             <div className={`${styles.klover_box_left} ${styles.pl0}`}>
                                                 <div className={`${styles.box_top}`}>
                                                     <p className={`${styles.text_user_score}`}>사용자 총점</p>
                                                     <div className={`${styles.rating_container} ${styles.ml_minus}`}>
-                                                        <div>{/*x*/}</div>
+                                                        <div>x</div>
                                                         <div className={`${styles.rating_stars} ${styles.wh}`}>
                                                             <span className={styles.empty_stars}></span>
                                                             <span className={`${styles.filled_start}`}
@@ -1129,7 +1131,7 @@ export default function Detail() {
                                                                     <i className={styles.icon_star}></i>
                                                                 </span>
                                                             </span>
-                                                            {/*<span className={`${styles.empty_stars}`}>
+                                                            <span className={`${styles.empty_stars}`}>
                                                                 <span className={styles.star}>
                                                                     <i className={styles.icon_star}></i>
                                                                 </span>
@@ -1142,11 +1144,11 @@ export default function Detail() {
                                                                 <span className={styles.star}>
                                                                     <i className={styles.icon_star}></i>
                                                                 </span>
-                                                            </span>*/}
+                                                            </span>
                                                         </div>
                                                         <div className={`${styles.caption}`}>
                                                             <span className={`${styles.caption_badge}`}>
-                                                                10점 중 9.8점 {/*이게 데이터임.*/}
+                                                                10점 중 9.8점 이게 데이터임.
                                                                 <span className={`${styles.caption_val}`}>9.81</span>
                                                                 <span className={`${styles.total}`}>10</span>
                                                             </span>
@@ -1197,7 +1199,7 @@ export default function Detail() {
                                                                 className={`${styles.score_bar_inner} ${styles.score_best}`}
                                                                 style={{width: "91%"}}></span>
                                                         </div>
-                                                        <span className={styles.text_score_bar}>91%</span>{/*실제 데이터*/}
+                                                        <span className={styles.text_score_bar}>91%</span>실제 데이터
                                                     </div>
                                                     <div className={`${styles.score_bar_wrap} ${styles.mt13}`}>
                                                         <div
@@ -1236,7 +1238,7 @@ export default function Detail() {
                                                                 className={`${styles.score_bar_inner} ${styles.score_best}`}
                                                                 style={{width: "11%"}}></span>
                                                         </div>
-                                                        <span className={styles.text_score_bar}>7%</span>{/*실제 데이터*/}
+                                                        <span className={styles.text_score_bar}>7%</span>실제 데이터
                                                     </div>
                                                     <div className={`${styles.score_bar_wrap} ${styles.mt13}`}>
                                                         <div
@@ -1275,7 +1277,7 @@ export default function Detail() {
                                                                 className={`${styles.score_bar_inner} ${styles.score_best}`}
                                                                 style={{width: "1%"}}></span>
                                                         </div>
-                                                        <span className={styles.text_score_bar}>1%</span>{/*실제 데이터*/}
+                                                        <span className={styles.text_score_bar}>1%</span>실제 데이터
                                                     </div>
                                                     <div className={`${styles.score_bar_wrap} ${styles.mt13}`}>
                                                         <div
@@ -1314,7 +1316,7 @@ export default function Detail() {
                                                                 className={`${styles.score_bar_inner} ${styles.score_best}`}
                                                                 style={{width: "1%"}}></span>
                                                         </div>
-                                                        <span className={styles.text_score_bar}>1%</span>{/*실제 데이터*/}
+                                                        <span className={styles.text_score_bar}>1%</span>실제 데이터
                                                     </div>
                                                 </div>
                                             </div>
@@ -1399,7 +1401,7 @@ export default function Detail() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>*/}
                                         {/*!-- //사용자 총점 */}
 
                                         {/*리뷰 적을 수 있는 칸 ㅆ비ㅏㄹ..*/}
