@@ -10,8 +10,6 @@ type ModalManagerProps = {
     showLoginModal: boolean;
     setShowLoginModal: (value: boolean) => void;
 
-    // showReviewModal: boolean;
-    // setShowReviewModal: (value: boolean) => void;
 
     showAlreadyCart: boolean;
     setShowAlreadyCart: (value: boolean) => void;
@@ -26,8 +24,6 @@ export default function ModalManager({
                                          setShowCartModal,
                                          showLoginModal,
                                          setShowLoginModal,
-                                         // showReviewModal,
-                                         // setShowReviewModal,
                                          showAlreadyCart,
                                          setShowAlreadyCart,
                                          showWishLoginModal,
@@ -96,19 +92,6 @@ export default function ModalManager({
                 />
             )}
 
-            {/*{showReviewModal && (
-                <GenericModal
-                    title="로그인 후 이용가능합니다"
-                    description="로그인 페이지로 이동하시겠습니까?"
-                    confirmText="확인"
-                    cancelText="취소"
-                    onClose={()=>setShowReviewModal(false)}
-                    onConfirm={()=>{
-                        setShowReviewModal(false);
-                        router.push('/login')
-                    }}
-                    />
-            )}*/}
         </>
     )
 }
