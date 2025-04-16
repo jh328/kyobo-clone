@@ -1,6 +1,19 @@
+.no_reviews_wrap {
+    padding: 0;
+    background: #fff;
+    box-sizing: border-box;
+    outline: none;
+}
+
 .comment_wrap {
     display: block;
     word-break: break-all;
+}
+
+.tab {
+    position: relative;
+    width: 100%;
+    padding: 0;
 }
 
 .size_sm {

@@ -17,6 +17,7 @@ import {useCartStore} from "@/app/store/cartStore";
 import ModalManager from "@/app/components/modals/ModalManager";
 import ReviewsHeader from "@/app/components/reviews/reviewsHeader/ReviewsHeader";
 import ReviewsBox from "@/app/components/reviews/reviewsBox/ReviewsBox";
+import ReviewSection from "@/app/components/reviews/ReviewSection";
 
 export default function Detail() {
     // const router = useRouter();
@@ -1073,17 +1074,21 @@ export default function Detail() {
                                         </div>
                                     </div>
                                     {/*!-- //기본정보*/}
-
                                     <div></div>
                                 </section>
 
 
                                 {/*!--> 리뷰시작*/}
-                                <section className={styles.tab_content}>
+                                <ReviewSection
+                                    reviewRef={eventRef.review}
+                                    onRequireLogin={() => setShowLoginModal(true)}
+                                />
+
+                                {/*<section className={styles.tab_content}>
                                     <div className={`${styles.product_detail_together}`}>
-                                        {/*!--> Klover 리뷰 제목*/}
+                                        !--> Klover 리뷰 제목
                                         <ReviewsHeader reviewRef={eventRef.review}/>
-                                      {/*  <div className={`${styles.title_size_md_btn} ${styles.title_wrap}`}>
+                                        <div className={`${styles.title_size_md_btn} ${styles.title_wrap}`}>
                                             <section ref={eventRef.review}>
                                                 <p className={`${styles.title_heading}`}>Klover 리뷰 (93)</p>
                                             </section>
@@ -1103,12 +1108,12 @@ export default function Detail() {
                                                 </button>
                                             </div>
 
-                                        </div>*/}
-                                        {/*!-- // Klover 리뷰 제목*/}
+                                        </div>
+                                        !-- // Klover 리뷰 제목
 
-                                        {/*!--> 사용자 총점 */}
+                                        !--> 사용자 총점
                                         <ReviewsBox/>
-                                        {/*<div className={`${styles.klover_review_box} ${styles.klover_padding}`}>
+                                        <div className={`${styles.klover_review_box} ${styles.klover_padding}`}>
                                             <div className={`${styles.klover_box_left} ${styles.pl0}`}>
                                                 <div className={`${styles.box_top}`}>
                                                     <p className={`${styles.text_user_score}`}>사용자 총점</p>
@@ -1401,12 +1406,12 @@ export default function Detail() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>*/}
-                                        {/*!-- //사용자 총점 */}
+                                        </div>
+                                        !-- //사용자 총점
 
-                                        {/*리뷰 적을 수 있는 칸 ㅆ비ㅏㄹ..*/}
-                                        <div className={`${styles.tab_wrap}`}>
-                                            {/*!--> 리뷰 ul 태그*/}
+                                        리뷰 적을 수 있는 칸 ㅆ비ㅏㄹ..
+                                       <div className={`${styles.tab_wrap}`}>
+                                            !--> 리뷰 ul 태그
                                             <div className={`${styles.tab_list_wrap}`} style={{height: "44px"}}>
                                                 <ul className={`${styles.tabs} ${styles.tabs_sup}`}>
                                                     <li className={`${styles.tab_item} ${styles.pl0} ${styles.tab_padding}`}>
@@ -1430,10 +1435,10 @@ export default function Detail() {
                                                 </ul>
                                                 <div className={`${styles.tab_review_option}`}>
                                                     <div className={`${styles.form_sel}`}>
-                                                        {/*<select name="" id="">
+                                                        <select name="" id="">
                                                             <option value="">좋아요 순</option>
                                                             <option value="">최신 순</option>
-                                                        </select>*/}
+                                                        </select>
                                                         <span style={{width: "100%", height: "38px"}}
                                                               className={`${styles.ui_selectmenu_button}`}>
                                                             <span className={`${styles.ui_selectmenu_icon}`}></span>
@@ -1443,13 +1448,13 @@ export default function Detail() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            {/*!-- //리뷰 ul 태그*/}
+                                            !-- //리뷰 ul 태그
 
-                                            {/*리뷰 리스트 시작..*/}
+                                            리뷰 리스트 시작..
                                             <div className={`${styles.tab_content}`}>
                                                 <div className={`${styles.comment_wrap}`}>
 
-                                                    {/*!--> 리뷰 리스트*/}
+                                                    !--> 리뷰 리스트
                                                     <div className={`${styles.comment_list} ${styles.bt_no}`}>
                                                         <div className={`${styles.comment_item}`}>
                                                             <div className={`${styles.comment_header}`}>
@@ -1489,7 +1494,7 @@ export default function Detail() {
                                                                     <div className={`${styles.reivew_summary_wrap}`}>
                                                                         <div
                                                                             className={`${styles.rating_sm} ${styles.mt3} ${styles.rating_footer} ${styles.w68}`}>
-                                                                            <div>{/*초기화*/}</div>
+                                                                            <div>초기화</div>
                                                                             <div
                                                                                 className={`${styles.rating_stars} ${styles.z} ${styles.w68}`}>
                                                                                 <span
@@ -1514,7 +1519,7 @@ export default function Detail() {
                                                                                     </span>
                                                                                  </span>
                                                                             </div>
-                                                                            <div>{/*caption*/}</div>
+                                                                            <div>caption</div>
                                                                         </div>
                                                                         <input type="text"
                                                                                className={styles.rating_input}/>
@@ -1568,12 +1573,12 @@ export default function Detail() {
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div className={`${styles.reply_wrap}`}>{/*리플*/}</div>
+                                                            <div className={`${styles.reply_wrap}`}>리플</div>
                                                         </div>
                                                     </div>
-                                                    {/*!--> // 리뷰 리스트 */}
+                                                    !--> // 리뷰 리스트
 
-                                                    {/*!--> 페이지네이션*/}
+                                                    !--> 페이지네이션
                                                     <div className={`${styles.pagination} `}>
                                                         <button type="button"
                                                                 className={`${styles.btn_page} ${styles.prev}`}>
@@ -1604,7 +1609,7 @@ export default function Detail() {
                                                             <span className={styles.hidden}>다음</span>
                                                         </button>
                                                     </div>
-                                                    {/*!--> //페이지네이션*/}
+                                                    !--> //페이지네이션
                                                     <div className={`${styles.no_data}`}></div>
                                                 </div>
                                             </div>
@@ -1612,7 +1617,7 @@ export default function Detail() {
 
                                     </div>
                                     <div className={`${styles.product_detail_together}`}></div>
-                                </section>
+                                </section>*/}
                                 {/*!-- // 리뷰끝*/}
                                 <section></section>
                             </div>
@@ -1706,9 +1711,9 @@ export default function Detail() {
                     <ToastNotification message={toastText} onClose={() => setShowToast(false)}/>
                 )}
 
-                {showCreateReviewModal && (
-                    <ReviewModal onClose={()=>setShowCreateReviewModal(false)}/>
-                )}
+                {/*{showCreateReviewModal && (*/}
+                {/*    <ReviewModal onClose={()=>setShowCreateReviewModal(false)}/>*/}
+                {/*)}*/}
             </main>
         </div>
     );

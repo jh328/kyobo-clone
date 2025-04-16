@@ -911,8 +911,16 @@
     justify-content: center;
 }
 
+
 .btn_ev {
     pointer-events: none !important;
     cursor: default !important;
     text-decoration: none !important;
+}
+
+.btn_registration{
+    color:#fff;
+    background:#5055b1;
+    border:1px solid #5055b1;
+    transition:background-color 0.2s ease-out, border-color 0.2s ease-out;
 }

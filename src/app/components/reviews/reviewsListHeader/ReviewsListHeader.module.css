@@ -1,0 +1,156 @@
+.tab_wrap{
+    position:relative;
+    width:100%;
+    padding:0;
+}
+
+.h_44{
+    height:44px;
+}
+
+
+.tab_list_wrap {
+    position: relative;
+    margin-bottom: 0;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #d5d5d5;
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+
+.tabs {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.tabs_sup {
+    flex: 1 1 auto;
+    padding-bottom: 5px;
+}
+
+.tab_item {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    float: left;
+    background: none;
+    box-sizing: border-box;
+}
+.pl0 {
+    padding-left: 0 !important;
+}
+.tab_padding {
+    padding: 0 12px ;
+}
+
+.w_664{
+    width:664px !important;
+}
+.tab_link {
+    position: relative;
+    display: -webkit-flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.tab_text {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    color: #767676;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+.review_text {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+}
+
+
+.tab_link:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    transition: background-color 0.3s ease-out;
+}
+
+.selected_btn{
+    color:#000;
+    font-weight:700;
+}
+.tab_review_option {
+    display: inline-block;
+    flex: 0 auto;
+    align-self: flex-start;
+    margin-left: 30px;
+}
+
+.form_sel {
+    display: inline-block;
+    width: 120px;
+}
+.ui_selectmenu_button {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 44px;
+    margin: 0;
+    padding: 0 14px;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-out, border-radius 0.2s ease-out;
+    outline: none;
+}
+.ui_selectmenu_icon {
+    position: absolute;
+    right: 14px;
+    width: 9px;
+    height: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 9px 8px;
+    background-image: url("/images/header/arw_service_more@2x.png");
+    transform: rotate(0);
+    transition: transform 0.2s ease-out;
+    top: 14px;
+    float: right;
+    margin-top: 0;
+}
+
+.ui_selectmenu_text {
+    letter-spacing: -0.01em;
+    color: #000;
+    font-size: 13px;
+    line-height: 36px;
+}

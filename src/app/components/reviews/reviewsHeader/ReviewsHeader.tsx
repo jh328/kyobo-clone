@@ -1,17 +1,31 @@
 import styles from "./ReviewsHeader.module.css"
 import {RefObject} from "react";
+import {useSession} from "next-auth/react";
 
 
 type ReviewsHeaderProps = {
     reviewRef: RefObject<HTMLDivElement> | null;
+    onOpenModal: () => void;
+    onRequiredLogin: () => void;
+    reviewCount:number;
 };
 
-const ReviewsHeader = ({ reviewRef }: ReviewsHeaderProps) => {
+const ReviewsHeader = ({reviewRef, onOpenModal, onRequiredLogin,reviewCount}: ReviewsHeaderProps) => {
+    const {data:session} =useSession();
 
+    const handleClick = () => {
+        const isLoggedIn = !!session;
+
+        if (!isLoggedIn) {
+            onRequiredLogin()
+            return;
+        }
+        onOpenModal();
+    }
     return (
         <div className={`${styles.title_size_md_btn} ${styles.title_wrap}`}>
             <section ref={reviewRef ?? undefined}>
-                <p className={`${styles.title_heading}`}>Klover 리뷰 (93)</p>
+                <p className={`${styles.title_heading}`}>Klove 리뷰 ({reviewCount})</p>
             </section>
             <button className={`${styles.btn_size_lg} ${styles.ml_6}`}>
                 <span className={`${styles.ico_info} ${styles.b_size}`}></span>
@@ -22,6 +36,8 @@ const ReviewsHeader = ({ reviewRef }: ReviewsHeaderProps) => {
                     구매 후 리뷰 작성 시, e교환권 200원 적립
                 </p>
                 <button
+                    type="button"
+                    onClick={handleClick}
                     className={`${styles.btn_sm} ${styles.btn_primary} ${styles.btn_all_text}`}>
                     <span className={`${styles.ico_review}`}></span>
                     <span className={styles.text_base}>리뷰작성</span>

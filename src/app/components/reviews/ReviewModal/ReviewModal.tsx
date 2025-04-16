@@ -1,15 +1,39 @@
 import style from "./Review.module.css"
 import Link from "next/link";
 import {useState} from "react";
+import {ReviewType} from "@/app/components/reviews/ReviewSection";
 
 type ReviewModalProps = {
     onClose: () => void;
+    onSubmit: (review: ReviewType) => void;
 }
 
-export default function ReviewModal({onClose}: ReviewModalProps) {
-    const [selectedTag, setSelecttedTag] = useState<string | null>(null);
+
+export default function ReviewModal({onClose, onSubmit}: ReviewModalProps) {
+    const [selectedTag, setSelectedTag] = useState<string | null>(null);
+    const [content, setContent] = useState("");
 
     const tags = ["집중돼요", "도움돼요", "쉬웠어요", "최고예요", "추천해요"];
+
+    // 리뷰 등록 유효성 검사
+    const registrationInspection = setSelectedTag !== null && content.trim().length >= 10;
+
+    const handleSubmit = () => {
+
+        if (!selectedTag) return;
+
+        const newReview: ReviewType = {
+            id: crypto.randomUUID(),
+            period: new Date(),
+            content,
+            tags: [selectedTag] //tags:[selectedTag!] 이것도 좋지만, 조건부로 처리하는게 좋다고 함.
+        }
+        console.log("등록될 리뷰, ", newReview)
+        onSubmit(newReview);
+    }
+
+    console.log("content : ", content);
+    console.log("setContent : ", setContent);
 
     return (
         <div className={`${style.base}`}>
@@ -165,13 +189,17 @@ export default function ReviewModal({onClose}: ReviewModalProps) {
                                                             </div>
                                                             <div className={`${style.mt_10} ${style.gray_color}`}>
                                                                 <div className={`${style.size_lg}`}>
-                                                                    {tags.map((tag)=> (
+                                                                    {tags.map((tag) => (
                                                                         <button type="button"
                                                                                 key={tag}
                                                                                 className={`${style.btn_tab_base} ${style.tag} ${selectedTag === tag ? style.selected_tag : ""}`}
-                                                                                onClick={()=>setSelecttedTag(tag)}
+                                                                                onClick={() => {
+                                                                                    console.log("잘 클릭 됨", tag)
+                                                                                    setSelectedTag(tag)
+                                                                                }}
                                                                         >
-                                                                            <span className={style.tag_text}>{tag}</span>
+                                                                            <span
+                                                                                className={style.tag_text}>{tag}</span>
                                                                         </button>
                                                                     ))}
                                                                 </div>
@@ -193,7 +221,9 @@ export default function ReviewModal({onClose}: ReviewModalProps) {
                                                             <div className={`${style.mt_10}`}>
                                                                 <div className={`${style.byte_check_wrap}`}>
                                                                     <textarea name="review"
+                                                                              onChange={(e) => setContent(e.target.value)}
                                                                               id="review"
+                                                                              value={content}
                                                                               placeholder="내용을 10자 이상 입력해 주세요.
                                                                               주제와 무관한 댓글,
                                                                               악플, 배송문의 등의 글은 임의 삭제될 수 있습니다."
@@ -203,7 +233,7 @@ export default function ReviewModal({onClose}: ReviewModalProps) {
                                                                     <div
                                                                         className={`${style.byte_check_footer} ${style.byte_check}`}>
                                                                         <span
-                                                                            className={`${style.count} ${style.review_text}`}>0</span>
+                                                                            className={`${style.count} ${style.review_text}`}>{content.length}</span>
                                                                         <span className={style.review_total}>
                                                                             3000
                                                                         </span>
@@ -280,7 +310,11 @@ export default function ReviewModal({onClose}: ReviewModalProps) {
                     {/*!--> footer*/}
                     <div className={`${style.dialog_footer}`}>
                         <button type="button"
-                                className={`${style.btn_md} ${style.btn_primary} ${style.btn_base} ${style.btn_ev}`}>
+                                onClick={() => {
+                                    console.log("버튼 클릭")
+                                    handleSubmit();
+                                }}
+                                className={`${style.btn_md} ${style.btn_primary} ${style.btn_base} ${registrationInspection ? style.btn_registration : style.btn_ev}`}>
                             <span className={style.text_base}>등록</span>
                         </button>
                     </div>
